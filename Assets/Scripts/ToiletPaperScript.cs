@@ -18,9 +18,9 @@ public class ToiletPaperScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag != "Player")
+        if (collision.gameObject.tag != "Player" && collision.gameObject.tag != "Projectile" && collision.gameObject != this.gameObject)
         {
-            //Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 }

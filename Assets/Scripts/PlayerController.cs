@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * movementSpeed, vertical * movementSpeed);
+        Vector2 playerVelocity = new Vector2 (horizontal * movementSpeed, vertical * movementSpeed);
+        rb.velocity = Vector2.ClampMagnitude(playerVelocity, movementSpeed);
     }
 }
