@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4840598168192485755}
   - component: {fileID: 1504507690591025397}
   - component: {fileID: 897912186101851746}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ToiletPaper
   m_TagString: Projectile
   m_Icon: {fileID: 0}
