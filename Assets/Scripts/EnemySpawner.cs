@@ -23,7 +23,7 @@ public class EnemySpawner : MonoBehaviour
     {
         enemySpawnPoint = Enemy.transform;
         player = GameObject.FindGameObjectWithTag("Player");
-        SpawnEnemy();
+        
     }
 
     // Update is called once per frame
@@ -33,6 +33,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Spawning the Enemy on a loop
         if (bEnemySpawned == true)
         {
             bEnemySpawned = false;
@@ -43,16 +44,22 @@ public class EnemySpawner : MonoBehaviour
     void SpawnEnemy()
     {
         bEnemySpawned = true;
-        bottomleft = player.transform.GetChild(0).GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0, 0));
-        topright = player.transform.GetChild(0).GetComponent<Camera>().ViewportToWorldPoint(new Vector3(1, 1));
+        
         GeneratePosition();
-        Debug.Log(spawnX);
-        Debug.Log(spawnY);
+
+        // Setting the position for the enemy to spawn
         enemySpawnPoint.position = new Vector2(spawnX, spawnY);
+
+        // Spawning the enemy at the given spawn point
         Instantiate<GameObject>(Enemy, enemySpawnPoint).GetComponent<AIDestinationSetter>().target = player.transform;
     }
+
     void GeneratePosition()
     {
+        // Finding Screen Boundaries
+        bottomleft = player.transform.GetChild(0).GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0, 0));
+        topright = player.transform.GetChild(0).GetComponent<Camera>().ViewportToWorldPoint(new Vector3(1, 1));
+
         // Generate X Value
         float spawnX1 = Random.Range(playAreaLeftX, bottomleft.x);
         float spawnX2 = Random.Range(topright.x, playAreaRightX);
