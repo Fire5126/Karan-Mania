@@ -13,10 +13,11 @@ public class EnemySpawner : MonoBehaviour
     float spawnY;
     public GameObject Enemy;
     Transform enemySpawnPoint;
+    bool bEnemySpawned;
     // Start is called before the first frame update
     void Start()
     {
-        enemySpawnPoint = gameObject.transform;
+        enemySpawnPoint = Enemy.transform;
         player = GameObject.FindGameObjectWithTag("Player");
         SpawnEnemy();
     }
@@ -24,25 +25,74 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    }
+
+    private void FixedUpdate()
+    {
+        if (bEnemySpawned == true)
+        {
+            bEnemySpawned = false;
+            Invoke("SpawnEnemy", 3f);
+        }
     }
 
     void SpawnEnemy()
     {
+        bEnemySpawned = true;
         bottomleft = player.transform.GetChild(0).GetComponent<Camera>().ViewportToWorldPoint(new Vector3(0, 0));
         topright = player.transform.GetChild(0).GetComponent<Camera>().ViewportToWorldPoint(new Vector3(1, 1));
         GeneratePosition();
-        while((spawnX <= (topright.x) || spawnX >= bottomleft.x) && (spawnY <= topright.y || spawnY >= bottomleft.y))
-        {
-            GeneratePosition();
-        }
+        Debug.Log(spawnX);
+        Debug.Log(spawnY);
         enemySpawnPoint.position = new Vector2(spawnX, spawnY);
-        GameObject enemy = Instantiate<GameObject>(Enemy, enemySpawnPoint);
-        enemy.GetComponent<AIDestinationSetter>().target = player.transform;
+        Instantiate<GameObject>(Enemy, enemySpawnPoint).GetComponent<AIDestinationSetter>().target = player.transform;
     }
     void GeneratePosition()
     {
-        spawnX = Random.Range(-2.5f, 22.5f);
-        spawnY = Random.Range(-3.45f, 7.5f);
+        // Generate X Value
+        float spawnX1 = Random.Range(-2.5f, bottomleft.x);
+        float spawnX2 = Random.Range(topright.x, 22.5f);
+        if (spawnX1 < -2.5f)
+        {
+            spawnX = spawnX2;
+        }
+        else if (spawnX2 > 22.5f)
+        {
+            spawnX = spawnX1;
+        }
+        else
+        {
+            if (Random.value > 0.5f)
+            {
+                spawnX = spawnX1;
+            }
+            else
+            {
+                spawnX = spawnX2;
+            }
+        }
+
+        // Generate Y Value
+        float spawnY1 = Random.Range(topright.y, 7.5f);
+        float spawnY2 = Random.Range(-3.45f, bottomleft.y);
+        if (spawnY1 > 7.5f)
+        {
+            spawnY = spawnY2;
+        }
+        else if (spawnY2 < -3.45f)
+        {
+            spawnY = spawnY1;
+        }
+        else
+        {
+            if (Random.value > 0.5f)
+            {
+                spawnY = spawnY1;
+            }
+            else
+            {
+                spawnY = spawnY2;
+            }
+        }
     }
 }
