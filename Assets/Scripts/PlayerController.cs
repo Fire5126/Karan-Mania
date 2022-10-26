@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float movementSpeed;
+    public float maxHealth = 20;
     float horizontal;
     float vertical;
     Rigidbody2D rb;
+    public int kills = 0;
     // Start is called before the first frame update
     void Start()
     {

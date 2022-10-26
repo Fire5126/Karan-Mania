@@ -7,6 +7,7 @@ TagManager:
   - Undefined
   - Projectile
   - Enemy
+  - GameManager
   layers:
   - Default
   - TransparentFX
@@ -15,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Projectile
-  - Walls
+  - Obsticals
   - 
   - 
   - 

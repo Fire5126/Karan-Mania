@@ -5,7 +5,6 @@ using Pathfinding;
 
 public class EnemySpawner : MonoBehaviour
 {
-
     GameObject player;
     Vector2 bottomleft;
     Vector2 topright;
@@ -14,6 +13,11 @@ public class EnemySpawner : MonoBehaviour
     public GameObject Enemy;
     Transform enemySpawnPoint;
     bool bEnemySpawned;
+    public float enemySpawnDelay = 3f;
+    public float playAreaLeftX;
+    public float playAreaRightX;
+    public float playAreaTopY;
+    public float playAreaBotomY;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +36,7 @@ public class EnemySpawner : MonoBehaviour
         if (bEnemySpawned == true)
         {
             bEnemySpawned = false;
-            Invoke("SpawnEnemy", 3f);
+            Invoke("SpawnEnemy", enemySpawnDelay);
         }
     }
 
@@ -50,13 +54,13 @@ public class EnemySpawner : MonoBehaviour
     void GeneratePosition()
     {
         // Generate X Value
-        float spawnX1 = Random.Range(-2.5f, bottomleft.x);
-        float spawnX2 = Random.Range(topright.x, 22.5f);
-        if (spawnX1 < -2.5f)
+        float spawnX1 = Random.Range(playAreaLeftX, bottomleft.x);
+        float spawnX2 = Random.Range(topright.x, playAreaRightX);
+        if (spawnX1 < playAreaLeftX)
         {
             spawnX = spawnX2;
         }
-        else if (spawnX2 > 22.5f)
+        else if (spawnX2 > playAreaRightX)
         {
             spawnX = spawnX1;
         }
@@ -73,13 +77,13 @@ public class EnemySpawner : MonoBehaviour
         }
 
         // Generate Y Value
-        float spawnY1 = Random.Range(topright.y, 7.5f);
-        float spawnY2 = Random.Range(-3.45f, bottomleft.y);
-        if (spawnY1 > 7.5f)
+        float spawnY1 = Random.Range(topright.y, playAreaTopY);
+        float spawnY2 = Random.Range(playAreaBotomY, bottomleft.y);
+        if (spawnY1 > playAreaTopY)
         {
             spawnY = spawnY2;
         }
-        else if (spawnY2 < -3.45f)
+        else if (spawnY2 < playAreaBotomY)
         {
             spawnY = spawnY1;
         }

@@ -8,6 +8,8 @@ public class PlayerToiletPaper : MonoBehaviour
     public float toiletPaperSpeed;
     private Camera mainCam;
     private Vector3 mousePos;
+    public float toiletPaperDamage = 10f;
+    public float toiletPaperDuration = 5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +26,10 @@ public class PlayerToiletPaper : MonoBehaviour
             GameObject thrownToiletPaper = Instantiate<GameObject>(toiletPaper, gameObject.transform);
             thrownToiletPaper.GetComponent<Rigidbody2D>().velocity = rotation.normalized * toiletPaperSpeed;
         }
+    }
+
+    public void EnemyHit(Collision2D enemy)
+    {
+        enemy.gameObject.GetComponent<EnemyHealthManager>().UpdateHealth(toiletPaperDamage);
     }
 }
