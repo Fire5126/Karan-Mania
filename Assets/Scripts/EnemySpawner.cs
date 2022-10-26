@@ -13,11 +13,14 @@ public class EnemySpawner : MonoBehaviour
     public GameObject Enemy;
     Transform enemySpawnPoint;
     bool bEnemySpawned;
-    public float enemySpawnDelay = 3f;
+    float enemySpawnDelay;
     public float playAreaLeftX;
     public float playAreaRightX;
     public float playAreaTopY;
     public float playAreaBotomY;
+    public bool bWaveStarted = false;
+    int enemiesSpawned = 0;
+    int enemiesToSpawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,14 +37,29 @@ public class EnemySpawner : MonoBehaviour
     private void FixedUpdate()
     {
         // Spawning the Enemy on a loop
-        if (bEnemySpawned == true)
+        if (bEnemySpawned == true && bWaveStarted == true && enemiesSpawned < enemiesToSpawn)
         {
+            Debug.Log(enemiesSpawned);
             bEnemySpawned = false;
             Invoke("SpawnEnemy", enemySpawnDelay);
         }
+        else if (enemiesSpawned >= enemiesToSpawn)
+        {
+            enemiesSpawned = 0;
+            bWaveStarted = gameObject.GetComponent<WaveManager>().WaveFinished();
+        }
     }
 
-    void SpawnEnemy()
+    public void InitilizeSpawnEnemy(float spawnRate, int enemies)
+    {
+        enemySpawnDelay = spawnRate;
+        bWaveStarted = true;
+        enemiesToSpawn = enemies;
+        Debug.Log(enemiesToSpawn);
+        bEnemySpawned = true;
+    }
+
+    public void SpawnEnemy()
     {
         bEnemySpawned = true;
         
@@ -52,6 +70,8 @@ public class EnemySpawner : MonoBehaviour
 
         // Spawning the enemy at the given spawn point
         Instantiate<GameObject>(Enemy, enemySpawnPoint).GetComponent<AIDestinationSetter>().target = player.transform;
+
+        enemiesSpawned = enemiesSpawned + 1;
     }
 
     void GeneratePosition()
