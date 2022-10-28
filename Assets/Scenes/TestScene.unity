@@ -178,6 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 547607396}
   - component: {fileID: 547607395}
+  - component: {fileID: 547607397}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -198,11 +199,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 583322672758955229, guid: f6c3ce6892ee14b72925f1afa6360157, type: 3}
-  enemySpawnDelay: 3
   playAreaLeftX: -2.5
   playAreaRightX: 22.5
   playAreaTopY: 7.5
   playAreaBotomY: -3.45
+  bWaveStarted: 0
 --- !u!4 &547607396
 Transform:
   m_ObjectHideFlags: 0
@@ -217,6 +218,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &547607397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547607394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a1c5120c3783443f8e39cb95fe30224, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveDiffMultiplier: 1
+  enemySpawnTime: 10
 --- !u!1 &1106631213
 GameObject:
   m_ObjectHideFlags: 0
