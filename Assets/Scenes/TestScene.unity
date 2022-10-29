@@ -185,7 +185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &547607395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +232,106 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveDiffMultiplier: 1
   enemySpawnTime: 10
+--- !u!1 &691892044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 691892045}
+  - component: {fileID: 691892047}
+  - component: {fileID: 691892046}
+  m_Layer: 0
+  m_Name: TestManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &691892045
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691892044}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &691892046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691892044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 461d5c3eb9c444ca3883b82350475c93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Enemy: {fileID: 583322672758955229, guid: f6c3ce6892ee14b72925f1afa6360157, type: 3}
+  playAreaLeftX: -2.5
+  playAreaRightX: 22.5
+  playAreaTopY: 7.5
+  playAreaBotomY: -3.45
+  bWaveStarted: 0
+--- !u!114 &691892047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691892044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24758bb55f016ba4e96cc7e878cb5fc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  difficultyFactor: 0.9
+  waves:
+  - name: Wave1
+    actions:
+    - name: basic
+      delay: 5
+      prefab: {fileID: 583322672758955229, guid: f6c3ce6892ee14b72925f1afa6360157, type: 3}
+      spawnCount: 10
+      message: bruh
+    - name: angry
+      delay: 5
+      prefab: {fileID: 195893726985913820, guid: 363b2a365ba944547a300d88c3912544, type: 3}
+      spawnCount: 10
+      message: bruh
+  - name: Wave2
+    actions:
+    - name: basic
+      delay: 10
+      prefab: {fileID: 583322672758955229, guid: f6c3ce6892ee14b72925f1afa6360157, type: 3}
+      spawnCount: 2
+      message: bruh
+    - name: angry
+      delay: 10
+      prefab: {fileID: 195893726985913820, guid: 363b2a365ba944547a300d88c3912544, type: 3}
+      spawnCount: 2
+      message: bruh
+  - name: Wave3
+    actions:
+    - name: basic
+      delay: 5
+      prefab: {fileID: 583322672758955229, guid: f6c3ce6892ee14b72925f1afa6360157, type: 3}
+      spawnCount: 10
+      message: bruh
+    - name: angry
+      delay: 5
+      prefab: {fileID: 195893726985913820, guid: 363b2a365ba944547a300d88c3912544, type: 3}
+      spawnCount: 10
+      message: bruh
 --- !u!1 &1106631213
 GameObject:
   m_ObjectHideFlags: 0

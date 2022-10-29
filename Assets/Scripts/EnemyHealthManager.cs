@@ -15,7 +15,6 @@ public class EnemyHealthManager : MonoBehaviour
     public void UpdateHealth(float damage)
     {
         MaxHealth -= damage;
-        Debug.Log(damage);
         if (MaxHealth <= 0)
         {
             player.GetComponent<PlayerController>().kills += 1;

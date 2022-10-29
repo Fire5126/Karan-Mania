@@ -14,6 +14,7 @@ public class WaveManager : MonoBehaviour
     int waveNumber;
     int enemiesToSpawn;
     float enemySpawnRate;
+    
 
     void Start()
     {
@@ -32,7 +33,14 @@ public class WaveManager : MonoBehaviour
         enemiesToSpawn = waveDiffMultiplier * waveNumber + 5;
         enemySpawnRate = enemiesToSpawn / 10;
 
-        gameObject.GetComponent<EnemySpawner>().InitilizeSpawnEnemy(enemySpawnRate, enemiesToSpawn);
+        if (waveNumber >= 2 && waveNumber <4)
+        {
+            int retailWorker = Mathf.RoundToInt(enemiesToSpawn * 0.8f);
+            int angryRetailWorker = Mathf.RoundToInt(enemiesToSpawn * 0.2f);
+            gameObject.GetComponent<EnemySpawner>().InitilizeSpawnEnemy(enemySpawnRate, enemiesToSpawn);
+        }
+
+        
     }
 
     public bool WaveFinished()
