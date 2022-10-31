@@ -49,7 +49,7 @@ public class TestSpawner : MonoBehaviour
                     {
                         for (int i = 0; i < A.spawnCount; i++)
                         {
-                            GetComponent<EnemySpawner>().SpawnEnemy(A.prefab);
+                            GetComponent<EnemySpawner>().SpawnEnemy();
                             yield return new WaitForSeconds(0.8f);
                         }
                     }

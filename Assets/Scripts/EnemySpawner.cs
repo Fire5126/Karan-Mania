@@ -57,19 +57,19 @@ public class EnemySpawner : MonoBehaviour
         bEnemySpawned = true;
     }
 
-    public void SpawnEnemy(GameObject EnemyToSpawn)
+    public void SpawnEnemy()
     {
         bEnemySpawned = true;
         
         GeneratePosition();
 
         // Setting the position for the enemy to spawn
-        enemySpawnPoint = EnemyToSpawn.transform;
+        enemySpawnPoint = Enemy.transform;
         enemySpawnPoint.position = new Vector2(spawnX, spawnY);
         Debug.Log(enemySpawnPoint.position);
 
         // Spawning the enemy at the given spawn point
-        Instantiate<GameObject>(EnemyToSpawn, enemySpawnPoint).GetComponent<AIDestinationSetter>().target = player.transform;
+        Instantiate<GameObject>(Enemy, enemySpawnPoint).GetComponent<AIDestinationSetter>().target = player.transform;
 
         enemiesSpawned = enemiesSpawned + 1;
     }
