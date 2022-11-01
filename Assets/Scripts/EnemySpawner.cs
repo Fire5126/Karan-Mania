@@ -69,7 +69,7 @@ public class EnemySpawner : MonoBehaviour
         Debug.Log(enemySpawnPoint.position);
 
         // Spawning the enemy at the given spawn point
-        Instantiate<GameObject>(Enemy, enemySpawnPoint).GetComponent<AIDestinationSetter>().target = player.transform;
+        Instantiate<GameObject>(Enemy, enemySpawnPoint.position, Quaternion.identity).GetComponent<AIDestinationSetter>().target = player.transform;
 
         enemiesSpawned = enemiesSpawned + 1;
     }
