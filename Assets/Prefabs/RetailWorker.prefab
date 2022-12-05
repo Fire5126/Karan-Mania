@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 583322672430832633}
   - component: {fileID: 583322672430832634}
-  m_Layer: 0
+  - component: {fileID: 5390233710787078256}
+  m_Layer: 8
   m_Name: EnemyGFX
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -82,6 +83,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &5390233710787078256
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583322672430832639}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.64}
+  m_Size: {x: 0.73, y: 0.0001}
+  m_Direction: 0
 --- !u!1 &583322672758955229
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,7 +115,7 @@ GameObject:
   - component: {fileID: 3209293814875460994}
   - component: {fileID: 2652029565857529048}
   - component: {fileID: -4851109586982956155}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RetailWorker
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -113,7 +130,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583322672758955229}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.514249, y: -0.16616261, z: 0}
+  m_LocalPosition: {x: 12.6588745, y: 6.412831, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 583322672430832633}
@@ -161,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 1.18
+  radius: 0.52
   height: 0.01
   canMove: 1
   maxSpeed: 3
@@ -178,14 +195,14 @@ MonoBehaviour:
     mode: 2
     interval: 0.5
     sensitivity: 10
-    maximumInterval: 1
+    maximumInterval: 0.64
     visualizeSensitivity: 0
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
-  slowdownDistance: 0.6
-  pickNextWaypointDist: 0.3
-  endReachedDistance: 0.2
+  slowdownDistance: 0.54
+  pickNextWaypointDist: 0.51
+  endReachedDistance: 0.44
   alwaysDrawGizmos: 1
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -255,7 +272,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.6, y: 1.1}
+  m_Size: {x: 0.51, y: 1.01}
   m_Direction: 0
 --- !u!114 &-4851109586982956155
 MonoBehaviour:

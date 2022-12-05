@@ -17,8 +17,8 @@ TagManager:
   - UI
   - Projectile
   - Obstacles
-  - 
-  - 
+  - EnemyObjectCollider
+  - EnemyHitBox
   - 
   - 
   - 

@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class ToiletPaperScript : MonoBehaviour
 {
-    GameObject player;
+    PlayerController player;
+    Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        Invoke("DestroyToiletPaper", player.GetComponent<PlayerToiletPaper>().toiletPaperDuration);
+        rb = GetComponent<Rigidbody2D>();
+
+        player = FindObjectOfType<PlayerController>();
+        rb.AddForce(transform.right * player.projectileSpeed, ForceMode2D.Impulse);
+        Invoke("DestroyToiletPaper", player.toiletPaperDuration);
     }
 
     // Update is called once per frame
@@ -24,7 +28,7 @@ public class ToiletPaperScript : MonoBehaviour
         {
             if (collision.gameObject.tag == "Enemy")
             {
-                player.GetComponent<PlayerToiletPaper>().EnemyHit(collision);
+                player.EnemyHit(collision);
             }
             DestroyToiletPaper();
         }
