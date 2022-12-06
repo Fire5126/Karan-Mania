@@ -57,6 +57,6 @@ public class PlayerController : MonoBehaviour
     // Toilet Paper Functions
     public void EnemyHit(Collision2D enemy)
     {
-        enemy.gameObject.GetComponent<EnemyHealthManager>().UpdateHealth(toiletPaperDamage);
+        enemy.gameObject.GetComponent<Enemy>().UpdateHealth(toiletPaperDamage);
     }
 }

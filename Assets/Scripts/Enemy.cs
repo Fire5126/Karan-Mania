@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHealthManager : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     public float MaxHealth = 10;
     GameObject player;
