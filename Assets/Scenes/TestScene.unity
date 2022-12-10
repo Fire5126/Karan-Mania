@@ -291,6 +291,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 583322672758955229, guid: f6c3ce6892ee14b72925f1afa6360157, type: 3}
+  enemyTypes:
+  - {fileID: 583322672758955229, guid: f6c3ce6892ee14b72925f1afa6360157, type: 3}
+  - {fileID: 583322672758955229, guid: e12d7a9674c215b41a305db6439d63a0, type: 3}
+  - {fileID: 583322672758955229, guid: 3b6dc84ebbc05614b86958ae95328345, type: 3}
   gameDifficulty: 1.5
   spawnDelay: 1
   waveDelay: 10
