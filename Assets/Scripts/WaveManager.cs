@@ -9,6 +9,12 @@ public class WaveManager : MonoBehaviour
     PlayerController player;
     public GameObject enemy;
     Camera gameCamera;
+    GameManager gameManager;
+
+    // Enemy GameObjects
+    GameObject RetailWorkerPrefab;
+    GameObject AngryWorkerPrefab;
+
 
     // Graph Values
     float maxGraphX;
@@ -31,6 +37,7 @@ public class WaveManager : MonoBehaviour
     // Functions
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         gameCamera = FindObjectOfType<Camera>();
         player = FindObjectOfType<PlayerController>();
         InitialisePlayArea();
@@ -122,11 +129,47 @@ public class WaveManager : MonoBehaviour
         enemiesSpawned++;
     }
 
+    GameObject CalculateEnemyToSpawn()
+    {
+        int waveScore = gameManager.GetWaveScore();
+        if (waveScore <= 2)
+        {
+            // ratio of 3:2
+            int ratioTotal = 3 + 2;
+            int retailWorker = Mathf.RoundToInt(3 * (enemiesToSpawn / ratioTotal));
+            int angryWorker = Mathf.RoundToInt(2 * (enemiesToSpawn / ratioTotal));
+            if (enemiesSpawned < retailWorker)
+            {
+                return RetailWorkerPrefab;
+            }
+            if (enemiesSpawned)
+            
+        }
+        if (waveScore <= 3)
+        {
+
+            return;
+        }
+        if (waveScore <= 5)
+        {
+            return;
+        }
+        if (waveScore <= 8)
+        {
+            return;
+        }
+        if (waveScore <= 10)
+        {
+            return;
+        }
+    }
+
     void InitialiseWave()
     {
         enemiesToSpawn = Mathf.RoundToInt(enemiesToSpawn * gameDifficulty + 5);
         enemiesSpawned = 0;
         waveActive = true;
+        gameManager.AddWaveScore();
     }
 
     public void ResetValues()
