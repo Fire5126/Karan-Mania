@@ -141,7 +141,6 @@ public class WaveManager : MonoBehaviour
     {
         int waveScore = gameManager.GetWaveScore();
         
-        Debug.Log("wave score = " + waveScore);
         if (waveScore <= 2)
         {
             // ratio of 1
@@ -163,18 +162,13 @@ public class WaveManager : MonoBehaviour
             retailWorker = Mathf.RoundToInt(3 * (enemiesToSpawn / ratioTotal));
             angryWorker = Mathf.RoundToInt(2 * (enemiesToSpawn / ratioTotal));
             enemyTypesSpawned++;
-            Debug.Log("enemy types spawned = " + enemyTypesSpawned);
             if (enemyTypesSpawned <= retailWorker)
             {
-                Debug.Log("Check 1");
                 return enemyTypes[0];
-                
             }
             else if (enemyTypesSpawned <= angryWorker + retailWorker)
             {
-                Debug.Log("Check 2");
                 return enemyTypes[1];
-                
             }
         }
         if (waveScore <= 5)
