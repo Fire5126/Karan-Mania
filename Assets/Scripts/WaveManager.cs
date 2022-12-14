@@ -7,15 +7,11 @@ public class WaveManager : MonoBehaviour
 {
     // Game Objects
     PlayerController player;
-    public GameObject enemy;
     Camera gameCamera;
     GameManager gameManager;
 
     // Enemy GameObjects
     public GameObject[] enemyTypes;
-    GameObject RetailWorkerPrefab;
-    GameObject AngryWorkerPrefab;
-
 
     // Graph Values
     float maxGraphX;
