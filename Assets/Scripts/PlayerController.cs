@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    // Misc Variables
+    bool isPaused = false;
+
     // Player
     public float movementSpeed;
     public float maxHealth = 20;
-    float horizontal;
-    float vertical;
     Rigidbody2D rb;
     Vector2 moveDirection;
 
@@ -21,21 +22,37 @@ public class PlayerController : MonoBehaviour
     public float toiletPaperDuration = 5f;
     public float projectileSpeed = 10f;
 
+    // Game Objects
+    GameManager gameManager;
+
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-        moveDirection = new Vector2(moveX, moveY).normalized;
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!isPaused)
         {
-            Quaternion rotation = transform.GetChild(1).transform.rotation;
-            GameObject instance = Instantiate<GameObject>(toiletPaper, transform.GetChild(1).transform.position, rotation);
+            // Player movement
+            float moveX = Input.GetAxisRaw("Horizontal");
+            float moveY = Input.GetAxisRaw("Vertical");
+            moveDirection = new Vector2(moveX, moveY).normalized;
+
+            // Player Attack
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Quaternion rotation = transform.GetChild(1).transform.rotation;
+                GameObject instance = Instantiate<GameObject>(toiletPaper, transform.GetChild(1).transform.position, rotation);
+            }
+        }
+
+        // Pause Game
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gameManager.TogglePauseGame();
         }
     }
 

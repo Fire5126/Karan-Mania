@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    // Game Variables
     int waveScore;
     int killScore;
+
+    // Game Properties
+    bool gamePaused = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,5 +41,21 @@ public class GameManager : MonoBehaviour
     public int GetKillScore()
     {
         return killScore;
+    }
+
+    public bool TogglePauseGame()
+    {
+        if (gamePaused == true)
+        {
+            gamePaused = false;
+            return gamePaused;
+        }
+        else if (gamePaused == false)
+        {
+            gamePaused = true;
+            return gamePaused;
+        }
+        Debug.Log("Pause code broken");
+        return gamePaused;
     }
 }
