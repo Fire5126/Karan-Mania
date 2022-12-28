@@ -5,11 +5,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Misc Variables
-    bool isPaused = false;
+    public bool isPaused = false;
 
     // Player
     public float movementSpeed;
     public float maxHealth = 20;
+    float health = 20;
     Rigidbody2D rb;
     Vector2 moveDirection;
 
@@ -27,6 +28,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        health = maxHealth;
         gameManager = FindObjectOfType<GameManager>();
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
@@ -72,8 +74,18 @@ public class PlayerController : MonoBehaviour
     }
 
     // Toilet Paper Functions
-    public void EnemyHit(Collision2D enemy)
+    public void EnemyHit(Collider2D enemy)
     {
         enemy.gameObject.GetComponent<Enemy>().UpdateHealth(toiletPaperDamage);
+    }
+
+    public void TakeDamage(int damageTaken)
+    {
+        health -= damageTaken;
+        gameManager.UpdatePlayerHealthStat(health);
+        if (health <= 0)
+        {
+            gameManager.PlayerDied();
+        }
     }
 }
