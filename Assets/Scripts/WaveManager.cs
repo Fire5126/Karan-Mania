@@ -5,6 +5,9 @@ using Pathfinding;
 
 public class WaveManager : MonoBehaviour
 {
+    // Misc Variables
+    public bool isPaused;
+
     // Game Objects
     PlayerController player;
     Camera gameCamera;
@@ -50,7 +53,7 @@ public class WaveManager : MonoBehaviour
 
     void Update()
     {
-        if (gameActive)
+        if (gameActive && !isPaused)
         {
             ProgressGame();
         }
@@ -284,9 +287,12 @@ public class WaveManager : MonoBehaviour
 
     public void InitialiseGame()
     {
-        ResetValues();
-        gameActive = true;
-        InitialiseWave();
+        if (!isPaused)
+        {
+            ResetValues();
+            gameActive = true;
+            InitialiseWave();
+        }
     }
 
     void ProgressGame()

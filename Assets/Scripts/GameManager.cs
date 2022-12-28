@@ -11,10 +11,13 @@ public class GameManager : MonoBehaviour
     // Game Properties
     bool gamePaused = false;
 
+    // Game Objects
+    WaveManager waveManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        waveManager = FindObjectOfType<WaveManager>();
     }
 
     // Update is called once per frame
@@ -48,11 +51,13 @@ public class GameManager : MonoBehaviour
         if (gamePaused == true)
         {
             gamePaused = false;
+            waveManager.isPaused = gamePaused;
             return gamePaused;
         }
         else if (gamePaused == false)
         {
             gamePaused = true;
+            waveManager.isPaused = gamePaused;
             return gamePaused;
         }
         Debug.Log("Pause code broken");
