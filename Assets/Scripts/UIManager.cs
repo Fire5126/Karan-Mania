@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     public GameObject pauseOverlay;
     public GameObject deathOverlay;
     public GameObject inGameOverlay;
+    public GameObject PreGameOverlay;
 
     // Component References
     Slider healthBar;
@@ -38,11 +39,42 @@ public class UIManager : MonoBehaviour
     public void ResetUI()
     {
         // In game overlay
-        healthBar.value = healthBar.maxValue;
+        if (healthBar == null)
+        {
+            healthBar = FindObjectOfType<Slider>();
+        }
+        if (healthBar != null)
+        {
+            healthBar.value = healthBar.maxValue;
+        }
     }
 
     public void UpdateHealthStat(float health)
     {
+        if (healthBar == null)
+        {
+            healthBar = FindObjectOfType<Slider>();
+        }
         healthBar.value = health;
+    }
+
+    public void EnableInGameOverlay()
+    {
+        inGameOverlay.SetActive(true);
+    }
+
+    public void DisableInGameOverlay()
+    {
+        inGameOverlay.SetActive(false);
+    }
+
+    public void EnablePreGameOverlay()
+    {
+        PreGameOverlay.SetActive(true);
+    }
+
+    public void DisablePreGameOverlay()
+    {
+        PreGameOverlay.SetActive(false);
     }
 }

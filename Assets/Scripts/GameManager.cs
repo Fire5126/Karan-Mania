@@ -11,29 +11,50 @@ public class GameManager : MonoBehaviour
 
     // Game Properties
     bool gamePaused = false;
+    bool gameStarted = false;
 
     // Game Objects
     public WaveManager waveManager;
     public UIManager uiManager;
     PlayerController player;
 
-    // Start is called before the first frame update
     void Start()
     {
+        Setup();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && !gameStarted)
+        {
+            StartGame();
+        }
+    }
+
+    void Setup()
+    {
+        FindObjectOfType<Camera>().orthographicSize = 2.5f;
         player = FindObjectOfType<PlayerController>();
         gamePaused = false;
-
+        gameStarted = false;
+        player.gameStarted = false;
+        waveManager.enabled = false;
         waveManager.isPaused = gamePaused;
         uiManager.TogglePauseOverlay(gamePaused);
         player.isPaused = gamePaused;
-
+        uiManager.DisableInGameOverlay();
+        uiManager.EnablePreGameOverlay();
         Time.timeScale = 1;
     }
 
-    // Update is called once per frame
-    void Update()
+    void StartGame()
     {
-        
+        gameStarted = true;
+        player.gameStarted = true;
+        waveManager.enabled = true;
+        FindObjectOfType<Camera>().orthographicSize = 6f;
+        uiManager.EnableInGameOverlay();
+        uiManager.DisablePreGameOverlay();
     }
 
     public void AddWaveScore()

@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     // Misc Variables
     public bool isPaused = false;
+    public bool gameStarted = false;
 
     // Player
     public float movementSpeed;
@@ -36,7 +37,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isPaused)
+        if (!isPaused && gameStarted == true)
         {
             // Player movement
             float moveX = Input.GetAxisRaw("Horizontal");
