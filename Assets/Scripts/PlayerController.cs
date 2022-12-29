@@ -11,9 +11,14 @@ public class PlayerController : MonoBehaviour
     // Player
     public float movementSpeed;
     public float maxHealth = 20;
+    bool isDead = false;
     float health = 20;
     Rigidbody2D rb;
     Vector2 moveDirection;
+
+    // Player Attack Timer
+    public float attackDelay;
+    float nextAttackTime;
 
     // Player Score Stats
     public int kills = 0;
@@ -45,15 +50,16 @@ public class PlayerController : MonoBehaviour
             moveDirection = new Vector2(moveX, moveY).normalized;
 
             // Player Attack
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextAttackTime)
             {
+                nextAttackTime = Time.time + attackDelay;
                 Quaternion rotation = transform.GetChild(1).transform.rotation;
                 GameObject instance = Instantiate<GameObject>(toiletPaper, transform.GetChild(1).transform.position, rotation);
             }
         }
 
         // Pause Game
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !isDead)
         {
             gameManager.TogglePauseGame();
         }
@@ -86,6 +92,7 @@ public class PlayerController : MonoBehaviour
         gameManager.UpdatePlayerHealthStat(health);
         if (health <= 0)
         {
+            isDead = true;
             gameManager.PlayerDied();
         }
     }

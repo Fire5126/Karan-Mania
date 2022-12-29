@@ -99,8 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba727f0a98848614d9febb6538bc533b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPaused: 0
+  gameStarted: 0
   movementSpeed: 5
   maxHealth: 20
+  attackDelay: 0.5
   kills: 0
   toiletPaper: {fileID: 5838533575152257406, guid: 8105d56d6044042bf952bc4362a40be7, type: 3}
   toiletPaperDamage: 10

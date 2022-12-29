@@ -24,11 +24,12 @@ public class ToiletPaperScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-            if (collision.gameObject.tag == "Enemy")
-            {
-                player.EnemyHit(collision);
-            }
-            DestroyToiletPaper();
+        if (collision.gameObject.tag == "Enemy")
+        {
+            player.EnemyHit(collision);
+        }
+        DestroyToiletPaper();
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
