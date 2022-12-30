@@ -27,13 +27,13 @@ public class WaveManager : MonoBehaviour
 
     // Wave Management Variables
     [Header("Wave Management Variables")]
-    bool waveActive = false;
     public float gameDifficulty;
+    public float spawnDelay;
+    public float waveDelay;
+    bool waveActive = false;
     int enemiesToSpawn;
     int enemiesSpawned;
-    public float spawnDelay;
     float nextSpawnTime;
-    public float waveDelay;
     Enemy[] enemies;
     bool gameActive = false;
 
