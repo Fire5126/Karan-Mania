@@ -16,16 +16,6 @@ public class PlayerController : MonoBehaviour
     Rigidbody2D rb;
     Vector2 moveDirection;
 
-    // Player Attack Timer
-    public float attackDelay;
-    float nextAttackTime;
-
-    // Toilet Paper
-    public GameObject toiletPaper;
-    public float toiletPaperDamage = 10f;
-    public float toiletPaperDuration = 5f;
-    public float projectileSpeed = 10f;
-
     // Game Objects
     GameManager gameManager;
 
@@ -45,14 +35,6 @@ public class PlayerController : MonoBehaviour
             float moveX = Input.GetAxisRaw("Horizontal");
             float moveY = Input.GetAxisRaw("Vertical");
             moveDirection = new Vector2(moveX, moveY).normalized;
-
-            // Player Attack
-            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.E)) && Time.time > nextAttackTime)
-            {
-                nextAttackTime = Time.time + attackDelay;
-                Quaternion rotation = transform.GetChild(1).transform.rotation;
-                GameObject instance = Instantiate<GameObject>(toiletPaper, transform.GetChild(1).transform.position, rotation);
-            }
         }
 
         // Pause Game
@@ -77,11 +59,7 @@ public class PlayerController : MonoBehaviour
         gameObject.transform.GetChild(1).transform.rotation = Quaternion.Euler(0, 0, AngleDeg);
     }
 
-    // Toilet Paper Functions
-    public void EnemyHit(Collider2D enemy)
-    {
-        enemy.gameObject.GetComponent<Enemy>().UpdateHealth(toiletPaperDamage);
-    }
+
 
     public void TakeDamage(int damageTaken)
     {

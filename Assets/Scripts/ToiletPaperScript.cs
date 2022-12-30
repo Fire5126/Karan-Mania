@@ -5,15 +5,17 @@ using UnityEngine;
 public class ToiletPaperScript : MonoBehaviour
 {
     PlayerController player;
+    PlayerAttack attackScript;
     Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
+        attackScript = FindObjectOfType<PlayerAttack>();
         player = FindObjectOfType<PlayerController>();
-        rb.AddForce(transform.right * player.projectileSpeed, ForceMode2D.Impulse);
-        Invoke("DestroyToiletPaper", player.toiletPaperDuration);
+        rb.AddForce(transform.right * attackScript.projectileSpeed, ForceMode2D.Impulse);
+        Invoke("DestroyToiletPaper", attackScript.toiletPaperDuration);
     }
 
     // Update is called once per frame
@@ -26,7 +28,7 @@ public class ToiletPaperScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            player.EnemyHit(collision);
+            attackScript.EnemyHit(collision);
         }
         DestroyToiletPaper();
 
@@ -34,7 +36,10 @@ public class ToiletPaperScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        DestroyToiletPaper();
+        if (collision.gameObject.tag != "Projectile")
+        {
+            DestroyToiletPaper();
+        }
     }
 
     void DestroyToiletPaper()

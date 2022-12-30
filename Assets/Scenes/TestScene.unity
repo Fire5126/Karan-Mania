@@ -59077,6 +59077,10 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: attackTypes.Array.data[3]
+      value: TripleToiletPaper
+      objectReference: {fileID: 0}
     - target: {fileID: 2953599187006508074, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.362056
