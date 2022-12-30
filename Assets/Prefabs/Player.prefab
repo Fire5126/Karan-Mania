@@ -104,11 +104,19 @@ MonoBehaviour:
   toiletPaperDamage: 10
   toiletPaperDuration: 5
   projectileSpeed: 10
-  attackDelay: 0.5
+  attackIndex: 0
   attackTypes:
   - ToiletPaper
   - DoubleToiletPaper
   - TripleToiletPaper
+  abilityCooldownDelay: 10
+  abilityTypes:
+  - ScreamAttack
+  - PlaceTrap
+  - HighHeelsMovementSpeed
+  attackDelay: 0.5
+  affectedRadius: 3
+  stunTime: 5
 --- !u!114 &265500894694437226
 MonoBehaviour:
   m_ObjectHideFlags: 0

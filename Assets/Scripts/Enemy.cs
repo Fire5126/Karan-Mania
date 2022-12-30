@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class Enemy : MonoBehaviour
     GameObject player;
     GameManager gameManager;
     public int damage;
+    int damageStat;
+    float speed;
     bool ableToAttack = false;
     float attackDelay = 1;
     float nextAttack;
@@ -15,6 +18,8 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        speed = GetComponent<AIPath>().maxSpeed;
+        damageStat = damage;
         gameManager = FindObjectOfType<GameManager>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -57,5 +62,11 @@ public class Enemy : MonoBehaviour
     void ApplyPlayerDamage()
     {
         player.GetComponent<PlayerController>().TakeDamage(damage);
+    }
+
+    public void ResetStunStats()
+    {
+        damage = damageStat;
+        GetComponent<AIPath>().maxSpeed = speed;
     }
 }

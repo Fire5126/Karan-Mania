@@ -1,32 +1,47 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class PlayerAttack : MonoBehaviour
 {
+    // References
     PlayerController player;
 
     // Toilet Paper
+    [Header("Toilet Paper")]
     public GameObject toiletPaper;
     public float toiletPaperDamage = 10f;
     public float toiletPaperDuration = 5f;
     public float projectileSpeed = 10f;
+    public int attackIndex = 0;
+    public string[] attackTypes;
 
-    // Player Attack Timer
+    // Ability Cooldown
+    [Header("Ability Variables")]
+    public float abilityCooldownDelay;
+    float nextAbility;
+    public int abilityIndex = 0;
+    public string[] abilityTypes;
+
+    // Main Attack Timer
+    [Header("Main Attack Timer")]
     public float attackDelay;
     float nextAttackTime;
 
-    // AttackTypeVariable
-    public string[] attackTypes;
-    public int attackIndex = 0;
+    [Header("Scream For Manager Ability")]
+    public float affectedRadius;
+    public float stunTime;
+    Collider2D[] hitColliders;
 
-    // Start is called before the first frame update
+
+
+
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!player.isPaused && player.gameStarted == true)
@@ -37,14 +52,24 @@ public class PlayerAttack : MonoBehaviour
                 nextAttackTime = Time.time + attackDelay;
                 Invoke(attackTypes[attackIndex], 0);
             }
+
+            // Player Ability
+            if (Input.GetKeyDown(KeyCode.Mouse1) && Time.time > nextAbility)
+            {
+                nextAbility = Time.time + abilityCooldownDelay;
+                Invoke(abilityTypes[abilityIndex], 0f);
+            }
         }
     }
 
+
+
+
+    // Main ToiletPaper Attack
     void ToiletPaper()
     {
         Quaternion rotation = transform.GetChild(1).transform.rotation;
         Instantiate<GameObject>(toiletPaper, transform.GetChild(1).transform.position, rotation);
-
     }
 
     void DoubleToiletPaper()
@@ -72,5 +97,44 @@ public class PlayerAttack : MonoBehaviour
     public void EnemyHit(Collider2D enemy)
     {
         enemy.gameObject.GetComponent<Enemy>().UpdateHealth(toiletPaperDamage);
+    }
+
+
+
+
+    // Abilities
+    void ScreamAttack()
+    {
+        hitColliders = Physics2D.OverlapCircleAll(this.transform.position, affectedRadius);
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.tag == "Enemy")
+            {
+                hitCollider.GetComponent<Enemy>().damage = 0;
+                hitCollider.GetComponent<AIPath>().maxSpeed = 0;
+            }
+        }
+        Invoke("ScreamAttackUnstunEnemy", stunTime);
+    }
+
+    void ScreamAttackUnstunEnemy()
+    {
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.tag == "Enemy")
+            {
+                hitCollider.GetComponent<Enemy>().ResetStunStats();
+            }
+        }
+    }
+
+    void PlaceTrap()
+    {
+
+    }
+
+    void HighHeelsMovementSpeed()
+    {
+
     }
 }

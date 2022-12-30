@@ -8,6 +8,7 @@ TagManager:
   - Projectile
   - Enemy
   - GameManager
+  - EnemyMovementCollider
   layers:
   - Default
   - TransparentFX
