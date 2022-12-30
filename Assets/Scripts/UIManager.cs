@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIManager : MonoBehaviour
 {
@@ -76,5 +77,31 @@ public class UIManager : MonoBehaviour
     public void DisablePreGameOverlay()
     {
         PreGameOverlay.SetActive(false);
+    }
+
+    public void UpdateKillsScoreUI(int kills)
+    {
+        inGameOverlay.transform.GetChild(1).GetComponent<TMP_Text>().text = "Score: " + kills;
+    }
+
+    public void UpdateWaveScoreUI(int wave)
+    {
+        inGameOverlay.transform.GetChild(2).GetComponent<TMP_Text>().text = "Wave: " + wave;
+    }
+
+    public void EnableTimerUI()
+    {
+        inGameOverlay.transform.GetChild(3).gameObject.SetActive(true);
+    }
+
+    public void DisableTimerUI()
+    {
+        inGameOverlay.transform.GetChild(3).gameObject.SetActive(false);
+    }
+
+    public void UpdateTimerUI(float time)
+    {
+        inGameOverlay.transform.GetChild(3).GetComponent<TMP_Text>().text = "Next Wave In " + time.ToString("0");
+
     }
 }

@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     // Game Variables
-    int waveScore;
-    int killScore;
+    int waveScore = 0;
+    int killScore = 0;
 
     // Game Properties
     bool gamePaused = false;
@@ -17,6 +17,10 @@ public class GameManager : MonoBehaviour
     public WaveManager waveManager;
     public UIManager uiManager;
     PlayerController player;
+
+    // wave timer
+    bool timerActivated;
+    float timer;
 
     void Start()
     {
@@ -28,6 +32,17 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && !gameStarted)
         {
             StartGame();
+        }
+
+        if (timerActivated)
+        {
+            timer -= 1 * Time.deltaTime;
+            uiManager.UpdateTimerUI(timer);
+            if (timer <= 0)
+            {
+                timerActivated = false;
+                uiManager.DisableTimerUI();
+            }
         }
     }
 
@@ -55,16 +70,20 @@ public class GameManager : MonoBehaviour
         FindObjectOfType<Camera>().orthographicSize = 6f;
         uiManager.EnableInGameOverlay();
         uiManager.DisablePreGameOverlay();
+        uiManager.UpdateWaveScoreUI(waveScore);
+        uiManager.UpdateKillsScoreUI(killScore);
     }
 
     public void AddWaveScore()
     {
         waveScore++;
+        uiManager.UpdateWaveScoreUI(waveScore);
     }
 
     public void AddKillScore()
     {
         killScore++;
+        uiManager.UpdateKillsScoreUI(killScore);
     }
 
     public int GetWaveScore()
@@ -133,4 +152,12 @@ public class GameManager : MonoBehaviour
     {
         uiManager.UpdateHealthStat(health);
     }
+
+    public void StartWaveTimer(float time)
+    {
+        uiManager.EnableTimerUI();
+        timer = time;
+        timerActivated = true;
+    }
+
 }

@@ -306,6 +306,7 @@ public class WaveManager : MonoBehaviour
         else if (enemiesToSpawn <= enemiesSpawned && waveActive && enemies.Length == 0)
         {
             waveActive = false;
+            gameManager.StartWaveTimer(waveDelay);
             Invoke("InitialiseWave", waveDelay);
         }
     }

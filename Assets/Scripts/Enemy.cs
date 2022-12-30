@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public float MaxHealth = 10;
     GameObject player;
+    GameManager gameManager;
     public int damage;
     bool ableToAttack = false;
     float attackDelay = 1;
@@ -14,6 +15,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
     private void Update()
@@ -31,7 +33,7 @@ public class Enemy : MonoBehaviour
         MaxHealth -= damage;
         if (MaxHealth <= 0)
         {
-            player.GetComponent<PlayerController>().kills += 1;
+            gameManager.AddKillScore();
             Destroy(gameObject);
         }
     }

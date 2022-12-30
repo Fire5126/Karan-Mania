@@ -20,9 +20,6 @@ public class PlayerController : MonoBehaviour
     public float attackDelay;
     float nextAttackTime;
 
-    // Player Score Stats
-    public int kills = 0;
-
     // Toilet Paper
     public GameObject toiletPaper;
     public float toiletPaperDamage = 10f;
@@ -50,7 +47,7 @@ public class PlayerController : MonoBehaviour
             moveDirection = new Vector2(moveX, moveY).normalized;
 
             // Player Attack
-            if (Input.GetKeyDown(KeyCode.Space) && Time.time > nextAttackTime)
+            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.E)) && Time.time > nextAttackTime)
             {
                 nextAttackTime = Time.time + attackDelay;
                 Quaternion rotation = transform.GetChild(1).transform.rotation;
