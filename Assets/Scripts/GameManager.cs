@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     bool gameStarted = false;
 
     // Game Objects
+    [Header("References")]
     public WaveManager waveManager;
     public UIManager uiManager;
     PlayerController player;

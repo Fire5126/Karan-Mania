@@ -6,10 +6,12 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     // Misc Variables
+    [Header("Misc Variables")]
     public bool isPaused = false;
     public bool gameStarted = false;
 
     // Player
+    [Header("Player Stats")]
     public float movementSpeed;
     public float maxHealth = 20;
     bool isDead = false;

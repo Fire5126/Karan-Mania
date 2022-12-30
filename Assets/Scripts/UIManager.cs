@@ -6,6 +6,7 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
+    [Header("UI References")]
     public GameObject pauseOverlay;
     public GameObject deathOverlay;
     public GameObject inGameOverlay;

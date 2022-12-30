@@ -5,15 +5,24 @@ using Pathfinding;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Enemy Stats")]
     public float MaxHealth = 10;
-    GameObject player;
-    GameManager gameManager;
     public int damage;
     int damageStat;
     float speed;
+
+    // Enemy Variable Properties
     bool ableToAttack = false;
     float attackDelay = 1;
     float nextAttack;
+
+    // References
+    GameObject player;
+    GameManager gameManager;
+    
+    
+    
+    
 
     // Start is called before the first frame update
     void Start()

@@ -6,6 +6,7 @@ using Pathfinding;
 public class WaveManager : MonoBehaviour
 {
     // Misc Variables
+    [Header("Misc Variables")]
     public bool isPaused;
 
     // Game Objects
@@ -14,6 +15,7 @@ public class WaveManager : MonoBehaviour
     GameManager gameManager;
 
     // Enemy GameObjects
+    [Header("Enemy GameObject List")]
     public GameObject[] enemyTypes;
 
     // Graph Values
@@ -24,6 +26,7 @@ public class WaveManager : MonoBehaviour
     Vector2 spawnPoint;
 
     // Wave Management Variables
+    [Header("Wave Management Variables")]
     bool waveActive = false;
     public float gameDifficulty;
     int enemiesToSpawn;
