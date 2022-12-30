@@ -23,6 +23,7 @@ public class PlayerAttack : MonoBehaviour
     float nextAbility;
     public int abilityIndex = 0;
     public string[] abilityTypes;
+    bool hasAbility = false;
 
     // Main Attack Timer
     [Header("Main Attack Timer")]
@@ -54,7 +55,7 @@ public class PlayerAttack : MonoBehaviour
             }
 
             // Player Ability
-            if (Input.GetKeyDown(KeyCode.Mouse1) && Time.time > nextAbility)
+            if (Input.GetKeyDown(KeyCode.Mouse1) && Time.time > nextAbility && hasAbility)
             {
                 nextAbility = Time.time + abilityCooldownDelay;
                 Invoke(abilityTypes[abilityIndex], 0f);
