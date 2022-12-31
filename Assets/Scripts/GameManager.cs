@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !gameStarted)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.touchCount >= 1) && !gameStarted)
         {
             StartGame();
         }
