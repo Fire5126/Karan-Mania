@@ -149,6 +149,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
     Standalone: com.ReefStudios.KarenMania
+    iPhone: com.ReefStudios.KarenMania
   buildNumber:
     Standalone: 0
     iPhone: 0
