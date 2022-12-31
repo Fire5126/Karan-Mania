@@ -59377,10 +59377,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 265500894828453663, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: orthographic size
-      value: 2.5
-      objectReference: {fileID: 0}
     - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
       propertyPath: joystick
       value: 

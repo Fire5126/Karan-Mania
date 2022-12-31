@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27a3d70f4444f7849aa1c3a221ce7f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
   toiletPaper: {fileID: 5838533575152257406, guid: 8105d56d6044042bf952bc4362a40be7, type: 3}
   toiletPaperDamage: 10
   toiletPaperDuration: 5
@@ -110,6 +111,7 @@ MonoBehaviour:
   - DoubleToiletPaper
   - TripleToiletPaper
   abilityCooldownDelay: 10
+  abilityIndex: 0
   abilityTypes:
   - ScreamAttack
   - PlaceTrap
@@ -133,6 +135,7 @@ MonoBehaviour:
   gameStarted: 0
   movementSpeed: 5
   maxHealth: 20
+  joystick: {fileID: 0}
 --- !u!58 &265500894694437225
 CircleCollider2D:
   m_ObjectHideFlags: 0
