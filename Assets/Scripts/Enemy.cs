@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     // References
     GameObject player;
     GameManager gameManager;
+    AIPath aIPath;
     
     
     
@@ -27,6 +28,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        aIPath = GetComponent<AIPath>();
         speed = GetComponent<AIPath>().maxSpeed;
         damageStat = damage;
         gameManager = FindObjectOfType<GameManager>();
@@ -34,6 +36,15 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
+        if (aIPath.velocity.x < 0f)
+        {
+            gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else if (aIPath.velocity.x > 0f)
+        {
+            gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
+        }
+        print(aIPath.velocity.x);
 
         if (ableToAttack == true && Time.time > nextAttack)
         {
