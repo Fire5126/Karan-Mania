@@ -55,17 +55,10 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(moveDirection.x * movementSpeed, moveDirection.y * movementSpeed);
-        RotateFirePosition();
+        
     }
 
-    void RotateFirePosition()
-    {
-        Vector3 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 lookAt = mouseScreenPosition;
-        float AngleRad = Mathf.Atan2(lookAt.y - this.transform.position.y, lookAt.x - this.transform.position.x);
-        float AngleDeg = (180 / Mathf.PI) * AngleRad;
-        gameObject.transform.GetChild(1).transform.rotation = Quaternion.Euler(0, 0, AngleDeg);
-    }
+    
 
 
 
