@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     Vector2 moveDirection;
 
     // Game Objects
+    [Header("References")]
+    public Joystick joystick;
     GameManager gameManager;
 
     void Start()
@@ -35,9 +37,12 @@ public class PlayerController : MonoBehaviour
         if (!isPaused && gameStarted == true)
         {
             // Player movement
-            float moveX = Input.GetAxisRaw("Horizontal");
-            float moveY = Input.GetAxisRaw("Vertical");
-            moveDirection = new Vector2(moveX, moveY).normalized;
+            //float moveX = Input.GetAxisRaw("Horizontal");
+            //float moveY = Input.GetAxisRaw("Vertical");
+            //moveDirection = new Vector2(moveX, moveY).normalized;
+            float moveX = joystick.Horizontal;
+            float moveY = joystick.Vertical;
+            moveDirection = new Vector2(moveX, moveY);
         }
 
         // Pause Game

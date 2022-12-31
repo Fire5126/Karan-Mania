@@ -6,6 +6,8 @@ using Pathfinding;
 public class PlayerAttack : MonoBehaviour
 {
     // References
+    [Header("References")]
+    public Joystick joystick;
     PlayerController player;
 
     // Toilet Paper
@@ -48,7 +50,13 @@ public class PlayerAttack : MonoBehaviour
         if (!player.isPaused && player.gameStarted == true)
         {
             // Player Attack
-            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.E)) && Time.time > nextAttackTime)
+            //if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.E)) && Time.time > nextAttackTime)
+            //{
+            //    nextAttackTime = Time.time + attackDelay;
+            //    Invoke(attackTypes[attackIndex], 0);
+            //}
+
+            if ((joystick.Vertical >= 0.2 || joystick.Vertical <= -0.2 || joystick.Horizontal >= 0.2 || joystick.Horizontal <= -0.2) && Time.time > nextAttackTime)
             {
                 nextAttackTime = Time.time + attackDelay;
                 Invoke(attackTypes[attackIndex], 0);
@@ -61,6 +69,24 @@ public class PlayerAttack : MonoBehaviour
                 Invoke(abilityTypes[abilityIndex], 0f);
             }
         }
+    }
+
+    private void FixedUpdate()
+    {
+        RotateFirePosition();
+    }
+
+    void RotateFirePosition()
+    {
+        //Vector3 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        //Vector3 lookAt = mouseScreenPosition;
+        //float AngleRad = Mathf.Atan2(lookAt.y - this.transform.position.y, lookAt.x - this.transform.position.x);
+        //float AngleDeg = (180 / Mathf.PI) * AngleRad;
+        //gameObject.transform.GetChild(1).transform.rotation = Quaternion.Euler(0, 0, AngleDeg);
+
+        float AngleRad = Mathf.Atan2(joystick.Vertical, joystick.Horizontal);
+        float AngleDeg = (180 / Mathf.PI) * AngleRad;
+        gameObject.transform.GetChild(1).transform.rotation = Quaternion.Euler(0, 0, AngleDeg);
     }
 
 

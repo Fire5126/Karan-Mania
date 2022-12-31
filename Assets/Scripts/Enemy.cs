@@ -44,7 +44,6 @@ public class Enemy : MonoBehaviour
         {
             gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
         }
-        print(aIPath.velocity.x);
 
         if (ableToAttack == true && Time.time > nextAttack)
         {
