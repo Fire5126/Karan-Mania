@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     // Game Variables
     int waveScore = 0;
     int killScore = 0;
+    float cameraSize;
 
     // Game Properties
     bool gamePaused = false;
@@ -49,6 +50,7 @@ public class GameManager : MonoBehaviour
 
     void Setup()
     {
+        cameraSize = FindObjectOfType<Camera>().orthographicSize;
         FindObjectOfType<Camera>().orthographicSize = 2.5f;
         player = FindObjectOfType<PlayerController>();
         gamePaused = false;
@@ -68,7 +70,7 @@ public class GameManager : MonoBehaviour
         gameStarted = true;
         player.gameStarted = true;
         waveManager.enabled = true;
-        FindObjectOfType<Camera>().orthographicSize = 6f;
+        FindObjectOfType<Camera>().orthographicSize = cameraSize;
         uiManager.EnableInGameOverlay();
         uiManager.DisablePreGameOverlay();
         uiManager.UpdateWaveScoreUI(waveScore);

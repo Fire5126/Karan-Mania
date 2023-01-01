@@ -12,6 +12,7 @@ public class PlayerAttack : MonoBehaviour
 
     // Toilet Paper
     [Header("Toilet Paper")]
+    public float joystickDeadZone;
     public GameObject toiletPaper;
     public float toiletPaperDamage = 10f;
     public float toiletPaperDuration = 5f;
@@ -56,7 +57,7 @@ public class PlayerAttack : MonoBehaviour
             //    Invoke(attackTypes[attackIndex], 0);
             //}
 
-            if ((joystick.Vertical >= 0.2 || joystick.Vertical <= -0.2 || joystick.Horizontal >= 0.2 || joystick.Horizontal <= -0.2) && Time.time > nextAttackTime)
+            if ((joystick.Vertical >= joystickDeadZone || joystick.Vertical <= -joystickDeadZone || joystick.Horizontal >= joystickDeadZone || joystick.Horizontal <= -joystickDeadZone) && Time.time > nextAttackTime)
             {
                 nextAttackTime = Time.time + attackDelay;
                 Invoke(attackTypes[attackIndex], 0);
