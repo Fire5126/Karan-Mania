@@ -24,7 +24,8 @@ public class WaveManager : MonoBehaviour
     float minGraphX;
     float minGraphY;
     Vector2 spawnPoint;
-    
+    GridNode[] nodes;
+
 
     // Wave Management Variables
     [Header("Wave Management Variables")]
@@ -66,76 +67,19 @@ public class WaveManager : MonoBehaviour
 
     void InitialisePlayArea()
     {
+        nodes = AstarPath.active.data.gridGraph.nodes;
+
         maxGraphX = ((AstarPath.active.data.gridGraph.width * AstarPath.active.data.gridGraph.nodeSize) / 2) + AstarPath.active.data.gridGraph.center.x;
         maxGraphY = ((AstarPath.active.data.gridGraph.Depth * AstarPath.active.data.gridGraph.nodeSize) / 2) + AstarPath.active.data.gridGraph.center.y;
         minGraphX = maxGraphX - (AstarPath.active.data.gridGraph.width * AstarPath.active.data.gridGraph.nodeSize);
         minGraphY = maxGraphY - (AstarPath.active.data.gridGraph.Depth * AstarPath.active.data.gridGraph.nodeSize);
     }
 
-    //void InitialiseEnemySpawnPoint()
-    //{
-    //    float spawnY;
-    //    float spawnX;
-
-    //    Vector2 bottomleft = gameCamera.ViewportToWorldPoint(new Vector3(0, 0));
-    //    Vector2 topright = gameCamera.ViewportToWorldPoint(new Vector3(1, 1));
-
-    //    // Generate X Value
-    //    float spawnX1 = Random.Range(minGraphX, bottomleft.x);
-    //    float spawnX2 = Random.Range(topright.x, maxGraphX);
-    //    if (spawnX1 < minGraphX)
-    //    {
-    //        spawnX = spawnX2;
-    //    }
-    //    else if (spawnX2 > maxGraphX)
-    //    {
-    //        spawnX = spawnX1;
-    //    }
-    //    else
-    //    {
-    //        if (Random.value > 0.5f)
-    //        {
-    //            spawnX = spawnX1;
-    //        }
-    //        else
-    //        {
-    //            spawnX = spawnX2;
-    //        }
-    //    }
-
-    //    // Generate Y Value
-    //    float spawnY1 = Random.Range(topright.y, maxGraphY);
-    //    float spawnY2 = Random.Range(minGraphY, bottomleft.y);
-    //    if (spawnY1 > maxGraphY)
-    //    {
-    //        spawnY = spawnY2;
-    //    }
-    //    else if (spawnY2 < minGraphY)
-    //    {
-    //        spawnY = spawnY1;
-    //    }
-    //    else
-    //    {
-    //        if (Random.value > 0.5f)
-    //        {
-    //            spawnY = spawnY1;
-    //        }
-    //        else
-    //        {
-    //            spawnY = spawnY2;
-    //        }
-    //    }
-
-    //    // Combining Spawn Points
-    //    spawnPoint = new Vector2(spawnX, spawnY);
-    //}
-
     void InitialiseEnemySpawnPoint()
     {
         
         Vector2 bottomleft = gameCamera.ViewportToWorldPoint(new Vector3(0, 0));
         Vector2 topright = gameCamera.ViewportToWorldPoint(new Vector3(1, 1));
-        GridNode[] nodes = AstarPath.active.data.gridGraph.nodes;
         GridNode[] walkableNodes;
         int x = 0;
         int y = 0;
