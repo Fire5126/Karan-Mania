@@ -67,10 +67,10 @@ public class GameManager : MonoBehaviour
 
     void StartGame()
     {
+        FindObjectOfType<Camera>().orthographicSize = cameraSize;
         gameStarted = true;
         player.gameStarted = true;
         waveManager.enabled = true;
-        FindObjectOfType<Camera>().orthographicSize = cameraSize;
         uiManager.EnableInGameOverlay();
         uiManager.DisablePreGameOverlay();
         uiManager.UpdateWaveScoreUI(waveScore);
@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
         return killScore;
     }
 
-    public bool TogglePauseGame()
+    public void TogglePauseGame()
     {
         if (gamePaused == true)
         {
@@ -110,7 +110,6 @@ public class GameManager : MonoBehaviour
             player.isPaused = gamePaused;
 
             Time.timeScale = 1;
-            return gamePaused;
         }
         else if (gamePaused == false)
         {
@@ -121,10 +120,8 @@ public class GameManager : MonoBehaviour
             player.isPaused = gamePaused;
 
             Time.timeScale = 0;
-            return gamePaused;
         }
         Debug.Log("Pause code broken");
-        return gamePaused;
     }
 
     public void UIUnpause()
