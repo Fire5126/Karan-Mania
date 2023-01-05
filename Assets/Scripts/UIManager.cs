@@ -11,6 +11,7 @@ public class UIManager : MonoBehaviour
     public GameObject deathOverlay;
     public GameObject inGameOverlay;
     public GameObject PreGameOverlay;
+    public GameObject SettingsOverlay;
 
     // Component References
     Slider healthBar;
@@ -104,5 +105,15 @@ public class UIManager : MonoBehaviour
     {
         inGameOverlay.transform.GetChild(3).GetComponent<TMP_Text>().text = "Next Wave In " + time.ToString("0");
 
+    }
+
+    public void OpenSetingsMenu()
+    {
+        SettingsOverlay.SetActive(true);
+    }
+
+    public void CloseSetingsMenu()
+    {
+        SettingsOverlay.SetActive(false);
     }
 }
