@@ -590,7 +590,7 @@ MonoBehaviour:
   deathOverlay: {fileID: 1627061637}
   inGameOverlay: {fileID: 1427741925}
   PreGameOverlay: {fileID: 850839816}
-  SettingsOverlay: {fileID: 0}
+  SettingsOverlay: {fileID: 778833007}
 --- !u!1 &360868847
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,9 +1889,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1419435699}
   - {fileID: 1215013141}
   - {fileID: 1655422539}
+  - {fileID: 1419435699}
   - {fileID: 1093933381}
   m_Father: {fileID: 1609703886}
   m_RootOrder: 2
@@ -9469,7 +9469,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 850839817}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -9917,7 +9917,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 850839817}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -58704,7 +58704,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 850839817}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
