@@ -31,11 +31,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.touchCount >= 1) && !gameStarted)
-        {
-            StartGame();
-        }
-
         if (timerActivated)
         {
             timer -= 1 * Time.deltaTime;
@@ -45,6 +40,14 @@ public class GameManager : MonoBehaviour
                 timerActivated = false;
                 uiManager.DisableTimerUI();
             }
+        }
+    }
+
+    public void UIStartGame()
+    {
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.touchCount >= 1) && !gameStarted)
+        {
+            StartGame();
         }
     }
 
