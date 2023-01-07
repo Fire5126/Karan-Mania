@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void TogglePauseOverlay(bool gamePaused)
@@ -116,4 +116,6 @@ public class UIManager : MonoBehaviour
     {
         SettingsOverlay.SetActive(false);
     }
+
+
 }
