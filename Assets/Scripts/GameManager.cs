@@ -127,7 +127,10 @@ public class GameManager : MonoBehaviour
 
             Time.timeScale = 0;
         }
-        Debug.Log("Pause code broken");
+        else
+        {
+            Debug.Log("Pause code broken");
+        }
     }
 
     public void UIUnpause()

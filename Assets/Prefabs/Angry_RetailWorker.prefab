@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 583322672430832633}
   - component: {fileID: 583322672430832634}
   - component: {fileID: 5390233710787078256}
+  - component: {fileID: 3829177571144702224}
   m_Layer: 8
   m_Name: EnemyGFX
   m_TagString: EnemyMovementCollider
@@ -99,6 +100,25 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.64}
   m_Size: {x: 0.73, y: 0.0001}
   m_Direction: 0
+--- !u!95 &3829177571144702224
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583322672430832639}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eb444374f1364a34e98a5165355c5e7f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &583322672758955229
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  uniqueID: 3047310160908680912
+  uniqueID: 8259677622238618086
   updateError: 0.1
   checkTime: 0.1
 --- !u!50 &3209293814875460994
