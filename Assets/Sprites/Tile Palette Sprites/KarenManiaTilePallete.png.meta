@@ -408,7 +408,7 @@ TextureImporter:
       213: -4589025792011610113
     second: KarenManiaTilePallete_134
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -429,6 +429,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -438,8 +439,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -467,6 +468,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -482,6 +484,66 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -3340,6 +3402,142 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      KarenManiaTilePallete_106: 4144870740321625920
+      KarenManiaTilePallete_133: 8546949539255411549
+      KarenManiaTilePallete_59: -7819973872398094049
+      KarenManiaTilePallete_8: 7761654334043154090
+      KarenManiaTilePallete_109: -5952807338696982016
+      KarenManiaTilePallete_13: -5376860929672518609
+      KarenManiaTilePallete_120: 3608501251687871011
+      KarenManiaTilePallete_78: -167340548489486447
+      KarenManiaTilePallete_91: -6441961466792255465
+      KarenManiaTilePallete_94: 3376300049301892513
+      KarenManiaTilePallete_37: -8778987955923364398
+      KarenManiaTilePallete_56: -3648061323646118861
+      KarenManiaTilePallete_38: -971651505712286359
+      KarenManiaTilePallete_47: -6970119759654506567
+      KarenManiaTilePallete_4: -3705993959593177186
+      KarenManiaTilePallete_35: -22220437436893272
+      KarenManiaTilePallete_98: -114556514129094782
+      KarenManiaTilePallete_1: -3708882842784508674
+      KarenManiaTilePallete_11: 8449487158332071857
+      KarenManiaTilePallete_31: -6966996593066657341
+      KarenManiaTilePallete_51: 6505890133594133558
+      KarenManiaTilePallete_25: 1098995665037745489
+      KarenManiaTilePallete_10: -6928423144120610768
+      KarenManiaTilePallete_43: 1296868101001041541
+      KarenManiaTilePallete_117: -665630887371959071
+      KarenManiaTilePallete_27: 5810073274007215623
+      KarenManiaTilePallete_0: -6882279689529645417
+      KarenManiaTilePallete_99: 728956051223120907
+      KarenManiaTilePallete_122: -5556962403928396637
+      KarenManiaTilePallete_39: 8924810066065513836
+      KarenManiaTilePallete_20: -4354387555640671564
+      KarenManiaTilePallete_40: 3613221327735485386
+      KarenManiaTilePallete_42: 5623336422984512232
+      KarenManiaTilePallete_28: 117293931002340248
+      KarenManiaTilePallete_9: 7457308989308642254
+      KarenManiaTilePallete_41: -3960252514903256192
+      KarenManiaTilePallete_61: -1100932759339087694
+      KarenManiaTilePallete_77: -3978960412279934784
+      KarenManiaTilePallete_108: 7038712406211298036
+      KarenManiaTilePallete_32: -6154343201659592872
+      KarenManiaTilePallete_72: 1768534835366331451
+      KarenManiaTilePallete_83: -7301440085693970869
+      KarenManiaTilePallete_92: -3821790696134815121
+      KarenManiaTilePallete_121: -2603222274842352443
+      KarenManiaTilePallete_22: 3113862752723143572
+      KarenManiaTilePallete_131: 4024151712691536589
+      KarenManiaTilePallete_46: 1153209970544689759
+      KarenManiaTilePallete_17: 9071979447105425279
+      KarenManiaTilePallete_111: -420061068659700874
+      KarenManiaTilePallete_69: -4261078231233188496
+      KarenManiaTilePallete_65: 965556017167482674
+      KarenManiaTilePallete_52: 8234745404564914190
+      KarenManiaTilePallete_55: 986745468069543003
+      KarenManiaTilePallete_89: -902167439690708488
+      KarenManiaTilePallete_62: 6856492576952725631
+      KarenManiaTilePallete_86: -4495513487305528273
+      KarenManiaTilePallete_129: 5274026807257336313
+      KarenManiaTilePallete_6: -4136656104195777714
+      KarenManiaTilePallete_48: 3051518521146710012
+      KarenManiaTilePallete_54: -8082125406426431592
+      KarenManiaTilePallete_21: -6383186437373509251
+      KarenManiaTilePallete_57: 4562459683816393743
+      KarenManiaTilePallete_95: 7370283160435220660
+      KarenManiaTilePallete_14: 101455541475319696
+      KarenManiaTilePallete_49: -8539169193592129967
+      KarenManiaTilePallete_30: -3949596194349306105
+      KarenManiaTilePallete_97: 376972142674638525
+      KarenManiaTilePallete_44: -2527082434909522025
+      KarenManiaTilePallete_93: 5014000254637400207
+      KarenManiaTilePallete_67: 4866361313953214314
+      KarenManiaTilePallete_104: 6856444618043539080
+      KarenManiaTilePallete_116: 4867284767843130171
+      KarenManiaTilePallete_128: 5043716785247694201
+      KarenManiaTilePallete_75: -7029242130412919622
+      KarenManiaTilePallete_134: -4589025792011610113
+      KarenManiaTilePallete_53: -8666734237014298516
+      KarenManiaTilePallete_127: 3157026752448560352
+      KarenManiaTilePallete_2: -4392514787878947223
+      KarenManiaTilePallete_18: -5800657209702891245
+      KarenManiaTilePallete_58: 4118378600047571360
+      KarenManiaTilePallete_60: -1593127431548709296
+      KarenManiaTilePallete_130: -4508976506091834800
+      KarenManiaTilePallete_70: 4651345403418768785
+      KarenManiaTilePallete_63: 7509901276020876850
+      KarenManiaTilePallete_119: -5826481209659085407
+      KarenManiaTilePallete_112: -1862621991802635416
+      KarenManiaTilePallete_68: 3284315108732253696
+      KarenManiaTilePallete_87: 6035275787166896404
+      KarenManiaTilePallete_76: -5651745862533937109
+      KarenManiaTilePallete_102: -8892858377513484994
+      KarenManiaTilePallete_132: 3813590960664030517
+      KarenManiaTilePallete_110: -8938789236164196451
+      KarenManiaTilePallete_15: 4559919912878257767
+      KarenManiaTilePallete_64: -7281127909097842452
+      KarenManiaTilePallete_36: 8338731444249064339
+      KarenManiaTilePallete_7: -1089150567853350064
+      KarenManiaTilePallete_23: 3947589803460445465
+      KarenManiaTilePallete_26: 8857299107637363229
+      KarenManiaTilePallete_74: -8534103538144526397
+      KarenManiaTilePallete_79: -8961929553000458085
+      KarenManiaTilePallete_73: 7891040059560435458
+      KarenManiaTilePallete_82: 7817648571632494073
+      KarenManiaTilePallete_88: -538863101727111825
+      KarenManiaTilePallete_81: -2074373086058747245
+      KarenManiaTilePallete_90: -6453582734434183986
+      KarenManiaTilePallete_96: 2919689805088825160
+      KarenManiaTilePallete_126: 6411822169157387154
+      KarenManiaTilePallete_29: -3279742186486733028
+      KarenManiaTilePallete_19: 540966063996946275
+      KarenManiaTilePallete_24: -7692549156218213596
+      KarenManiaTilePallete_71: -1368748010668789471
+      KarenManiaTilePallete_118: 7260626371146637035
+      KarenManiaTilePallete_100: -6840111636160317467
+      KarenManiaTilePallete_103: -7820174315578752295
+      KarenManiaTilePallete_105: 600417373106829021
+      KarenManiaTilePallete_107: -3970048729224033020
+      KarenManiaTilePallete_45: 4979817305688487107
+      KarenManiaTilePallete_66: 5832105050267165681
+      KarenManiaTilePallete_85: 2499471319365437503
+      KarenManiaTilePallete_115: -7286579460973987451
+      KarenManiaTilePallete_125: 6105168461998254535
+      KarenManiaTilePallete_12: 4804567804820904892
+      KarenManiaTilePallete_124: 3794800016209878263
+      KarenManiaTilePallete_50: 5070081614153960604
+      KarenManiaTilePallete_33: 5717376271622471273
+      KarenManiaTilePallete_16: -64729493928635183
+      KarenManiaTilePallete_80: 1804195917532612895
+      KarenManiaTilePallete_113: 5136295365042435944
+      KarenManiaTilePallete_34: 6235215288056156890
+      KarenManiaTilePallete_123: 6433897748670512110
+      KarenManiaTilePallete_3: -8413902775599728697
+      KarenManiaTilePallete_5: 9165232651019475057
+      KarenManiaTilePallete_114: -6632970058099330759
+      KarenManiaTilePallete_84: 8908694336332558583
+      KarenManiaTilePallete_101: -862648289252422989
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
