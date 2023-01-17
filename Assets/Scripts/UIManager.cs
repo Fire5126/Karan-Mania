@@ -13,6 +13,18 @@ public class UIManager : MonoBehaviour
     public GameObject PreGameOverlay;
     public GameObject SettingsOverlay;
 
+    [Header("Upgrade Menu References")]
+    public GameObject UpgradeMenu;
+    public GameObject UpgradeButtonOne;
+    public GameObject UpgradeButtonTwo;
+    public GameObject UpgradeButtonThree;
+    public Sprite[] UpgradeOneIcons;
+    public Sprite[] UpgradeTwoIcons;
+
+    public Sprite[] UpgradeOneIcons_Special;
+    public Sprite[] UpgradeTwoIcons_Special;
+    public Sprite[] UpgradeThreeIcons_Special;
+
     // Component References
     Slider healthBar;
 
@@ -116,6 +128,47 @@ public class UIManager : MonoBehaviour
     {
         SettingsOverlay.SetActive(false);
     }
+
+    public void OpenUpgradeMenuOne(int UpgradeOneIndex, int UpgradeTwoIndex)
+    {
+        UpgradeMenu.SetActive(true);
+        UpgradeButtonOne.SetActive(true);
+        //UpgradeButtonOne.GetComponentInChildren<SpriteRenderer>().sprite = UpgradeOneIcons[UpgradeOneIndex];
+        UpgradeButtonTwo.SetActive(true);
+        //UpgradeButtonTwo.GetComponentInChildren<SpriteRenderer>().sprite = UpgradeTwoIcons[UpgradeTwoIndex];
+        UpgradeButtonThree.SetActive(false);
+    }
+
+    public void OpenUpgradeMenuTwo(int UpgradeOneIndex, int UpgradeTwoIndex, int UpgradeThreeIndex)
+    {
+        UpgradeMenu.SetActive(true);
+        UpgradeButtonOne.SetActive(true);
+        //UpgradeButtonOne.GetComponentInChildren<SpriteRenderer>().sprite = UpgradeOneIcons_Special[UpgradeOneIndex];
+        UpgradeButtonTwo.SetActive(true);
+        //UpgradeButtonTwo.GetComponentInChildren<SpriteRenderer>().sprite = UpgradeTwoIcons_Special[UpgradeTwoIndex];
+        UpgradeButtonThree.SetActive(true);
+        //UpgradeButtonThree.GetComponentInChildren<SpriteRenderer>().sprite = UpgradeThreeIcons_Special[UpgradeThreeIndex];
+    }
+
+    public void UpgradeOneChosen()
+    {
+
+        FindObjectOfType<UpgradeMenu>().UpgradeChosen(1);
+        UpgradeMenu.SetActive(false);
+    }
+
+    public void UpgradeTwoChosen()
+    {
+        FindObjectOfType<UpgradeMenu>().UpgradeChosen(2);
+        UpgradeMenu.SetActive(false);
+    }
+
+    public void UpgradeThreeChosen()
+    {
+        FindObjectOfType<UpgradeMenu>().UpgradeChosen(3);
+        UpgradeMenu.SetActive(false);
+    }
+
 
 
 }

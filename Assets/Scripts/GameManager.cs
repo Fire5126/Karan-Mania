@@ -10,9 +10,11 @@ public class GameManager : MonoBehaviour
     int killScore = 0;
     float cameraSize;
 
+
     // Game Properties
     bool gamePaused = false;
     bool gameStarted = false;
+    bool softPauseActive = false;
 
     // Game Objects
     [Header("References")]
@@ -111,21 +113,27 @@ public class GameManager : MonoBehaviour
         {
             gamePaused = false;
 
-            waveManager.isPaused = gamePaused;
-            uiManager.TogglePauseOverlay(gamePaused);
-            player.isPaused = gamePaused;
-
-            Time.timeScale = 1;
+            if(softPauseActive == false)
+            {
+                waveManager.isPaused = gamePaused;
+                player.isPaused = gamePaused;
+                Time.timeScale = 1;
+            }
+            
+            uiManager.TogglePauseOverlay(gamePaused); 
         }
         else if (gamePaused == false)
         {
             gamePaused = true;
 
-            waveManager.isPaused = gamePaused;
+            if(softPauseActive == false)
+            {
+                waveManager.isPaused = gamePaused;
+                player.isPaused = gamePaused;
+                Time.timeScale = 0;
+            }
+            
             uiManager.TogglePauseOverlay(gamePaused);
-            player.isPaused = gamePaused;
-
-            Time.timeScale = 0;
         }
         else
         {
@@ -136,6 +144,22 @@ public class GameManager : MonoBehaviour
     public void UIUnpause()
     {
         TogglePauseGame();
+    }
+
+    public void SoftPause()
+    {
+        softPauseActive = true;
+        waveManager.isPaused = gamePaused;
+        player.isPaused = gamePaused;
+        Time.timeScale = 0;
+    }
+
+    public void SoftUnPause()
+    {
+        softPauseActive = false;
+        waveManager.isPaused = gamePaused;
+        player.isPaused = gamePaused;
+        Time.timeScale = 1;
     }
 
     public void QuitGame()
@@ -164,9 +188,15 @@ public class GameManager : MonoBehaviour
 
     public void StartWaveTimer(float time)
     {
-        uiManager.EnableTimerUI();
+        //uiManager.EnableTimerUI();
+        Invoke("EnableTimerUIDelayed", 0.01f);
         timer = time;
         timerActivated = true;
+    }
+
+    void EnableTimerUIDelayed()
+    {
+        uiManager.EnableTimerUI();
     }
 
 }

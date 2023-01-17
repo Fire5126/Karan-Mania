@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
         health = maxHealth;
         gameManager = FindObjectOfType<GameManager>();
         rb = gameObject.GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame

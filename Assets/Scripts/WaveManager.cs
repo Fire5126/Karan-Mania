@@ -13,6 +13,7 @@ public class WaveManager : MonoBehaviour
     PlayerController player;
     Camera gameCamera;
     GameManager gameManager;
+    UpgradeMenu upgradeMenu;
 
     // Enemy GameObjects
     [Header("Enemy GameObject List")]
@@ -38,6 +39,7 @@ public class WaveManager : MonoBehaviour
     float nextSpawnTime;
     Enemy[] enemies;
     bool gameActive = false;
+    int waveIndex = 0;
 
     // Amount Of Enemies
     int retailWorker = 0;
@@ -51,6 +53,7 @@ public class WaveManager : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         gameCamera = FindObjectOfType<Camera>();
+        upgradeMenu = FindObjectOfType<UpgradeMenu>();
         player = FindObjectOfType<PlayerController>();
         InitialisePlayArea();
         InitialiseGame();
@@ -253,6 +256,7 @@ public class WaveManager : MonoBehaviour
         enemyTypesSpawned = 0;
         waveActive = true;
         gameManager.AddWaveScore();
+        waveIndex++;
     }
 
     public void ResetValues()
@@ -290,6 +294,11 @@ public class WaveManager : MonoBehaviour
         }
         else if (enemiesToSpawn <= enemiesSpawned && waveActive && enemies.Length == 0)
         {
+            upgradeMenu.OfferUpgrades(waveIndex);
+            if (waveIndex >= 3)
+            {
+                waveIndex = 0;
+            }
             waveActive = false;
             gameManager.StartWaveTimer(waveDelay);
             Invoke("InitialiseWave", waveDelay);

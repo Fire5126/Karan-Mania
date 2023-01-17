@@ -44,6 +44,7 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
+
     }
 
     void Update()
