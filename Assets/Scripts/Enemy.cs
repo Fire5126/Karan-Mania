@@ -6,7 +6,7 @@ using Pathfinding;
 public class Enemy : MonoBehaviour
 {
     [Header("Enemy Stats")]
-    public float MaxHealth = 10;
+    public float MaxHealth = 5;
     public int damage;
     int damageStat;
     float speed;

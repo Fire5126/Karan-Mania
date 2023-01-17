@@ -14,7 +14,7 @@ public class PlayerAttack : MonoBehaviour
     [Header("Toilet Paper")]
     public float joystickDeadZone;
     public GameObject toiletPaper;
-    public float toiletPaperDamage = 10f;
+    public float toiletPaperDamage = 5f;
     public float toiletPaperDuration = 5f;
     public float projectileSpeed = 10f;
     public int attackIndex = 0;

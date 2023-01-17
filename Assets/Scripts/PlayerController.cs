@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     public float movementSpeed;
     public float maxHealth = 20;
     bool isDead = false;
-    float health = 20;
+    public float health = 20;
     Rigidbody2D rb;
     Vector2 moveDirection;
 

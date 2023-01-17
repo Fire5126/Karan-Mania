@@ -34,7 +34,7 @@ public class UpgradeMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        print(Random.Range(1, 2));
     }
 
     public void OfferUpgrades(int RoundTypeIndex)
@@ -120,21 +120,49 @@ public class UpgradeMenu : MonoBehaviour
 
     void UpgradeProjectileStatistic(int StatisticIndex)
     {
+        if (StatisticIndex == 0)
+        {
+            FindObjectOfType<PlayerAttack>().toiletPaperDamage += 2;
+        }
+        if (StatisticIndex == 1)
+        {
+            if (FindObjectOfType<PlayerAttack>().attackDelay >= 0.3)
+            {
+                FindObjectOfType<PlayerAttack>().attackDelay -= 0.1f;
+            }
+            if (FindObjectOfType<PlayerAttack>().attackDelay >= 0.1f)
+            {
+                FindObjectOfType<PlayerAttack>().attackDelay -= 0.05f;
+            }
+            if (FindObjectOfType<PlayerAttack>().attackDelay <= 0.1f)
+            {
+            }
 
+        }
     }
 
     void HealthIncrease(int IncreaseTypeIndex)
     {
-
+        if(IncreaseTypeIndex == 0)
+        {
+            FindObjectOfType<PlayerController>().maxHealth += 5;
+        }
+        if(IncreaseTypeIndex == 1)
+        {
+            if (FindObjectOfType <PlayerController>().health < FindObjectOfType<PlayerController>().maxHealth)
+            {
+                FindObjectOfType<PlayerController>().health += 5;
+            }
+        }
     }
 
     void GiveAbility(int AbilityIndex)
     {
-
+        FindObjectOfType<PlayerAttack>().attackIndex = AbilityIndex;
     }
 
     void UpgradeAbility()
     {
-
+        // do something
     }
 }
