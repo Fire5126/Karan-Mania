@@ -72,6 +72,14 @@ public class UIManager : MonoBehaviour
         }
         healthBar.value = health;
     }
+    public void UpdateMaxHealth(float maxHealth)
+    {
+        if (healthBar == null)
+        {
+            healthBar = FindObjectOfType<Slider>();
+        }
+        healthBar.maxValue = maxHealth;
+    }
 
     public void EnableInGameOverlay()
     {

@@ -33,13 +33,25 @@ public class PlayerAttack : MonoBehaviour
     public float attackDelay;
     float nextAttackTime;
 
-    [Header("Scream For Manager Ability")]
+    [Header("Screaming Stun Ability")]
     public float affectedRadius;
     public float stunTime;
     Collider2D[] hitColliders;
 
+    [Header("High Heel Run Ability")]
+    public float speedIncrease;
+    float movementSpeedBackup;
+    public float abilityDuration_HighHeelRun;
+    public float abilityCooldown_HighHeelRun;
 
+    [Header("Banana Peel Land Mine Ability")]
+    public float landMineAffectedRadius;
+    public float abilityCooldown_BananaPeelLandMine;
 
+    [Header("Piercing Toilet Paper Ability")]
+    public int numberOfEnemiesToPierceThrough;
+    public float abilityCooldown_PiercingToiletPaper;
+    public float abilityDuration_PiercingToiletPaper;
 
     void Start()
     {
@@ -71,6 +83,12 @@ public class PlayerAttack : MonoBehaviour
                 Invoke(abilityTypes[abilityIndex], 0f);
             }
         }
+    }
+
+    public void ChangeAbility(int abilityIndexInput)
+    {
+        hasAbility = true;
+        abilityIndex = abilityIndexInput;
     }
 
     private void FixedUpdate()
@@ -132,7 +150,7 @@ public class PlayerAttack : MonoBehaviour
 
 
     // Abilities
-    void ScreamAttack()
+    void ScreamingStun()
     {
         hitColliders = Physics2D.OverlapCircleAll(this.transform.position, affectedRadius);
         foreach (var hitCollider in hitColliders)
@@ -157,13 +175,27 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    void PlaceTrap()
+    void HighHeelRun()
     {
+        movementSpeedBackup = player.movementSpeed;
+        player.movementSpeed += speedIncrease;
+        Invoke("DisableHighHeelRun", abilityDuration_HighHeelRun);
+    }
+
+    void DisableHighHeelRun()
+    {
+        player.movementSpeed = movementSpeedBackup;
+    }
+
+    void BananaPeelLandMine()
+    {
+
 
     }
 
-    void HighHeelsMovementSpeed()
+    void PiercingToiletPaper()
     {
+
 
     }
 }

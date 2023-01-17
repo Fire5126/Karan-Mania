@@ -34,7 +34,6 @@ public class UpgradeMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(Random.Range(1, 2));
     }
 
     public void OfferUpgrades(int RoundTypeIndex)
@@ -47,6 +46,7 @@ public class UpgradeMenu : MonoBehaviour
             
             upgradeOneIndex = Random.Range(0, UpgradeOneOptions.Length);
             upgradeTwoIndex = Random.Range(0, UpgradeTwoOptions.Length);
+            //print(UpgradeTwoOptions.Length);
             UIManager.OpenUpgradeMenuOne(upgradeOneIndex, upgradeTwoIndex);
             print("Upgrade One Chosen");
             return;
@@ -145,7 +145,7 @@ public class UpgradeMenu : MonoBehaviour
     {
         if(IncreaseTypeIndex == 0)
         {
-            FindObjectOfType<PlayerController>().maxHealth += 5;
+            UIManager.UpdateMaxHealth(FindObjectOfType<PlayerController>().maxHealth += 5);
         }
         if(IncreaseTypeIndex == 1)
         {
@@ -158,7 +158,7 @@ public class UpgradeMenu : MonoBehaviour
 
     void GiveAbility(int AbilityIndex)
     {
-        FindObjectOfType<PlayerAttack>().attackIndex = AbilityIndex;
+        FindObjectOfType<PlayerAttack>().ChangeAbility(AbilityIndex);
     }
 
     void UpgradeAbility()

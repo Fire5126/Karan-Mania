@@ -60753,8 +60753,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1949369146}
     - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: abilityTypes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
       propertyPath: attackTypes.Array.data[3]
       value: TripleToiletPaper
+      objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: abilityTypes.Array.data[0]
+      value: ScreamingStun
+      objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: abilityTypes.Array.data[1]
+      value: HighHeelRun
+      objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: abilityTypes.Array.data[2]
+      value: BananaPeelLandMine
+      objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: abilityTypes.Array.data[3]
+      value: PiercingToiletPaper
       objectReference: {fileID: 0}
     - target: {fileID: 2079693928650573054, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
       propertyPath: m_Icon
