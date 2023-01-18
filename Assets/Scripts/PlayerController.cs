@@ -60,10 +60,6 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    
-
-
-
     public void TakeDamage(int damageTaken)
     {
         if (damageDisabled == false)

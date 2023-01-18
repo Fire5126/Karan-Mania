@@ -21,7 +21,6 @@ public class Enemy : MonoBehaviour
     GameManager gameManager;
     AIPath aIPath;
     Animator animator;
-    Animation runAnim;
 
     //bool animPlaying = false;
     
