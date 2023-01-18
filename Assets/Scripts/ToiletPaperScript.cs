@@ -10,6 +10,7 @@ public class ToiletPaperScript : MonoBehaviour
 
     bool collideCheck = true;
     public Collider2D toiletPaperCollider;
+    int enemiesToPierce = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,11 @@ public class ToiletPaperScript : MonoBehaviour
             DestroyToiletPaper();
         }
         Invoke("DestroyToiletPaper", attackScript.toiletPaperDuration);
+    }
+
+    public void InitiateVariables(int piercingCount)
+    {
+        enemiesToPierce = piercingCount;
     }
 
     void StopCollideCheck()
@@ -43,6 +49,10 @@ public class ToiletPaperScript : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             attackScript.EnemyHit(collision);
+            enemiesToPierce--;
+        }
+        if (enemiesToPierce < 0)
+        {
             DestroyToiletPaper();
         }
         

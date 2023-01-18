@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEditor.Animations;
 
 public class UpgradeMenu : MonoBehaviour
 {
@@ -22,13 +21,13 @@ public class UpgradeMenu : MonoBehaviour
 
 
     GameManager gameManager;
-    UIManager UIManager;
+    UIManager uIManager;
 
     // Start is called before the first frame update
     void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
-        UIManager = FindObjectOfType<UIManager>();
+        uIManager = FindObjectOfType<UIManager>();
     }
 
     // Update is called once per frame
@@ -47,7 +46,7 @@ public class UpgradeMenu : MonoBehaviour
             upgradeOneIndex = Random.Range(0, UpgradeOneOptions.Length);
             upgradeTwoIndex = Random.Range(0, UpgradeTwoOptions.Length);
             //print(UpgradeTwoOptions.Length);
-            UIManager.OpenUpgradeMenuOne(upgradeOneIndex, upgradeTwoIndex);
+            uIManager.OpenUpgradeMenuOne(upgradeOneIndex, upgradeTwoIndex);
             print("Upgrade One Chosen");
             return;
         }
@@ -55,18 +54,22 @@ public class UpgradeMenu : MonoBehaviour
 
         if(RoundTypeIndex >= 3 && FirstAbilityChosen == false)
         {
+            
             UpgradeTypeIndex = 1;
             upgradeOneIndex = Random.Range(0, UpgradeOneOptions.Length);
             upgradeTwoIndex = Random.Range(0, UpgradeTwoOptions.Length);
             upgradeThreeIndex = Random.Range(0, UpgradeThreeOptions.Length);
+            uIManager.OpenUpgradeMenuThree(upgradeOneIndex, upgradeTwoIndex, upgradeThreeIndex);
             return;
         }
 
         if (RoundTypeIndex >= 3 && FirstAbilityChosen == true)
         {
+            
             UpgradeTypeIndex = 2;
             upgradeTwoIndex = Random.Range(0, UpgradeTwoOptions.Length);
             upgradeThreeIndex = Random.Range(0, UpgradeThreeOptions.Length);
+            uIManager.OpenUpgradeMenuTwo(upgradeTwoIndex, upgradeThreeIndex);
             return;
         }
     }
@@ -96,6 +99,11 @@ public class UpgradeMenu : MonoBehaviour
             }
             if (UpgradeIndex == 3)
             {
+                if(FirstAbilityChosen == false)
+                {
+                    FirstAbilityChosen = true;
+                    uIManager.ActivateAbilityButton();
+                }
                 GiveAbility(upgradeThreeIndex);
             }
         }
@@ -111,6 +119,11 @@ public class UpgradeMenu : MonoBehaviour
             }
             if (UpgradeIndex == 3)
             {
+                if (FirstAbilityChosen == false)
+                {
+                    FirstAbilityChosen = true;
+                    uIManager.ActivateAbilityButton();
+                }
                 GiveAbility(upgradeThreeIndex);
             }
         }
@@ -145,7 +158,7 @@ public class UpgradeMenu : MonoBehaviour
     {
         if(IncreaseTypeIndex == 0)
         {
-            UIManager.UpdateMaxHealth(FindObjectOfType<PlayerController>().maxHealth += 5);
+            uIManager.UpdateMaxHealth(FindObjectOfType<PlayerController>().maxHealth += 5);
         }
         if(IncreaseTypeIndex == 1)
         {

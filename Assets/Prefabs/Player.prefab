@@ -119,9 +119,22 @@ MonoBehaviour:
   - ScreamAttack
   - PlaceTrap
   - HighHeelsMovementSpeed
+  hasAbility: 0
   attackDelay: 0.5
   affectedRadius: 3
   stunTime: 5
+  speedIncrease: 0
+  abilityDuration_HighHeelRun: 0
+  abilityCooldown_HighHeelRun: 0
+  BananaPeelLandMinePrefab: {fileID: 5788082788069121262, guid: 5803940a0834f78439e58672bfd868a1, type: 3}
+  landMineAffectedRadius: 4
+  abilityCooldown_BananaPeelLandMine: 0
+  damage_BananaPeelLandMine: 3
+  landMineSpawnOffset: {x: 0, y: 0}
+  blastForceMultiplier: 0
+  numberOfEnemiesToPierceThrough: 0
+  abilityCooldown_PiercingToiletPaper: 0
+  abilityDuration_PiercingToiletPaper: 0
 --- !u!114 &265500894694437226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,6 +151,7 @@ MonoBehaviour:
   gameStarted: 0
   movementSpeed: 5
   maxHealth: 20
+  health: 20
   joystick: {fileID: 0}
 --- !u!58 &265500894694437225
 CircleCollider2D:

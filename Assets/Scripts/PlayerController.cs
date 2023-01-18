@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     [Header("Misc Variables")]
     public bool isPaused = false;
     public bool gameStarted = false;
+    public bool damageDisabled = false;
 
     // Player
     [Header("Player Stats")]
@@ -59,18 +60,17 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    
-
-
-
     public void TakeDamage(int damageTaken)
     {
-        health -= damageTaken;
-        gameManager.UpdatePlayerHealthStat(health);
-        if (health <= 0)
+        if (damageDisabled == false)
         {
-            isDead = true;
-            gameManager.PlayerDied();
+            health -= damageTaken;
+            gameManager.UpdatePlayerHealthStat(health);
+            if (health <= 0)
+            {
+                isDead = true;
+                gameManager.PlayerDied();
+            }
         }
     }
 }

@@ -20,10 +20,11 @@ public class UIManager : MonoBehaviour
     public GameObject UpgradeButtonThree;
     public Sprite[] UpgradeOneIcons;
     public Sprite[] UpgradeTwoIcons;
-
     public Sprite[] UpgradeOneIcons_Special;
     public Sprite[] UpgradeTwoIcons_Special;
     public Sprite[] UpgradeThreeIcons_Special;
+    public Sprite UpgradeAbilityIcon;
+    public GameObject AbilityButton;
 
     // Component References
     Slider healthBar;
@@ -147,7 +148,18 @@ public class UIManager : MonoBehaviour
         UpgradeButtonThree.SetActive(false);
     }
 
-    public void OpenUpgradeMenuTwo(int UpgradeOneIndex, int UpgradeTwoIndex, int UpgradeThreeIndex)
+    public void OpenUpgradeMenuTwo(int UpgradeTwoIndex, int UpgradeThreeIndex)
+    {
+        UpgradeMenu.SetActive(true);
+        UpgradeButtonOne.SetActive(true);
+        //UpgradeButtonOne.GetComponentInChildren<SpriteRenderer>().sprite = UpgradeAbilityIcon;
+        UpgradeButtonTwo.SetActive(true);
+        //UpgradeButtonTwo.GetComponentInChildren<SpriteRenderer>().sprite = UpgradeTwoIcons_Special[UpgradeTwoIndex];
+        UpgradeButtonThree.SetActive(true);
+        //UpgradeButtonThree.GetComponentInChildren<SpriteRenderer>().sprite = UpgradeThreeIcons_Special[UpgradeThreeIndex];
+    }
+
+    public void OpenUpgradeMenuThree(int UpgradeOneIndex, int UpgradeTwoIndex, int UpgradeThreeIndex)
     {
         UpgradeMenu.SetActive(true);
         UpgradeButtonOne.SetActive(true);
@@ -175,6 +187,11 @@ public class UIManager : MonoBehaviour
     {
         FindObjectOfType<UpgradeMenu>().UpgradeChosen(3);
         UpgradeMenu.SetActive(false);
+    }
+
+    public void ActivateAbilityButton()
+    {
+        AbilityButton.SetActive(true);
     }
 
 
