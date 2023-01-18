@@ -9,6 +9,7 @@ public class ToiletPaperScript : MonoBehaviour
     Rigidbody2D rb;
 
     bool collideCheck = true;
+    bool collideDisabled = false;
     public Collider2D toiletPaperCollider;
     int enemiesToPierce = 0;
 
@@ -63,7 +64,9 @@ public class ToiletPaperScript : MonoBehaviour
     {
         if (collideCheck)
         {
+            collideDisabled = true;
             Physics2D.IgnoreLayerCollision(6, 7, true);
+            Invoke("EnableCollision", 0.2f);
             return;
         }
         if (collision.gameObject.tag != "Projectile")
@@ -73,9 +76,19 @@ public class ToiletPaperScript : MonoBehaviour
 
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    void EnableCollision()
     {
         Physics2D.IgnoreLayerCollision(6, 7, false);
+        collideDisabled = false;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collideDisabled == true)
+        {
+            collideDisabled = false;
+            Physics2D.IgnoreLayerCollision(6, 7, false);
+        }
     }
 
     void DestroyToiletPaper()
