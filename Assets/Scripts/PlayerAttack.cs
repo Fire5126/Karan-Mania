@@ -87,11 +87,11 @@ public class PlayerAttack : MonoBehaviour
             }
 
             // Player Ability
-            if (Input.GetKeyDown(KeyCode.Mouse1) && Time.time > nextAbility && hasAbility)
+           /* if (Input.GetKeyDown(KeyCode.Mouse1) && Time.time > nextAbility && hasAbility)
             {
                 nextAbility = Time.time + abilityCooldownDelay;
                 Invoke(abilityTypes[abilityIndex], 0f);
-            }
+            }*/
         }
     }
 
