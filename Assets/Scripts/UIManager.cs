@@ -20,10 +20,10 @@ public class UIManager : MonoBehaviour
     public GameObject UpgradeButtonThree;
     public Sprite[] UpgradeOneIcons;
     public Sprite[] UpgradeTwoIcons;
-
     public Sprite[] UpgradeOneIcons_Special;
     public Sprite[] UpgradeTwoIcons_Special;
     public Sprite[] UpgradeThreeIcons_Special;
+    public GameObject AbilityButton;
 
     // Component References
     Slider healthBar;
@@ -175,6 +175,11 @@ public class UIManager : MonoBehaviour
     {
         FindObjectOfType<UpgradeMenu>().UpgradeChosen(3);
         UpgradeMenu.SetActive(false);
+    }
+
+    public void ActivateAbilityButton()
+    {
+        AbilityButton.SetActive(true);
     }
 
 
