@@ -879,7 +879,8 @@ MonoBehaviour:
   UpgradeOneIcons_Special: []
   UpgradeTwoIcons_Special: []
   UpgradeThreeIcons_Special: []
-  AbilityButton: {fileID: 0}
+  UpgradeAbilityIcon: {fileID: 0}
+  AbilityButton: {fileID: 22979746}
 --- !u!1 &360868847
 GameObject:
   m_ObjectHideFlags: 0
