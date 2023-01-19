@@ -26,10 +26,13 @@ public class GameManager : MonoBehaviour
     bool timerActivated;
     float timer;
 
+    AudioSource maintheme;
+
     void Start()
     {
         Application.targetFrameRate = 60;
         Setup();
+        maintheme = FindObjectOfType<SoundManager>().Play("MainMusic");
     }
 
     void Update()
@@ -75,6 +78,7 @@ public class GameManager : MonoBehaviour
 
     void StartGame()
     {
+        FindObjectOfType<SoundManager>().StopPlaying(maintheme);
         FindObjectOfType<Camera>().orthographicSize = cameraSize;
         gameStarted = true;
         player.gameStarted = true;
