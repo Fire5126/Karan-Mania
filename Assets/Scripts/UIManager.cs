@@ -203,16 +203,7 @@ public class UIManager : MonoBehaviour
     public void SFXVolUpdate(float sliderValue)
     {
         FindObjectOfType<SoundManager>().UpdateSFXVolume(sliderValue);
-        if (SFXVolSlider.value != sliderValue)
-        {
-            SFXVolSlider.value = sliderValue;
-            return;
-        }
-        if (SFXVolSlider2.value != sliderValue)
-        {
-            SFXVolSlider2.value = sliderValue;
-            return;
-        }
+        
     }
 
     public void MusicVolUpdate(float sliderValue)
