@@ -84809,7 +84809,7 @@ MonoBehaviour:
     pitch: 0
     source: {fileID: 0}
   - name: MainMusic
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 9d34cf9dc9d25444a99035c45f4c2fdb, type: 3}
     volume: 1
     pitch: 1
     source: {fileID: 0}
