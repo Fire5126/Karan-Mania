@@ -45,7 +45,6 @@ public class WaveManager : MonoBehaviour
     int retailWorker = 0;
     int angryWorker = 0;
     int supervisorWorker = 0;
-    int enemyTypesSpawned = 0;
 
 
     // Functions
@@ -290,7 +289,6 @@ public class WaveManager : MonoBehaviour
     {
         enemiesToSpawn = Mathf.RoundToInt(enemiesToSpawn * gameDifficulty + 5);
         enemiesSpawned = 0;
-        enemyTypesSpawned = 0;
         waveActive = true;
         gameManager.AddWaveScore();
         waveIndex++;

@@ -9,10 +9,14 @@ public class Sound
 
     public AudioClip clip;
 
+    public AudioMixerGroup mixerGroup;
+
     [Range(0, 1)]
     public float volume;
     [Range(.1f, 3)]
     public float pitch;
+    [Range(0f, 10f)]
+    public float speed;
 
     [HideInInspector]
     public AudioSource source;
@@ -22,6 +26,9 @@ public class SoundManager : MonoBehaviour
 {
     public Sound[] sounds;
     private AudioSource[] audioSources;
+    public AudioMixerGroup SFXMixer;
+    public AudioMixerGroup MasterMixer;
+    public AudioMixerGroup MusicMixer;
     // Start is called before the first frame update
 
     void Awake()
@@ -34,6 +41,7 @@ public class SoundManager : MonoBehaviour
             s.source.clip = s.clip;
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
+            s.source.outputAudioMixerGroup = s.mixerGroup;
             Array.Resize(ref audioSources, x);
             audioSources[audioSources.Length - 1] = s.source;
         }
