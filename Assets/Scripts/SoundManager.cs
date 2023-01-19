@@ -12,11 +12,9 @@ public class Sound
     public AudioMixerGroup mixerGroup;
 
     [Range(0, 1)]
-    public float volume;
+    public float volume = 1;
     [Range(.1f, 3)]
-    public float pitch;
-    [Range(0f, 10f)]
-    public float speed;
+    public float pitch = 1;
 
     [HideInInspector]
     public AudioSource source;
@@ -33,6 +31,7 @@ public class SoundManager : MonoBehaviour
 
     void Awake()
     {
+        
         int x = 0;
         foreach(Sound s in sounds)
         {
