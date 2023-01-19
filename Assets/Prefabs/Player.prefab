@@ -79,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -9095717837082945937, guid: 0506dcb198a79764d9d0ad8e4069532a, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 9392a2ef55b424d5ab960642e7cf0047, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -121,6 +121,7 @@ MonoBehaviour:
   - HighHeelsMovementSpeed
   hasAbility: 0
   attackDelay: 0.5
+  abilityCooldown_ScreamingStunAbility: 0
   affectedRadius: 3
   stunTime: 5
   speedIncrease: 0
@@ -132,6 +133,7 @@ MonoBehaviour:
   damage_BananaPeelLandMine: 3
   landMineSpawnOffset: {x: 0, y: 0}
   blastForceMultiplier: 0
+  ability_NumberOfEnemiesToPierceThrough: 0
   numberOfEnemiesToPierceThrough: 0
   abilityCooldown_PiercingToiletPaper: 0
   abilityDuration_PiercingToiletPaper: 0
@@ -149,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPaused: 0
   gameStarted: 0
+  damageDisabled: 0
   movementSpeed: 5
   maxHealth: 20
   health: 20

@@ -51,6 +51,14 @@ public class PlayerController : MonoBehaviour
             moveDirection = new Vector2(moveX, moveY).normalized;
         }
 
+        if(moveDirection.x > 0)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else if(moveDirection.x <0)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
         
 
         if (audioPlaying == false && moveDirection.magnitude > 0 && !isPaused)
