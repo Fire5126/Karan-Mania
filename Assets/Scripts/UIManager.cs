@@ -12,6 +12,10 @@ public class UIManager : MonoBehaviour
     public GameObject inGameOverlay;
     public GameObject PreGameOverlay;
     public GameObject SettingsOverlay;
+    public Slider MusicVolSlider;
+    public Slider SFXVolSlider;
+    public Slider MusicVolSlider2;
+    public Slider SFXVolSlider2;
 
     [Header("Upgrade Menu References")]
     public GameObject UpgradeMenu;
@@ -196,6 +200,31 @@ public class UIManager : MonoBehaviour
         AbilityButton.SetActive(true);
     }
 
+    public void SFXVolUpdate(float sliderValue)
+    {
+        FindObjectOfType<SoundManager>().UpdateSFXVolume(sliderValue);
+        if (SFXVolSlider.value != sliderValue)
+        {
+            SFXVolSlider.value = sliderValue;
+            return;
+        }
+        if (SFXVolSlider2.value != sliderValue)
+        {
+            SFXVolSlider2.value = sliderValue;
+            return;
+        }
+    }
 
+    public void MusicVolUpdate(float sliderValue)
+    {
+        Debug.Log(sliderValue);
+        test();
+        FindObjectOfType<SoundManager>().UpdateMusicVolume(sliderValue);
+    }
+
+    public void test()
+    {
+        print("balls");
+    }
 
 }

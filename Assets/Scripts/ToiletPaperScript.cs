@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ToiletPaperScript : MonoBehaviour
 {
+
     PlayerController player;
     PlayerAttack attackScript;
     Rigidbody2D rb;
@@ -71,6 +72,11 @@ public class ToiletPaperScript : MonoBehaviour
         }
         if (collision.gameObject.tag != "Projectile")
         {
+            if(collision.gameObject.tag != "Obstacles")
+            {
+                print(collision.gameObject.tag + " " + collision.gameObject.ToString());
+                
+            }
             DestroyToiletPaper();
         }
 
@@ -93,6 +99,7 @@ public class ToiletPaperScript : MonoBehaviour
 
     void DestroyToiletPaper()
     {
+        player.PlayToiletPaperHit();
         Destroy(gameObject);
     }
 }

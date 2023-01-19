@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public bool isPaused = false;
     public bool gameStarted = false;
     public bool damageDisabled = false;
+    bool audioPlaying = false;
+    AudioSource runAudio;
 
     // Player
     [Header("Player Stats")]
@@ -24,9 +26,11 @@ public class PlayerController : MonoBehaviour
     [Header("References")]
     public Joystick joystick;
     GameManager gameManager;
+    SoundManager soundManager;
 
     void Start()
     {
+        soundManager = FindObjectOfType<SoundManager>();
         health = maxHealth;
         gameManager = FindObjectOfType<GameManager>();
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -44,7 +48,20 @@ public class PlayerController : MonoBehaviour
             //moveDirection = new Vector2(moveX, moveY).normalized;
             float moveX = joystick.Horizontal;
             float moveY = joystick.Vertical;
-            moveDirection = new Vector2(moveX, moveY);
+            moveDirection = new Vector2(moveX, moveY).normalized;
+        }
+
+        
+
+        if (audioPlaying == false && moveDirection.magnitude > 0 && !isPaused)
+        {
+            audioPlaying = true;
+            runAudio = soundManager.Play("KarenRun", true);
+        }
+        else if (audioPlaying == true && moveDirection.magnitude <= 0)
+        {
+            audioPlaying=false;
+            soundManager.StopPlaying(runAudio);
         }
 
         // Pause Game
@@ -71,6 +88,20 @@ public class PlayerController : MonoBehaviour
                 isDead = true;
                 gameManager.PlayerDied();
             }
+        }
+    }
+
+    public void PlayToiletPaperHit()
+    {
+        if (Random.Range(0, 2) == 1)
+        {
+            soundManager.Play("ToiletPaperHit1");
+            return;
+        }
+        else
+        {
+            soundManager.Play("ToiletPaperHit2");
+            return;
         }
     }
 }
