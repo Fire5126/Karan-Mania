@@ -124,21 +124,25 @@ public class WaveManager : MonoBehaviour
         enemiesSpawned++;
     }
 
-    GameObject CalculateEnemyToSpawn()
+    int[] CalculateEnemyToSpawn()
     {
         int waveScore = gameManager.GetWaveScore();
-        
+        int[] enemyList = new int[enemiesToSpawn];
+
         if (waveScore <= 2)
         {
             // ratio of 1
             int ratioTotal = 1;
             
-            retailWorker = Mathf.RoundToInt(3 * (enemiesToSpawn / ratioTotal));
-            enemyTypesSpawned++;
-            if (enemyTypesSpawned <= retailWorker)
+            retailWorker = Mathf.RoundToInt(1 * (enemiesToSpawn / ratioTotal));
+            int x = 0;
+
+            for (int i = 0; i < retailWorker; i++)
             {
-                return enemyTypes[0];
+                enemyList[i] = 0;
+                x = i;
             }
+            return enemyList;
         }
         if (waveScore <= 3)
         {
@@ -148,15 +152,19 @@ public class WaveManager : MonoBehaviour
 
             retailWorker = Mathf.RoundToInt(3 * (enemiesToSpawn / ratioTotal));
             angryWorker = Mathf.RoundToInt(2 * (enemiesToSpawn / ratioTotal));
-            enemyTypesSpawned++;
-            if (enemyTypesSpawned <= retailWorker)
+            int x = 0;
+
+            for (int i = 0; i < retailWorker; i++)
             {
-                return enemyTypes[0];
+                enemyList[i] = 0;
+                x = i;
             }
-            else if (enemyTypesSpawned <= angryWorker + retailWorker)
+            for (int i = 0; i < angryWorker; i++)
             {
-                return enemyTypes[1];
+                enemyList[i + x] = 1;
+                x = i;
             }
+            return enemyList;
         }
         if (waveScore <= 5)
         {
@@ -166,19 +174,26 @@ public class WaveManager : MonoBehaviour
             retailWorker = Mathf.RoundToInt(4 * (enemiesToSpawn / ratioTotal));
             angryWorker = Mathf.RoundToInt(3 * (enemiesToSpawn / ratioTotal));
             supervisorWorker = Mathf.RoundToInt(1 * (enemiesToSpawn / ratioTotal));
-            enemyTypesSpawned++;
-            if (enemyTypesSpawned <= retailWorker)
+
+            int x = 0;
+
+            for (int i = 0; i < retailWorker; i++)
             {
-                return enemyTypes[0];
+                enemyList[i] = 0;
+                x = i;
             }
-            else if (enemyTypesSpawned <= angryWorker + retailWorker)
+            for (int i = 0; i < angryWorker; i++)
             {
-                return enemyTypes[1];
+                enemyList[i+x] = 1;
+                x = i;
             }
-            else if (enemyTypesSpawned <= supervisorWorker + angryWorker + retailWorker)
+            for (int i = 0; i < supervisorWorker; i++)
             {
-                return enemyTypes[2];
+                enemyList[i + x] = 2;
+                x = i;
             }
+
+            return enemyList;
         }
         if (waveScore <= 8)
         {
@@ -188,19 +203,26 @@ public class WaveManager : MonoBehaviour
             retailWorker = Mathf.RoundToInt(4 * (enemiesToSpawn / ratioTotal));
             angryWorker = Mathf.RoundToInt(3 * (enemiesToSpawn / ratioTotal));
             supervisorWorker = Mathf.RoundToInt(1 * (enemiesToSpawn / ratioTotal));
-            enemyTypesSpawned++;
-            if (enemyTypesSpawned <= retailWorker)
+
+            int x = 0;
+
+            for (int i = 0; i < retailWorker; i++)
             {
-                return enemyTypes[0];
+                enemyList[i] = 0;
+                x = i;
             }
-            else if (enemyTypesSpawned <= angryWorker + retailWorker)
+            for (int i = 0; i < angryWorker; i++)
             {
-                return enemyTypes[1];
+                enemyList[i + x] = 1;
+                x = i;
             }
-            else if (enemyTypesSpawned <= supervisorWorker + angryWorker + retailWorker)
+            for (int i = 0; i < supervisorWorker; i++)
             {
-                return enemyTypes[2];
+                enemyList[i + x] = 2;
+                x = i;
             }
+
+            return enemyList;
         }
         if (waveScore <= 10)
         {
@@ -210,19 +232,26 @@ public class WaveManager : MonoBehaviour
             retailWorker = Mathf.RoundToInt(4 * (enemiesToSpawn / ratioTotal));
             angryWorker = Mathf.RoundToInt(3 * (enemiesToSpawn / ratioTotal));
             supervisorWorker = Mathf.RoundToInt(1 * (enemiesToSpawn / ratioTotal));
-            enemyTypesSpawned++;
-            if (enemyTypesSpawned <= retailWorker)
+
+            int x = 0;
+
+            for (int i = 0; i < retailWorker; i++)
             {
-                return enemyTypes[0];
+                enemyList[i] = 0;
+                x = i;
             }
-            else if (enemyTypesSpawned <= angryWorker + retailWorker)
+            for (int i = 0; i < angryWorker; i++)
             {
-                return enemyTypes[1];
+                enemyList[i + x] = 1;
+                x = i;
             }
-            else if (enemyTypesSpawned <= supervisorWorker + angryWorker + retailWorker)
+            for (int i = 0; i < supervisorWorker; i++)
             {
-                return enemyTypes[2];
+                enemyList[i + x] = 2;
+                x = i;
             }
+
+            return enemyList;
         }
         if (waveScore > 10)
         {
@@ -232,21 +261,29 @@ public class WaveManager : MonoBehaviour
             retailWorker = Mathf.RoundToInt(4 * (enemiesToSpawn / ratioTotal));
             angryWorker = Mathf.RoundToInt(3 * (enemiesToSpawn / ratioTotal));
             supervisorWorker = Mathf.RoundToInt(1 * (enemiesToSpawn / ratioTotal));
-            enemyTypesSpawned++;
-            if (enemyTypesSpawned <= retailWorker)
+
+            int x = 0;
+
+            for (int i = 0; i < retailWorker; i++)
             {
-                return enemyTypes[0];
+                enemyList[i] = 0;
+                x = i;
             }
-            else if (enemyTypesSpawned <= angryWorker + retailWorker)
+            for (int i = 0; i < angryWorker; i++)
             {
-                return enemyTypes[1];
+                enemyList[i + x] = 1;
+                x = i;
             }
-            else if (enemyTypesSpawned <= supervisorWorker + angryWorker + retailWorker)
+            for (int i = 0; i < supervisorWorker; i++)
             {
-                return enemyTypes[2];
+                enemyList[i + x] = 2;
+                x = i;
             }
+
+            return enemyList;
         }
-        return enemyTypes[0];
+
+        return null;
     }
 
     void InitialiseWave()
@@ -287,9 +324,23 @@ public class WaveManager : MonoBehaviour
     void ProgressGame()
     {
         enemies = FindObjectsOfType<Enemy>();
+        int[] enemyIndexes = CalculateEnemyToSpawn();
         if (Time.time > nextSpawnTime && waveActive && enemiesToSpawn > enemiesSpawned)
         {
-            SpawnEnemy(CalculateEnemyToSpawn());
+            if (enemyIndexes == null)
+            {
+                return;
+            }
+            int enemyIndex = Random.Range(0, enemyIndexes.Length);
+            while (enemyIndexes[enemyIndex] == -1)
+            {
+                enemyIndex = Random.Range(0, enemyIndexes.Length);
+            }
+            int enemyIndexToSpawn;
+            enemyIndexToSpawn = enemyIndexes[enemyIndex];
+            enemyIndexes[enemyIndex] = -1;
+
+            SpawnEnemy(enemyTypes[enemyIndexToSpawn]);
             nextSpawnTime = Time.time + spawnDelay;
         }
         else if (enemiesToSpawn <= enemiesSpawned && waveActive && enemies.Length == 0)

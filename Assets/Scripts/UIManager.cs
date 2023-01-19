@@ -18,10 +18,9 @@ public class UIManager : MonoBehaviour
     public GameObject UpgradeButtonOne;
     public GameObject UpgradeButtonTwo;
     public GameObject UpgradeButtonThree;
+    public GameObject UpgradeButtonThree_GFX;
     public Sprite[] UpgradeOneIcons;
     public Sprite[] UpgradeTwoIcons;
-    public Sprite[] UpgradeOneIcons_Special;
-    public Sprite[] UpgradeTwoIcons_Special;
     public Sprite[] UpgradeThreeIcons_Special;
     public Sprite UpgradeAbilityIcon;
     public GameObject AbilityButton;
@@ -142,32 +141,35 @@ public class UIManager : MonoBehaviour
     {
         UpgradeMenu.SetActive(true);
         UpgradeButtonOne.SetActive(true);
-        //UpgradeButtonOne.GetComponentInChildren<SpriteRenderer>().sprite = UpgradeOneIcons[UpgradeOneIndex];
+        UpgradeButtonOne.GetComponent<Image>().sprite = UpgradeOneIcons[UpgradeOneIndex];
         UpgradeButtonTwo.SetActive(true);
-        //UpgradeButtonTwo.GetComponentInChildren<SpriteRenderer>().sprite = UpgradeTwoIcons[UpgradeTwoIndex];
+        UpgradeButtonTwo.GetComponent<Image>().sprite = UpgradeTwoIcons[UpgradeTwoIndex];
         UpgradeButtonThree.SetActive(false);
+        UpgradeButtonThree_GFX.SetActive(false);
     }
 
     public void OpenUpgradeMenuTwo(int UpgradeTwoIndex, int UpgradeThreeIndex)
     {
         UpgradeMenu.SetActive(true);
         UpgradeButtonOne.SetActive(true);
-        //UpgradeButtonOne.GetComponentInChildren<SpriteRenderer>().sprite = UpgradeAbilityIcon;
+        UpgradeButtonOne.GetComponent<Image>().sprite = UpgradeAbilityIcon;
         UpgradeButtonTwo.SetActive(true);
-        //UpgradeButtonTwo.GetComponentInChildren<SpriteRenderer>().sprite = UpgradeTwoIcons_Special[UpgradeTwoIndex];
+        UpgradeButtonTwo.GetComponent<Image>().sprite = UpgradeTwoIcons[UpgradeTwoIndex];
         UpgradeButtonThree.SetActive(true);
-        //UpgradeButtonThree.GetComponentInChildren<SpriteRenderer>().sprite = UpgradeThreeIcons_Special[UpgradeThreeIndex];
+        UpgradeButtonThree_GFX.SetActive(true);
+        UpgradeButtonThree.GetComponent<Image>().sprite = UpgradeThreeIcons_Special[UpgradeThreeIndex];
     }
 
     public void OpenUpgradeMenuThree(int UpgradeOneIndex, int UpgradeTwoIndex, int UpgradeThreeIndex)
     {
         UpgradeMenu.SetActive(true);
         UpgradeButtonOne.SetActive(true);
-        //UpgradeButtonOne.GetComponentInChildren<SpriteRenderer>().sprite = UpgradeOneIcons_Special[UpgradeOneIndex];
+        UpgradeButtonOne.GetComponent<Image>().sprite = UpgradeOneIcons[UpgradeOneIndex];
         UpgradeButtonTwo.SetActive(true);
-        //UpgradeButtonTwo.GetComponentInChildren<SpriteRenderer>().sprite = UpgradeTwoIcons_Special[UpgradeTwoIndex];
+        UpgradeButtonTwo.GetComponent<Image>().sprite = UpgradeTwoIcons[UpgradeTwoIndex];
         UpgradeButtonThree.SetActive(true);
-        //UpgradeButtonThree.GetComponentInChildren<SpriteRenderer>().sprite = UpgradeThreeIcons_Special[UpgradeThreeIndex];
+        UpgradeButtonThree_GFX.SetActive(true);
+        UpgradeButtonThree.GetComponent<Image>().sprite = UpgradeThreeIcons_Special[UpgradeThreeIndex];
     }
 
     public void UpgradeOneChosen()
