@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 265500894694437226}
   - component: {fileID: 265500894694437225}
   - component: {fileID: 265500894694437224}
+  - component: {fileID: 4034637624392420809}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -120,21 +121,29 @@ MonoBehaviour:
   - PlaceTrap
   - HighHeelsMovementSpeed
   hasAbility: 0
+  AbilityLevel: 1
   attackDelay: 0.5
   abilityCooldown_ScreamingStunAbility: 0
   affectedRadius: 3
-  stunTime: 5
+  stunTime_Level1: 0
+  stunTime_Level2: 0
+  stunTime_Level3: 0
   speedIncrease: 0
-  abilityDuration_HighHeelRun: 0
+  abilityDuration_HighHeelRun_Lvl1: 0
+  abilityDuration_HighHeelRun_Lvl2: 0
+  abilityDuration_HighHeelRun_Lvl3: 0
   abilityCooldown_HighHeelRun: 0
   BananaPeelLandMinePrefab: {fileID: 5788082788069121262, guid: 5803940a0834f78439e58672bfd868a1, type: 3}
   landMineAffectedRadius: 4
-  abilityCooldown_BananaPeelLandMine: 0
+  abilityCooldown_BananaPeelLandMine_Lvl1: 0
+  abilityCooldown_BananaPeelLandMine_Lvl2: 0
+  abilityCooldown_BananaPeelLandMine_lvl3: 0
   damage_BananaPeelLandMine: 3
   landMineSpawnOffset: {x: 0, y: 0}
   blastForceMultiplier: 0
-  ability_NumberOfEnemiesToPierceThrough: 0
-  numberOfEnemiesToPierceThrough: 0
+  numberOfEnemiesToPierceThrough_Lvl1: 0
+  numberOfEnemiesToPierceThrough_Lvl2: 0
+  numberOfEnemiesToPierceThrough_Lvl3: 0
   abilityCooldown_PiercingToiletPaper: 0
   abilityDuration_PiercingToiletPaper: 0
 --- !u!114 &265500894694437226
@@ -193,6 +202,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &4034637624392420809
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265500894694437237}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &265500894828453657
 GameObject:
   m_ObjectHideFlags: 0

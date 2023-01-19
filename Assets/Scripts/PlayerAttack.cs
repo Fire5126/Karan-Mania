@@ -28,6 +28,8 @@ public class PlayerAttack : MonoBehaviour
     public int abilityIndex = 0;
     public string[] abilityTypes;
     public bool hasAbility = false;
+    [Range(1, 3)]
+    public int AbilityLevel = 1;
 
     // Main Attack Timer
     [Header("Main Attack Timer")]
@@ -35,30 +37,42 @@ public class PlayerAttack : MonoBehaviour
     float nextAttackTime;
 
     [Header("Screaming Stun Ability")]
-    public float abilityCooldown_ScreamingStunAbility;
+    [SerializeField] private float abilityCooldown_ScreamingStunAbility;
     public float affectedRadius;
-    public float stunTime;
+    private float stunTime;
+    [SerializeField] private float stunTime_Level1;
+    [SerializeField] private float stunTime_Level2;
+    [SerializeField] private float stunTime_Level3;
     Collider2D[] hitColliders;
 
     [Header("High Heel Run Ability")]
-    public float speedIncrease;
-    float movementSpeedBackup;
-    public float abilityDuration_HighHeelRun;
-    public float abilityCooldown_HighHeelRun;
+    [SerializeField] private float speedIncrease;
+    private float movementSpeedBackup;
+    private float abilityDuration_HighHeelRun;
+    [SerializeField] private float abilityDuration_HighHeelRun_Lvl1;
+    [SerializeField] private float abilityDuration_HighHeelRun_Lvl2;
+    [SerializeField] private float abilityDuration_HighHeelRun_Lvl3;
+    [SerializeField] private float abilityCooldown_HighHeelRun;
 
     [Header("Banana Peel Land Mine Ability")]
-    public GameObject BananaPeelLandMinePrefab;
-    public float landMineAffectedRadius;
-    public float abilityCooldown_BananaPeelLandMine;
-    public float damage_BananaPeelLandMine;
+    [SerializeField] private GameObject BananaPeelLandMinePrefab;
+    [SerializeField] private float landMineAffectedRadius;
+    private float abilityCooldown_BananaPeelLandMine;
+    [SerializeField] private float abilityCooldown_BananaPeelLandMine_Lvl1;
+    [SerializeField] private float abilityCooldown_BananaPeelLandMine_Lvl2;
+    [SerializeField] private float abilityCooldown_BananaPeelLandMine_lvl3;
+    [SerializeField] private float damage_BananaPeelLandMine;
     public Vector2 landMineSpawnOffset;
     public float blastForceMultiplier;
 
     [Header("Piercing Toilet Paper Ability")]
-    public int ability_NumberOfEnemiesToPierceThrough;
-    public int numberOfEnemiesToPierceThrough;
-    public float abilityCooldown_PiercingToiletPaper;
-    public float abilityDuration_PiercingToiletPaper;
+    private int ability_NumberOfEnemiesToPierceThrough;
+    private int numberOfEnemiesToPierceThrough;
+    [SerializeField] private int numberOfEnemiesToPierceThrough_Lvl1;
+    [SerializeField] private int numberOfEnemiesToPierceThrough_Lvl2;
+    [SerializeField] private int numberOfEnemiesToPierceThrough_Lvl3;
+    [SerializeField] private float abilityCooldown_PiercingToiletPaper;
+    [SerializeField] private float abilityDuration_PiercingToiletPaper;
 
     void Start()
     {
@@ -110,6 +124,7 @@ public class PlayerAttack : MonoBehaviour
     {
         hasAbility = true;
         abilityIndex = abilityIndexInput;
+        AbilityLevel = 1;
     }
 
     private void FixedUpdate()
@@ -173,6 +188,18 @@ public class PlayerAttack : MonoBehaviour
     // Abilities
     void ScreamingStun()
     {
+        if (AbilityLevel == 1)
+        {
+            stunTime = stunTime_Level1;
+        }
+        else if (AbilityLevel == 2)
+        {
+            stunTime = stunTime_Level2;
+        }
+        else if (AbilityLevel == 3)
+        {
+            stunTime = stunTime_Level3;
+        }
         abilityCooldownDelay = abilityCooldown_ScreamingStunAbility;
         hitColliders = Physics2D.OverlapCircleAll(this.transform.position, affectedRadius);
         foreach (var hitCollider in hitColliders)
@@ -199,6 +226,18 @@ public class PlayerAttack : MonoBehaviour
 
     void HighHeelRun()
     {
+        if (AbilityLevel == 1)
+        {
+            abilityDuration_HighHeelRun = abilityDuration_HighHeelRun_Lvl1;
+        }
+        else if (AbilityLevel == 2)
+        {
+            abilityDuration_HighHeelRun = abilityDuration_HighHeelRun_Lvl2;
+        }
+        else if (AbilityLevel == 3)
+        {
+            abilityDuration_HighHeelRun = abilityDuration_HighHeelRun_Lvl3;
+        }
         abilityCooldownDelay = abilityCooldown_HighHeelRun;
         movementSpeedBackup = player.movementSpeed;
         player.movementSpeed += speedIncrease;
@@ -216,6 +255,18 @@ public class PlayerAttack : MonoBehaviour
 
     void BananaPeelLandMine()
     {
+        if (AbilityLevel == 1)
+        {
+            abilityCooldown_BananaPeelLandMine = abilityCooldown_BananaPeelLandMine_Lvl1;
+        }
+        else if (AbilityLevel == 2)
+        {
+            abilityCooldown_BananaPeelLandMine = abilityCooldown_BananaPeelLandMine_Lvl2;
+        }
+        else if (AbilityLevel == 3)
+        {
+            abilityCooldown_BananaPeelLandMine = abilityCooldown_BananaPeelLandMine_lvl3;
+        }
         abilityCooldownDelay = abilityCooldown_BananaPeelLandMine;
         Vector2 spawnOffset = transform.position;
         spawnOffset = spawnOffset + landMineSpawnOffset;
@@ -225,6 +276,18 @@ public class PlayerAttack : MonoBehaviour
 
     void PiercingToiletPaper()
     {
+        if (AbilityLevel == 1)
+        {
+            ability_NumberOfEnemiesToPierceThrough = numberOfEnemiesToPierceThrough_Lvl1;
+        }
+        else if (AbilityLevel == 2)
+        {
+            ability_NumberOfEnemiesToPierceThrough = numberOfEnemiesToPierceThrough_Lvl2;
+        }
+        else if (AbilityLevel == 3)
+        {
+            ability_NumberOfEnemiesToPierceThrough = numberOfEnemiesToPierceThrough_Lvl3;
+        }
         abilityCooldownDelay = abilityCooldown_PiercingToiletPaper;
         numberOfEnemiesToPierceThrough = ability_NumberOfEnemiesToPierceThrough;
         Invoke("EndPiercingToiletPaper", abilityDuration_PiercingToiletPaper);

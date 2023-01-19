@@ -87331,12 +87331,28 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: AbilityLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
       propertyPath: abilityIndex
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
       propertyPath: speedIncrease
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: stunTime_Level1
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: stunTime_Level2
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: stunTime_Level3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
       propertyPath: blastForceMultiplier
@@ -87379,6 +87395,26 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: numberOfEnemiesToPierceThrough
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: abilityDuration_HighHeelRun_Lvl1
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: abilityDuration_HighHeelRun_Lvl2
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: abilityDuration_HighHeelRun_Lvl3
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: abilityCooldown_BananaPeelLandMine
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
       propertyPath: abilityCooldown_PiercingToiletPaper
       value: 15
       objectReference: {fileID: 0}
@@ -87387,8 +87423,32 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: numberOfEnemiesToPierceThrough_Lvl1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: numberOfEnemiesToPierceThrough_Lvl2
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: numberOfEnemiesToPierceThrough_Lvl3
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
       propertyPath: ability_NumberOfEnemiesToPierceThrough
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: abilityCooldown_BananaPeelLandMine_Lvl1
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: abilityCooldown_BananaPeelLandMine_Lvl2
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: abilityCooldown_BananaPeelLandMine_lvl3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2079693928650573054, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
       propertyPath: m_Icon
