@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         player = GameObject.FindGameObjectWithTag("Player");
         animator.Play("Running", 0, 0.0f);
+        
     }
     private void Update()
     {
@@ -76,6 +77,7 @@ public class Enemy : MonoBehaviour
         if (MaxHealth <= 0)
         {
             gameManager.AddKillScore();
+            
             Destroy(gameObject);
         }
     }

@@ -9,6 +9,7 @@ public class PlayerAttack : MonoBehaviour
     [Header("References")]
     public Joystick joystick;
     PlayerController player;
+    SoundManager soundManager;
 
     // Toilet Paper
     [Header("Toilet Paper")]
@@ -62,7 +63,7 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerController>();
-
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     void Update()
@@ -83,6 +84,7 @@ public class PlayerAttack : MonoBehaviour
             if ((joystick.Vertical >= joystickDeadZone || joystick.Vertical <= -joystickDeadZone || joystick.Horizontal >= joystickDeadZone || joystick.Horizontal <= -joystickDeadZone) && Time.time > nextAttackTime)
             {
                 nextAttackTime = Time.time + attackDelay;
+                soundManager.Play("ToiletPaperThrow");
                 Invoke(attackTypes[attackIndex], 0);
             }
 

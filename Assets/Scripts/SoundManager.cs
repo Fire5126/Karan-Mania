@@ -27,6 +27,11 @@ public class SoundManager : MonoBehaviour
     public AudioMixerGroup SFXMixer;
     public AudioMixerGroup MasterMixer;
     public AudioMixerGroup MusicMixer;
+    [SerializeField] private AudioMixer Mixer;
+
+    public UIManager uiManager;
+
+    
     // Start is called before the first frame update
 
     void Awake()
@@ -62,6 +67,7 @@ public class SoundManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
         {
+            print("Cannot stop playing audio... " + s + "not found");
             return null;
         }
         s.source.Play();
@@ -70,6 +76,11 @@ public class SoundManager : MonoBehaviour
     }
     public void StopPlaying(AudioSource source)
     {
+        if(source == null)
+        {
+            print("Cannot stop playing audio... " + source.name + "not found");
+            return;
+        }
         source.Pause();
         source.time = 0f;
     }
@@ -78,5 +89,36 @@ public class SoundManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void UpdateMusicVolume(float dbs)
+    {
+        Mixer.SetFloat("MusicVolume", Mathf.Log10(dbs) * 20);
+        if (uiManager.MusicVolSlider.value != dbs)
+        {
+            uiManager.MusicVolSlider.value = dbs;
+            return;
+        }
+        if (uiManager.MusicVolSlider2.value != dbs)
+        {
+            uiManager.MusicVolSlider2.value = dbs;
+            return;
+        }
+        
+    }
+
+    public void UpdateSFXVolume(float dbs)
+    {
+        Mixer.SetFloat("SFXVolume", Mathf.Log10(dbs) * 20);
+        if (uiManager.SFXVolSlider.value != dbs)
+        {
+            uiManager.SFXVolSlider.value = dbs;
+            return;
+        }
+        if (uiManager.SFXVolSlider2.value != dbs)
+        {
+            uiManager.SFXVolSlider2.value = dbs;
+            return;
+        }
     }
 }

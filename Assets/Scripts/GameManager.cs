@@ -21,18 +21,24 @@ public class GameManager : MonoBehaviour
     public WaveManager waveManager;
     public UIManager uiManager;
     PlayerController player;
+    SoundManager soundManager;
+    AudioSource titleScreenMusic;
+    AudioSource maintheme;
 
     // wave timer
     bool timerActivated;
     float timer;
 
-    AudioSource maintheme;
+    
+
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
+    }
 
     void Start()
     {
-        Application.targetFrameRate = 60;
         Setup();
-        maintheme = FindObjectOfType<SoundManager>().Play("MainMusic");
     }
 
     void Update()
@@ -61,6 +67,8 @@ public class GameManager : MonoBehaviour
 
     void Setup()
     {
+        soundManager = FindObjectOfType<SoundManager>();
+        titleScreenMusic = soundManager.Play("TitleScreenMusic", true);
         cameraSize = FindObjectOfType<Camera>().orthographicSize;
         FindObjectOfType<Camera>().orthographicSize = 2.5f;
         player = FindObjectOfType<PlayerController>();
@@ -78,7 +86,8 @@ public class GameManager : MonoBehaviour
 
     void StartGame()
     {
-        FindObjectOfType<SoundManager>().StopPlaying(maintheme);
+        soundManager.StopPlaying(titleScreenMusic);
+        maintheme = soundManager.Play("MainMusic", true);
         FindObjectOfType<Camera>().orthographicSize = cameraSize;
         gameStarted = true;
         player.gameStarted = true;
@@ -97,6 +106,7 @@ public class GameManager : MonoBehaviour
 
     public void AddKillScore()
     {
+        soundManager.Play("EnemyDeath");
         killScore++;
         uiManager.UpdateKillsScoreUI(killScore);
     }
@@ -201,6 +211,11 @@ public class GameManager : MonoBehaviour
     void EnableTimerUIDelayed()
     {
         uiManager.EnableTimerUI();
+    }
+
+    public void PlayButtonSound()
+    {
+        soundManager.Play("ButtonClick");
     }
 
 }
