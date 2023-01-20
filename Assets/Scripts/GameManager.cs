@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
         uiManager.UpdateKillsScoreUI(killScore);
         if (killScore > PlayerPrefs.GetInt("HighScore"))
         {
-            PlayerPrefs.SetInt("HighScore", waveScore);
+            PlayerPrefs.SetInt("HighScore", killScore);
             uiManager.UpdateHighScores(PlayerPrefs.GetInt("HighScore"), PlayerPrefs.GetInt("WaveHighScore"));
         }
     }

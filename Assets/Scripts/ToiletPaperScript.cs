@@ -18,6 +18,7 @@ public class ToiletPaperScript : MonoBehaviour
     void Start()
     {
         Invoke("StopCollideCheck", 0.1f);
+        Invoke("EnableCollision", 0.2f);
         rb = GetComponent<Rigidbody2D>();
 
         attackScript = FindObjectOfType<PlayerAttack>();

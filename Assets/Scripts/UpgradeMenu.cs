@@ -164,7 +164,7 @@ public class UpgradeMenu : MonoBehaviour
         {
             if (FindObjectOfType <PlayerController>().health < FindObjectOfType<PlayerController>().maxHealth)
             {
-                FindObjectOfType<PlayerController>().health += 5;
+                uIManager.UpdateHealthStat(FindObjectOfType<PlayerController>().health += 5);
             }
         }
     }
