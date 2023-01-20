@@ -172,6 +172,7 @@ public class UpgradeMenu : MonoBehaviour
     void GiveAbility(int AbilityIndex)
     {
         FindObjectOfType<PlayerAttack>().ChangeAbility(AbilityIndex);
+
     }
 
     void UpgradeAbility()
