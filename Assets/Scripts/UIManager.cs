@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.PlayerLoop;
 
 public class UIManager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class UIManager : MonoBehaviour
     public Slider SFXVolSlider;
     public Slider MusicVolSlider2;
     public Slider SFXVolSlider2;
+    public TMP_Text HighScoreText;
+    public TMP_Text HighestWaveText;
 
     [Header("Upgrade Menu References")]
     public GameObject UpgradeMenu;
@@ -115,6 +118,12 @@ public class UIManager : MonoBehaviour
         inGameOverlay.transform.GetChild(2).GetComponent<TMP_Text>().text = "Wave: " + wave;
     }
 
+    public void UpdateHighScores(int HighScore, int WaveHighScore)
+    {
+        HighestWaveText.text = "Highest Wave: " + WaveHighScore;
+        HighScoreText.text = "High Score: " + HighScore;
+    }
+
     public void EnableTimerUI()
     {
         inGameOverlay.transform.GetChild(3).gameObject.SetActive(true);
@@ -209,13 +218,7 @@ public class UIManager : MonoBehaviour
     public void MusicVolUpdate(float sliderValue)
     {
         Debug.Log(sliderValue);
-        test();
         FindObjectOfType<SoundManager>().UpdateMusicVolume(sliderValue);
-    }
-
-    public void test()
-    {
-        print("balls");
     }
 
 }

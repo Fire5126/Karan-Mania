@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+
         Setup();
     }
 
@@ -67,6 +68,7 @@ public class GameManager : MonoBehaviour
 
     void Setup()
     {
+        uiManager.UpdateHighScores(PlayerPrefs.GetInt("HighScore"), PlayerPrefs.GetInt("WaveHighScore"));
         soundManager = FindObjectOfType<SoundManager>();
         titleScreenMusic = soundManager.Play("TitleScreenMusic", true);
         cameraSize = FindObjectOfType<Camera>().orthographicSize;
@@ -102,6 +104,11 @@ public class GameManager : MonoBehaviour
     {
         waveScore++;
         uiManager.UpdateWaveScoreUI(waveScore);
+        if (waveScore > PlayerPrefs.GetInt("WaveHighScore"))
+        {
+            PlayerPrefs.SetInt("WaveHighScore", waveScore);
+            uiManager.UpdateHighScores(PlayerPrefs.GetInt("HighScore"), PlayerPrefs.GetInt("WaveHighScore"));
+        }
     }
 
     public void AddKillScore()
@@ -109,6 +116,11 @@ public class GameManager : MonoBehaviour
         soundManager.Play("EnemyDeath");
         killScore++;
         uiManager.UpdateKillsScoreUI(killScore);
+        if (killScore > PlayerPrefs.GetInt("HighScore"))
+        {
+            PlayerPrefs.SetInt("HighScore", waveScore);
+            uiManager.UpdateHighScores(PlayerPrefs.GetInt("HighScore"), PlayerPrefs.GetInt("WaveHighScore"));
+        }
     }
 
     public int GetWaveScore()

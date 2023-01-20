@@ -97,10 +97,12 @@ public class PlayerAttack : MonoBehaviour
 
             if ((joystick.Vertical >= joystickDeadZone || joystick.Vertical <= -joystickDeadZone || joystick.Horizontal >= joystickDeadZone || joystick.Horizontal <= -joystickDeadZone) && Time.time > nextAttackTime)
             {
+                
                 nextAttackTime = Time.time + attackDelay;
                 soundManager.Play("ToiletPaperThrow");
                 Invoke(attackTypes[attackIndex], 0);
             }
+            player.attackMagnitude = new Vector2(joystick.Horizontal, joystick.Vertical).magnitude;
 
             // Player Ability
            /* if (Input.GetKeyDown(KeyCode.Mouse1) && Time.time > nextAbility && hasAbility)

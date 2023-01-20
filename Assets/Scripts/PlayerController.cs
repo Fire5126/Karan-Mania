@@ -27,9 +27,13 @@ public class PlayerController : MonoBehaviour
     public Joystick joystick;
     GameManager gameManager;
     SoundManager soundManager;
+    Animator animator;
+    [HideInInspector]
+    public float attackMagnitude = 0;
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         soundManager = FindObjectOfType<SoundManager>();
         health = maxHealth;
         gameManager = FindObjectOfType<GameManager>();
@@ -51,16 +55,23 @@ public class PlayerController : MonoBehaviour
             moveDirection = new Vector2(moveX, moveY).normalized;
         }
 
-        if(moveDirection.x > 0)
-        {
-            gameObject.GetComponent<SpriteRenderer>().flipX = false;
-        }
-        else if(moveDirection.x <0)
-        {
-            gameObject.GetComponent<SpriteRenderer>().flipX = true;
-        }
+        ManageAnimationsAndSFX();
         
 
+        
+
+        // Pause Game
+        if (Input.GetKeyDown(KeyCode.Escape) && !isDead)
+        {
+            gameManager.TogglePauseGame();
+        }
+
+        
+    }
+
+    void ManageAnimationsAndSFX()
+    {
+        // SFX
         if (audioPlaying == false && moveDirection.magnitude > 0 && !isPaused)
         {
             audioPlaying = true;
@@ -68,15 +79,38 @@ public class PlayerController : MonoBehaviour
         }
         else if (audioPlaying == true && moveDirection.magnitude <= 0)
         {
-            audioPlaying=false;
+            audioPlaying = false;
             soundManager.StopPlaying(runAudio);
         }
 
-        // Pause Game
-        if (Input.GetKeyDown(KeyCode.Escape) && !isDead)
+        // Flipping the sprite
+        if (moveDirection.x > 0)
         {
-            gameManager.TogglePauseGame();
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
+        if (moveDirection.x < 0)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+
+        // Anim Variables
+        if (Mathf.Abs(attackMagnitude) > 0)
+        {
+            animator.SetBool("isThrowing", true);
+        }
+        if (Mathf.Abs(attackMagnitude) == 0)
+        {
+            animator.SetBool("isThrowing", false);
+        }
+        if (Mathf.Abs(moveDirection.magnitude) > 0)
+        {
+            animator.SetBool("isMoving", true);
+        }
+        if (Mathf.Abs(moveDirection.magnitude) == 0)
+        {
+            animator.SetBool("isMoving", false);
+        }
+        
     }
 
     private void FixedUpdate()
