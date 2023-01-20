@@ -40,6 +40,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float abilityCooldown_ScreamingStunAbility;
     public float affectedRadius;
     private float stunTime;
+    [SerializeField] private GameObject StunGameObject;
     [SerializeField] private float stunTime_Level1;
     [SerializeField] private float stunTime_Level2;
     [SerializeField] private float stunTime_Level3;
@@ -105,9 +106,9 @@ public class PlayerAttack : MonoBehaviour
             player.attackMagnitude = new Vector2(joystick.Horizontal, joystick.Vertical).magnitude;
 
             // Player Ability
-           /* if (Input.GetKeyDown(KeyCode.Mouse1) && Time.time > nextAbility && hasAbility)
+            /*if (Input.GetKeyDown(KeyCode.Mouse1))
             {
-                nextAbility = Time.time + abilityCooldownDelay;
+
                 Invoke(abilityTypes[abilityIndex], 0f);
             }*/
         }
@@ -202,6 +203,10 @@ public class PlayerAttack : MonoBehaviour
         {
             stunTime = stunTime_Level3;
         }
+
+        StunGameObject.SetActive(true);
+        StunGameObject.GetComponent<Animator>().enabled = true;
+        Invoke("DisableScreamObject", 0.8f);
         abilityCooldownDelay = abilityCooldown_ScreamingStunAbility;
         hitColliders = Physics2D.OverlapCircleAll(this.transform.position, affectedRadius);
         foreach (var hitCollider in hitColliders)
@@ -213,6 +218,13 @@ public class PlayerAttack : MonoBehaviour
             }
         }
         Invoke("ScreamAttackUnstunEnemy", stunTime);
+    }
+
+    void DisableScreamObject()
+    {
+        StunGameObject.GetComponent<Animator>().enabled = false;
+        StunGameObject.SetActive(false);
+
     }
 
     void ScreamAttackUnstunEnemy()
