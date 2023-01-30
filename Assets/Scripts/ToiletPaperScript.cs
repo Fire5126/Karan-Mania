@@ -17,6 +17,7 @@ public class ToiletPaperScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FindObjectOfType<SoundManager>().Play("ToiletPaperThrow");
         Invoke("StopCollideCheck", 0.1f);
         Invoke("EnableCollision", 0.2f);
         rb = GetComponent<Rigidbody2D>();

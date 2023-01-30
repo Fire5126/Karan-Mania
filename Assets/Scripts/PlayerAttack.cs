@@ -100,8 +100,7 @@ public class PlayerAttack : MonoBehaviour
             {
                 
                 nextAttackTime = Time.time + attackDelay;
-                soundManager.Play("ToiletPaperThrow");
-                Invoke(attackTypes[attackIndex], 0);
+                InvokeToiletPaperAttack();
             }
             player.attackMagnitude = new Vector2(joystick.Horizontal, joystick.Vertical).magnitude;
 
@@ -121,6 +120,12 @@ public class PlayerAttack : MonoBehaviour
             nextAbility = Time.time + abilityCooldownDelay;
             Invoke(abilityTypes[abilityIndex], 0f);
         }
+    }
+
+    public void InvokeToiletPaperAttack()
+    {
+        
+        Invoke(attackTypes[attackIndex], 0);
     }
 
     public void ChangeAbility(int abilityIndexInput)
@@ -152,9 +157,14 @@ public class PlayerAttack : MonoBehaviour
 
 
     // Main ToiletPaper Attack
-    void ToiletPaper()
+    public void ToiletPaper()
     {
         Quaternion rotation = transform.GetChild(1).transform.rotation;
+        Instantiate<GameObject>(toiletPaper, transform.GetChild(1).transform.position, rotation).transform.GetComponent<ToiletPaperScript>().InitiateVariables(numberOfEnemiesToPierceThrough);
+    }
+
+    public void ToiletPaper(Quaternion rotation)
+    {
         Instantiate<GameObject>(toiletPaper, transform.GetChild(1).transform.position, rotation).transform.GetComponent<ToiletPaperScript>().InitiateVariables(numberOfEnemiesToPierceThrough);
     }
 

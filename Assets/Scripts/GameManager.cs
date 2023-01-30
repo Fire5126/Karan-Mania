@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     // Game Objects
     [Header("References")]
+    [SerializeField] private IntroManager introManager;
     public WaveManager waveManager;
     public UIManager uiManager;
     PlayerController player;
@@ -68,6 +69,7 @@ public class GameManager : MonoBehaviour
 
     void Setup()
     {
+        //introManager.GameStartSequence();
         uiManager.UpdateHighScores(PlayerPrefs.GetInt("HighScore"), PlayerPrefs.GetInt("WaveHighScore"));
         soundManager = FindObjectOfType<SoundManager>();
         titleScreenMusic = soundManager.Play("TitleScreenMusic", true);
@@ -88,6 +90,7 @@ public class GameManager : MonoBehaviour
 
     void StartGame()
     {
+
         soundManager.StopPlaying(titleScreenMusic);
         maintheme = soundManager.Play("MainMusic", true);
         FindObjectOfType<Camera>().orthographicSize = cameraSize;
