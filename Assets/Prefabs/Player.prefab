@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 265500894694437237}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.68, y: 1.1, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 265500894828453662}
@@ -117,14 +117,16 @@ MonoBehaviour:
   abilityCooldownDelay: 10
   abilityIndex: 0
   abilityTypes:
-  - ScreamAttack
-  - PlaceTrap
-  - HighHeelsMovementSpeed
+  - ScreamingStun
+  - HighHeelRun
+  - BananaPeelLandMine
+  - PiercingToiletPaper
   hasAbility: 0
-  AbilityLevel: 1
+  AbilityLevel: 3
   attackDelay: 0.5
-  abilityCooldown_ScreamingStunAbility: 0
+  abilityCooldown_ScreamingStunAbility: 15
   affectedRadius: 3
+  StunGameObject: {fileID: 0}
   stunTime_Level1: 0
   stunTime_Level2: 0
   stunTime_Level3: 0
@@ -165,6 +167,7 @@ MonoBehaviour:
   maxHealth: 20
   health: 20
   joystick: {fileID: 0}
+  attackMagnitude: 0
 --- !u!58 &265500894694437225
 CircleCollider2D:
   m_ObjectHideFlags: 0

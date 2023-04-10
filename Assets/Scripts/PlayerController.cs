@@ -38,7 +38,8 @@ public class PlayerController : MonoBehaviour
         health = maxHealth;
         gameManager = FindObjectOfType<GameManager>();
         rb = gameObject.GetComponent<Rigidbody2D>();
-        
+
+        animator.Play("AngryKaren");
     }
 
     // Update is called once per frame
@@ -55,10 +56,6 @@ public class PlayerController : MonoBehaviour
             moveDirection = new Vector2(moveX, moveY).normalized;
         }
 
-        ManageAnimationsAndSFX();
-        
-
-        
 
         // Pause Game
         if (Input.GetKeyDown(KeyCode.Escape) && !isDead)
@@ -66,7 +63,17 @@ public class PlayerController : MonoBehaviour
             gameManager.TogglePauseGame();
         }
 
-        
+        if (!gameStarted) return;
+
+        ManageAnimationsAndSFX();
+
+
+    }
+
+    public void StartGameAnimation()
+    {
+        //play animation
+        animator.Play("StartGameKaren");
     }
 
     void ManageAnimationsAndSFX()

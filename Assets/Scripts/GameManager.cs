@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
 
     public void UIStartGame()
     {
-        StartGame();
+        StartGameAnimation();
     }
 
     void Setup()
@@ -88,11 +88,17 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    void StartGame()
+    void StartGameAnimation()
     {
 
         soundManager.StopPlaying(titleScreenMusic);
         maintheme = soundManager.Play("MainMusic", true);
+        
+        player.StartGameAnimation();
+    }
+
+    public void StartGame()
+    {
         FindObjectOfType<Camera>().orthographicSize = cameraSize;
         gameStarted = true;
         player.gameStarted = true;
