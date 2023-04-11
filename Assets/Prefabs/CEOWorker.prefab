@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 583322672430832633}
   - component: {fileID: 583322672430832634}
   - component: {fileID: 5390233710787078256}
-  - component: {fileID: 3829177571144702224}
+  - component: {fileID: 6912884560593194010}
   m_Layer: 8
   m_Name: EnemyGFX
   m_TagString: EnemyMovementCollider
@@ -75,12 +75,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: e2dd2b907b44a4a45a00f1ba4374e40e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 77717d61eb95d4663b71eb1dd3c0adbc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.47, y: 0.64}
+  m_Size: {x: 1, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -102,7 +102,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.64}
   m_Size: {x: 0.73, y: 0.0001}
   m_Direction: 0
---- !u!95 &3829177571144702224
+--- !u!95 &6912884560593194010
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -112,7 +112,7 @@ Animator:
   m_GameObject: {fileID: 583322672430832639}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: eb444374f1364a34e98a5165355c5e7f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 14198756260c92e4099870ba4d584f41, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -139,7 +139,7 @@ GameObject:
   - component: {fileID: 3209293814875460994}
   - component: {fileID: 2652029565857529048}
   m_Layer: 9
-  m_Name: Angry_RetailWorker
+  m_Name: CEOWorker
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,8 +173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f555b5aa0ffb24b6a801f0e81cb6388b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 10
-  damage: 5
+  MaxHealth: 30
+  damage: 10
 --- !u!114 &583322672758955227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +191,7 @@ MonoBehaviour:
   radius: 0.52
   height: 0.01
   canMove: 1
-  maxSpeed: 5
+  maxSpeed: 2.5
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  uniqueID: 8259677622238618086
+  uniqueID: 3047310160908680912
   updateError: 0.1
   checkTime: 0.1
 --- !u!50 &3209293814875460994

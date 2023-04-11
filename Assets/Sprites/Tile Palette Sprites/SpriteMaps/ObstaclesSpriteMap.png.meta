@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -2262,15 +2262,15 @@ TextureImporter:
       SpriteMap-sheet_31: -1517501442
       SpriteMap-sheet_82: -1433352880
       SpriteMap-sheet_87: -1922461832
+      SpriteMap-sheet_83: -1974734699
       SpriteMap-sheet_37: -1703966588
-      SpriteMap-sheet_44: 112612445
       SpriteMap-sheet_62: 293666222
-      SpriteMap-sheet_74: -999534230
+      SpriteMap-sheet_44: 112612445
       SpriteMap-sheet_60: 991404253
       SpriteMap-sheet_88: -1464953330
+      SpriteMap-sheet_74: -999534230
       SpriteMap-sheet_14: 982824226
       SpriteMap-sheet_22: 724426807
-      SpriteMap-sheet_83: -1974734699
       SpriteMap-sheet_73: -1932679388
       SpriteMap-sheet_34: -867622387
       SpriteMap-sheet_49: 1136089188
@@ -2280,8 +2280,8 @@ TextureImporter:
       SpriteMap-sheet_94: 1084882699
       SpriteMap-sheet_10: -1877479215
       SpriteMap-sheet_97: -1749653825
-      SpriteMap-sheet_53: -1664122696
       SpriteMap-sheet_75: 1707626636
+      SpriteMap-sheet_53: -1664122696
       SpriteMap-sheet_13: -22418420
       SpriteMap-sheet_27: -2140142577
       SpriteMap-sheet_0: 576116916
@@ -2311,18 +2311,18 @@ TextureImporter:
       SpriteMap-sheet_98: 1552111247
       SpriteMap-sheet_45: 1788324422
       SpriteMap-sheet_35: -1472893931
-      SpriteMap-sheet_12: 1357519803
-      SpriteMap-sheet_1: -844629238
-      SpriteMap-sheet_79: 1822839602
       SpriteMap-sheet_24: 889650786
+      SpriteMap-sheet_1: -844629238
+      SpriteMap-sheet_12: 1357519803
+      SpriteMap-sheet_57: -611786255
       SpriteMap-sheet_52: -628728614
       SpriteMap-sheet_38: -654257402
       SpriteMap-sheet_63: 1310772229
+      SpriteMap-sheet_79: 1822839602
       SpriteMap-sheet_11: -369319270
       SpriteMap-sheet_36: -1988821019
       SpriteMap-sheet_61: -1301925588
       SpriteMap-sheet_26: 1243656352
-      SpriteMap-sheet_57: -611786255
       SpriteMap-sheet_92: 829362035
       SpriteMap-sheet_7: -1567291130
       SpriteMap-sheet_54: 70573947

@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 53573b832f379024ba2a831e57bbd048
+guid: 34cd9db371c7e594b85613fcf0bc9e1c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -68,7 +68,7 @@ TextureImporter:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
-    resizeAlgorithm: 1
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
     compressionQuality: 50
@@ -130,7 +130,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -142,7 +142,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -153,12 +153,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KarenMainMenuAngry_0
+      name: ManagerAnim_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
+        width: 47
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -167,19 +167,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a43a13b96766d4cf2aebb193ee4678d4
-      internalID: -583338208
+      spriteID: abb0348ab6ce41d44bad71c7694e7b5e
+      internalID: 856719019
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KarenMainMenuAngry_1
+      name: ManagerAnim_1
       rect:
         serializedVersion: 2
-        x: 64
+        x: 47
         y: 0
-        width: 64
+        width: 47
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -188,19 +188,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3533a384cb564cba8d9ee1f47d7a5df
-      internalID: 1246711033
+      spriteID: a8bf5469ed3a51d4294807d55d82305a
+      internalID: -434701965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KarenMainMenuAngry_2
+      name: ManagerAnim_2
       rect:
         serializedVersion: 2
-        x: 128
+        x: 94
         y: 0
-        width: 64
+        width: 47
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -209,19 +209,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13ff062bee0854f6f9ba45dbd8957008
-      internalID: -354126267
+      spriteID: a24899f396be74b42b46b3cc826e5562
+      internalID: 1838442609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KarenMainMenuAngry_3
+      name: ManagerAnim_3
       rect:
         serializedVersion: 2
-        x: 192
+        x: 141
         y: 0
-        width: 64
+        width: 47
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -230,19 +230,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1652d0bd9276b46309a9e99cd2312e1d
-      internalID: -1023689799
+      spriteID: 098a8c7ecd5bb6345bbc85b21f27cbef
+      internalID: 1479597284
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KarenMainMenuAngry_4
+      name: ManagerAnim_4
       rect:
         serializedVersion: 2
-        x: 256
+        x: 188
         y: 0
-        width: 64
+        width: 47
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -251,19 +251,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 200a0c5223443488eb7a23178decebdd
-      internalID: 2049978086
+      spriteID: feb42c16c049a9844bb8c58b4126163c
+      internalID: 1920818815
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KarenMainMenuAngry_5
+      name: ManagerAnim_5
       rect:
         serializedVersion: 2
-        x: 320
+        x: 235
         y: 0
-        width: 64
+        width: 47
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -272,19 +272,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35c4e92c9f1a544abac4a268634fbbe1
-      internalID: -1254818545
+      spriteID: 9efb66d2a384fdd4591f11e1d97bf461
+      internalID: -148467549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KarenMainMenuAngry_6
+      name: ManagerAnim_6
       rect:
         serializedVersion: 2
-        x: 384
+        x: 282
         y: 0
-        width: 64
+        width: 47
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -293,19 +293,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75f98844e46d245a39efd3aa3fd20ae5
-      internalID: -1678421703
+      spriteID: d52a0e10eab0e324381d0da6f9b39bb1
+      internalID: -2014869225
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KarenMainMenuAngry_7
+      name: ManagerAnim_7
       rect:
         serializedVersion: 2
-        x: 448
+        x: 329
         y: 0
-        width: 64
+        width: 47
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -314,19 +314,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1fe5d37825d404eb19cc27fa30ca02af
-      internalID: 1049720201
+      spriteID: 3e1ac305662e8f1459879c05d20b269c
+      internalID: 892075445
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KarenMainMenuAngry_8
+      name: ManagerAnim_8
       rect:
         serializedVersion: 2
-        x: 512
+        x: 376
         y: 0
-        width: 64
+        width: 47
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -335,19 +335,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 995cec5414b9640568b5f252020217b3
-      internalID: 851505194
+      spriteID: 4404297db73585c45b08d1413536afc8
+      internalID: -853683923
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KarenMainMenuAngry_9
+      name: ManagerAnim_9
       rect:
         serializedVersion: 2
-        x: 576
+        x: 423
         y: 0
-        width: 64
+        width: 47
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -356,19 +356,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b925f1c2041340c8919b471e3778d45
-      internalID: 682946318
+      spriteID: 58eb2828c8913b1479b2bf773005eb4d
+      internalID: -1412260763
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KarenMainMenuAngry_10
+      name: ManagerAnim_10
       rect:
         serializedVersion: 2
-        x: 640
+        x: 470
         y: 0
-        width: 64
+        width: 47
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -377,19 +377,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eaae42699fd2f42ecad348f004036acb
-      internalID: -1500267069
+      spriteID: cad1b1bd982b8b64cad22e8ee0e4da44
+      internalID: -1675549833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KarenMainMenuAngry_11
+      name: ManagerAnim_11
       rect:
         serializedVersion: 2
-        x: 704
+        x: 517
         y: 0
-        width: 64
+        width: 47
         height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -398,239 +398,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75cf04e55c71946bb9cd9eb078a99ec2
-      internalID: -77112466
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KarenMainMenuAngry_12
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f6be866a4b984492791a6d010f71b45e
-      internalID: 1647313788
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KarenMainMenuAngry_13
-      rect:
-        serializedVersion: 2
-        x: 832
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6080fe51f463b4ebe81e8b8f27f2533d
-      internalID: -1680903467
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KarenMainMenuAngry_14
-      rect:
-        serializedVersion: 2
-        x: 896
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 865221864eea143c5b6bc89c07336568
-      internalID: 1226542725
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KarenMainMenuAngry_15
-      rect:
-        serializedVersion: 2
-        x: 960
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b65fe4eb45ba4460f812a6e141d116cd
-      internalID: -1189277276
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KarenMainMenuAngry_16
-      rect:
-        serializedVersion: 2
-        x: 1024
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0dc418ec21d05482389008fa20745ca5
-      internalID: 1076174023
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KarenMainMenuAngry_17
-      rect:
-        serializedVersion: 2
-        x: 1088
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f237dc4f443346a6a0cfb73817099dd
-      internalID: -600821597
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KarenMainMenuAngry_18
-      rect:
-        serializedVersion: 2
-        x: 1152
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4c29435586df94dd38f9210e98b24792
-      internalID: -1633987158
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KarenMainMenuAngry_19
-      rect:
-        serializedVersion: 2
-        x: 1216
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 37e043aafb15f4516bd5526fd9e9617c
-      internalID: -1122877701
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KarenMainMenuAngry_20
-      rect:
-        serializedVersion: 2
-        x: 1280
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0201dfa30818e4dd18c0ed00d7620547
-      internalID: -7247280
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KarenMainMenuAngry_21
-      rect:
-        serializedVersion: 2
-        x: 1344
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f15265dbaa4d9424a91e78dca1441a58
-      internalID: 219868905
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KarenMainMenuAngry_22
-      rect:
-        serializedVersion: 2
-        x: 1408
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bc4025b5362a04cd09e19c3928352e29
-      internalID: -911011906
+      spriteID: 40347167377d21840822c447180a6942
+      internalID: 1679026910
       vertices: []
       indices: 
       edges: []
@@ -646,29 +415,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      KarenMainMenuAngry_8: 851505194
-      KarenMainMenuAngry_13: -1680903467
-      KarenMainMenuAngry_3: -1023689799
-      KarenMainMenuAngry_10: -1500267069
-      KarenMainMenuAngry_17: -600821597
-      KarenMainMenuAngry_22: -911011906
-      KarenMainMenuAngry_2: -354126267
-      KarenMainMenuAngry_11: -77112466
-      KarenMainMenuAngry_6: -1678421703
-      KarenMainMenuAngry_21: 219868905
-      KarenMainMenuAngry_4: 2049978086
-      KarenMainMenuAngry_0: -583338208
-      KarenMainMenuAngry_14: 1226542725
-      KarenMainMenuAngry_5: -1254818545
-      KarenMainMenuAngry_20: -7247280
-      KarenMainMenuAngry_1: 1246711033
-      KarenMainMenuAngry_12: 1647313788
-      KarenMainMenuAngry_15: -1189277276
-      KarenMainMenuAngry_18: -1633987158
-      KarenMainMenuAngry_7: 1049720201
-      KarenMainMenuAngry_16: 1076174023
-      KarenMainMenuAngry_9: 682946318
-      KarenMainMenuAngry_19: -1122877701
+      ManagerAnim_11: 1679026910
+      ManagerAnim_1: -434701965
+      ManagerAnim_4: 1920818815
+      ManagerAnim_3: 1479597284
+      ManagerAnim_0: 856719019
+      ManagerAnim_2: 1838442609
+      ManagerAnim_10: -1675549833
+      ManagerAnim_5: -148467549
+      ManagerAnim_6: -2014869225
+      ManagerAnim_9: -1412260763
+      ManagerAnim_7: 892075445
+      ManagerAnim_8: -853683923
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

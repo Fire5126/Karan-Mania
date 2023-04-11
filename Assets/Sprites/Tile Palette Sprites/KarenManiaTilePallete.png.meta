@@ -411,7 +411,7 @@ TextureImporter:
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -3403,8 +3403,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      KarenManiaTilePallete_106: 4144870740321625920
       KarenManiaTilePallete_133: 8546949539255411549
+      KarenManiaTilePallete_101: -862648289252422989
       KarenManiaTilePallete_59: -7819973872398094049
       KarenManiaTilePallete_8: 7761654334043154090
       KarenManiaTilePallete_109: -5952807338696982016
@@ -3460,6 +3460,7 @@ TextureImporter:
       KarenManiaTilePallete_62: 6856492576952725631
       KarenManiaTilePallete_86: -4495513487305528273
       KarenManiaTilePallete_129: 5274026807257336313
+      KarenManiaTilePallete_104: 6856444618043539080
       KarenManiaTilePallete_6: -4136656104195777714
       KarenManiaTilePallete_48: 3051518521146710012
       KarenManiaTilePallete_54: -8082125406426431592
@@ -3473,7 +3474,6 @@ TextureImporter:
       KarenManiaTilePallete_44: -2527082434909522025
       KarenManiaTilePallete_93: 5014000254637400207
       KarenManiaTilePallete_67: 4866361313953214314
-      KarenManiaTilePallete_104: 6856444618043539080
       KarenManiaTilePallete_116: 4867284767843130171
       KarenManiaTilePallete_128: 5043716785247694201
       KarenManiaTilePallete_75: -7029242130412919622
@@ -3537,7 +3537,7 @@ TextureImporter:
       KarenManiaTilePallete_5: 9165232651019475057
       KarenManiaTilePallete_114: -6632970058099330759
       KarenManiaTilePallete_84: 8908694336332558583
-      KarenManiaTilePallete_101: -862648289252422989
+      KarenManiaTilePallete_106: 4144870740321625920
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

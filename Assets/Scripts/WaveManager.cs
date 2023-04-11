@@ -45,6 +45,9 @@ public class WaveManager : MonoBehaviour
     int retailWorker = 0;
     int angryWorker = 0;
     int supervisorWorker = 0;
+    int managerWorker = 0;
+    int CEOWorker = 0;
+    int CEOsSpawned = 1;
 
 
     // Functions
@@ -60,6 +63,8 @@ public class WaveManager : MonoBehaviour
 
     void Update()
     {
+        
+
         if (gameActive && !isPaused)
         {
             
@@ -132,7 +137,7 @@ public class WaveManager : MonoBehaviour
         {
             // ratio of 1
             int ratioTotal = 1;
-            
+
             retailWorker = Mathf.RoundToInt(1 * (enemiesToSpawn / ratioTotal));
             int x = 0;
 
@@ -145,7 +150,7 @@ public class WaveManager : MonoBehaviour
         }
         if (waveScore <= 3)
         {
-            
+
             // ratio of 3:2
             int ratioTotal = 3 + 2;
 
@@ -183,7 +188,7 @@ public class WaveManager : MonoBehaviour
             }
             for (int i = 0; i < angryWorker; i++)
             {
-                enemyList[i+x] = 1;
+                enemyList[i + x] = 1;
                 x = i;
             }
             for (int i = 0; i < supervisorWorker; i++)
@@ -196,12 +201,13 @@ public class WaveManager : MonoBehaviour
         }
         if (waveScore <= 8)
         {
-            // ratio of 4:3:1
-            int ratioTotal = 4 + 3 + 1;
+            // ratio of 4:3:2:1
+            int ratioTotal = 4 + 3 + 2 + 1;
 
             retailWorker = Mathf.RoundToInt(4 * (enemiesToSpawn / ratioTotal));
             angryWorker = Mathf.RoundToInt(3 * (enemiesToSpawn / ratioTotal));
-            supervisorWorker = Mathf.RoundToInt(1 * (enemiesToSpawn / ratioTotal));
+            supervisorWorker = Mathf.RoundToInt(2 * (enemiesToSpawn / ratioTotal));
+            managerWorker = Mathf.RoundToInt(1 * (enemiesToSpawn / ratioTotal));
 
             int x = 0;
 
@@ -220,33 +226,9 @@ public class WaveManager : MonoBehaviour
                 enemyList[i + x] = 2;
                 x = i;
             }
-
-            return enemyList;
-        }
-        if (waveScore <= 10)
-        {
-            // ratio of 4:3:1
-            int ratioTotal = 4 + 3 + 1;
-
-            retailWorker = Mathf.RoundToInt(4 * (enemiesToSpawn / ratioTotal));
-            angryWorker = Mathf.RoundToInt(3 * (enemiesToSpawn / ratioTotal));
-            supervisorWorker = Mathf.RoundToInt(1 * (enemiesToSpawn / ratioTotal));
-
-            int x = 0;
-
-            for (int i = 0; i < retailWorker; i++)
+            for (int i = 0; i < managerWorker; i++)
             {
-                enemyList[i] = 0;
-                x = i;
-            }
-            for (int i = 0; i < angryWorker; i++)
-            {
-                enemyList[i + x] = 1;
-                x = i;
-            }
-            for (int i = 0; i < supervisorWorker; i++)
-            {
-                enemyList[i + x] = 2;
+                enemyList[i + x] = 3;
                 x = i;
             }
 
@@ -254,12 +236,14 @@ public class WaveManager : MonoBehaviour
         }
         if (waveScore > 10)
         {
-            // ratio of 4:3:1
-            int ratioTotal = 4 + 3 + 1;
+            // ratio of 4:3:2:1
+            int ratioTotal = 5 + 4 + 2 + 2;
 
-            retailWorker = Mathf.RoundToInt(4 * (enemiesToSpawn / ratioTotal));
-            angryWorker = Mathf.RoundToInt(3 * (enemiesToSpawn / ratioTotal));
-            supervisorWorker = Mathf.RoundToInt(1 * (enemiesToSpawn / ratioTotal));
+            retailWorker = Mathf.RoundToInt(5 * (enemiesToSpawn - 1 / ratioTotal));
+            angryWorker = Mathf.RoundToInt(4 * (enemiesToSpawn - 1 / ratioTotal));
+            supervisorWorker = Mathf.RoundToInt(2 * (enemiesToSpawn - 1 / ratioTotal));
+            managerWorker = Mathf.RoundToInt(2 * (enemiesToSpawn - 1 / ratioTotal));
+            CEOWorker = CEOsSpawned;
 
             int x = 0;
 
@@ -278,6 +262,17 @@ public class WaveManager : MonoBehaviour
                 enemyList[i + x] = 2;
                 x = i;
             }
+            for (int i = 0; i < managerWorker; i++)
+            {
+                enemyList[i + x] = 3;
+                x = i;
+            }
+            for (int i = 0; i < CEOWorker; i++)
+            {
+                enemyList[enemiesToSpawn - i] = 4;
+            }
+
+            CEOsSpawned++;
 
             return enemyList;
         }
