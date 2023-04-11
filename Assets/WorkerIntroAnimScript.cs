@@ -17,6 +17,7 @@ public class WorkerIntroAnimScript : MonoBehaviour
     {
         if (collision.transform.tag == "Projectile")
         {
+            Debug.LogWarning("Intro Worker Hit!");
             animController.SetBool("IsDead", true);
             gameManager.StartGame();
         }

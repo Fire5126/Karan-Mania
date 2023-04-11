@@ -113,6 +113,12 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    public void StartGameThrowAnimation()
+    {
+        InvokeToiletPaperAttack();
+        player.animator.Play("Throwing");
+    }
+
     public void ActivateAbility()
     {
         if (Time.time > nextAbility && hasAbility)

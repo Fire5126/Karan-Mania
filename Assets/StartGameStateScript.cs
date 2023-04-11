@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class test : StateMachineBehaviour
+public class StartGameStateScript : StateMachineBehaviour
 {
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        FindObjectOfType<PlayerAttack>().InvokeToiletPaperAttack();
+        FindObjectOfType<PlayerAttack>().StartGameThrowAnimation();
         FindObjectOfType<GameManager>().StartGame();
     }
 

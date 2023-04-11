@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     public Joystick joystick;
     GameManager gameManager;
     SoundManager soundManager;
-    Animator animator;
+    public Animator animator;
     [HideInInspector]
     public float attackMagnitude = 0;
 
@@ -69,6 +69,8 @@ public class PlayerController : MonoBehaviour
 
 
     }
+
+    
 
     public void StartGameAnimation()
     {
