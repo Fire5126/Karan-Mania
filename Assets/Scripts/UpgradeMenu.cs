@@ -139,17 +139,33 @@ public class UpgradeMenu : MonoBehaviour
         }
         if (StatisticIndex == 1)
         {
-            if (FindObjectOfType<PlayerAttack>().attackDelay >= 0.3)
+            float ProjectileSpeed = FindObjectOfType<PlayerAttack>().projectileSpeed;
+            if (ProjectileSpeed <= 13)
             {
-                FindObjectOfType<PlayerAttack>().attackDelay -= 0.1f;
+                FindObjectOfType<PlayerAttack>().projectileSpeed += 1;
             }
-            if (FindObjectOfType<PlayerAttack>().attackDelay >= 0.1f)
+            if (ProjectileSpeed <= 17)
+            {
+                FindObjectOfType<PlayerAttack>().projectileSpeed += 0.5f;
+            }
+            if (ProjectileSpeed <= 20)
+            {
+                FindObjectOfType<PlayerAttack>().projectileSpeed += 0.25f;
+            }
+                
+                
+                
+            /*if (FindObjectOfType<PlayerAttack>().attackDelay >= 0.3)
             {
                 FindObjectOfType<PlayerAttack>().attackDelay -= 0.05f;
             }
+            if (FindObjectOfType<PlayerAttack>().attackDelay >= 0.1f)
+            {
+                FindObjectOfType<PlayerAttack>().attackDelay -= 0.025f;
+            }
             if (FindObjectOfType<PlayerAttack>().attackDelay <= 0.1f)
             {
-            }
+            }*/
 
         }
     }

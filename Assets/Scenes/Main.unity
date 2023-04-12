@@ -2948,6 +2948,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1983629789}
+  - {fileID: 2128312085}
   m_Father: {fileID: 486868105}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3594,7 +3595,7 @@ GameObject:
   - component: {fileID: 874124737}
   m_Layer: 7
   m_Name: Obstacles
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9710,7 +9711,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 274133232}
-  - {fileID: 2128312085}
   - {fileID: 750345472}
   m_Father: {fileID: 486868105}
   m_RootOrder: 0
@@ -39787,7 +39787,7 @@ GameObject:
   - component: {fileID: 1271179957}
   m_Layer: 11
   m_Name: Obstacles2
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42148,7 +42148,7 @@ GameObject:
   - component: {fileID: 1558844610}
   m_Layer: 7
   m_Name: Walls
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -134858,7 +134858,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1041349847}
+  m_Father: {fileID: 761256171}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2128312086

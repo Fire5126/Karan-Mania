@@ -93,12 +93,15 @@ public class PlayerAttack : MonoBehaviour
             //}
             if (attackDisabled)
             {
+                Debug.LogError("Attack blocked");
                 return;
             }
 
-            if ((joystick.Vertical >= joystickDeadZone || joystick.Vertical <= -joystickDeadZone || joystick.Horizontal >= joystickDeadZone || joystick.Horizontal <= -joystickDeadZone) && Time.time > nextAttackTime)
+            if ((joystick.Vertical >= joystickDeadZone || joystick.Vertical <= -joystickDeadZone ||
+                 joystick.Horizontal >= joystickDeadZone || joystick.Horizontal <= -joystickDeadZone) &&
+                Time.time > nextAttackTime)
             {
-                
+
                 nextAttackTime = Time.time + attackDelay;
                 InvokeToiletPaperAttack();
             }
