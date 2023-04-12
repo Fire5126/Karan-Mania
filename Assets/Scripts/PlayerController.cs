@@ -124,6 +124,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         rb.velocity = new Vector2(moveDirection.x * movementSpeed, moveDirection.y * movementSpeed);
         
     }

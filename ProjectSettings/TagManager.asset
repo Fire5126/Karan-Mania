@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - GameManager
   - EnemyMovementCollider
+  - DoorTeleporter
   layers:
   - Default
   - TransparentFX

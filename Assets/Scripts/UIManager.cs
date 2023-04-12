@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
     public Slider SFXVolSlider2;
     public TMP_Text HighScoreText;
     public TMP_Text HighestWaveText;
+    public GameObject SectorOpenAlertText;
 
     [Header("Upgrade Menu References")]
     public GameObject UpgradeMenu;
@@ -219,6 +220,17 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log(sliderValue);
         FindObjectOfType<SoundManager>().UpdateMusicVolume(sliderValue);
+    }
+
+    public void ActivateSectorTextAlert()
+    {
+        SectorOpenAlertText.SetActive(true);
+        SectorOpenAlertText.GetComponent<Animator>().Play("AlertAnim");
+    }
+
+    public void DisableSectorTextAlert()
+    {
+        SectorOpenAlertText.SetActive(false);
     }
 
 }

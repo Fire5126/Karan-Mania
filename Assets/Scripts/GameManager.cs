@@ -133,6 +133,11 @@ public class GameManager : MonoBehaviour
         if (waveScore >= room3WaveNumber)
         {
             sector3Barrier.enabled = false;
+            TeleporterBackDoor[] teleporters = FindObjectsOfType<TeleporterBackDoor>();
+            foreach (TeleporterBackDoor door in teleporters)
+            {
+                door.ActivateDoors();
+            }
         }
     }
 

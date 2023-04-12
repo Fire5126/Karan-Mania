@@ -90,6 +90,8 @@ public class WaveManager : MonoBehaviour
         GridNode[] walkableNodes;
         int x = 0;
         int y = 0;
+        
+        
 
         foreach (GridNode node in nodes)
         {
@@ -282,12 +284,12 @@ public class WaveManager : MonoBehaviour
 
     void InitialiseWave()
     {
+        AstarPath.active.data.gridGraph.Scan();
         enemiesToSpawn = Mathf.RoundToInt(enemiesToSpawn * gameDifficulty + 5);
         enemiesSpawned = 0;
         waveActive = true;
         gameManager.AddWaveScore();
         waveIndex++;
-        InitialisePlayArea();
     }
 
     public void ResetValues()
