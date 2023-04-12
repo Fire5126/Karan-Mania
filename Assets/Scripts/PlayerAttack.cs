@@ -97,15 +97,23 @@ public class PlayerAttack : MonoBehaviour
                 return;
             }
 
-            if ((joystick.Vertical >= joystickDeadZone || joystick.Vertical <= -joystickDeadZone ||
-                 joystick.Horizontal >= joystickDeadZone || joystick.Horizontal <= -joystickDeadZone) &&
-                Time.time > nextAttackTime)
+            if (joystick.Vertical >= joystickDeadZone || joystick.Vertical <= -joystickDeadZone ||
+                 joystick.Horizontal >= joystickDeadZone || joystick.Horizontal <= -joystickDeadZone)
             {
-
-                nextAttackTime = Time.time + attackDelay;
-                InvokeToiletPaperAttack();
+                if (Time.time > nextAttackTime)
+                {
+                    nextAttackTime = Time.time + attackDelay;
+                    InvokeToiletPaperAttack();
+                }
+                player.attackMagnitude = new Vector2(joystick.Horizontal, joystick.Vertical).magnitude;
+                
+                Debug.LogError(new Vector2(joystick.Horizontal, joystick.Vertical));
             }
-            player.attackMagnitude = new Vector2(joystick.Horizontal, joystick.Vertical).magnitude;
+            else
+            {
+                player.attackMagnitude = 0;
+            }
+            
 
             // Player Ability
             /*if (Input.GetKeyDown(KeyCode.Mouse1))
