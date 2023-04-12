@@ -19,6 +19,8 @@ public class WaveManager : MonoBehaviour
     [Header("Enemy GameObject List")]
     public GameObject[] enemyTypes;
 
+    //public List<GameObject> enemyTypes2;
+
     // Graph Values
     float maxGraphX;
     float maxGraphY;
