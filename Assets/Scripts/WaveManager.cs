@@ -287,6 +287,7 @@ public class WaveManager : MonoBehaviour
         waveActive = true;
         gameManager.AddWaveScore();
         waveIndex++;
+        InitialisePlayArea();
     }
 
     public void ResetValues()
