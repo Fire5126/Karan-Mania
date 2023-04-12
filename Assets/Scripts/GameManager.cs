@@ -26,6 +26,12 @@ public class GameManager : MonoBehaviour
     AudioSource titleScreenMusic;
     AudioSource maintheme;
 
+    [Header("Sector Barriers")]
+    [SerializeField] private BoxCollider2D sector2Barrier;
+    [SerializeField] private BoxCollider2D sector3Barrier;
+    [SerializeField] private int room2WaveNumber;
+    [SerializeField] private int room3WaveNumber;
+
     // wave timer
     bool timerActivated;
     float timer;
@@ -117,6 +123,16 @@ public class GameManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("WaveHighScore", waveScore);
             uiManager.UpdateHighScores(PlayerPrefs.GetInt("HighScore"), PlayerPrefs.GetInt("WaveHighScore"));
+        }
+
+        if(waveScore >= room2WaveNumber)
+        {
+            sector2Barrier.enabled = false;
+        }
+
+        if (waveScore >= room3WaveNumber)
+        {
+            sector3Barrier.enabled = false;
         }
     }
 
