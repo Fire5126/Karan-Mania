@@ -96,9 +96,11 @@ public class PlayerAttack : MonoBehaviour
                 Debug.LogError("Attack blocked");
                 return;
             }
+            
+            /*if (joystick.Vertical >= joystickDeadZone || joystick.Vertical <= -joystickDeadZone ||
+                joystick.Horizontal >= joystickDeadZone || joystick.Horizontal <= -joystickDeadZone)*/
 
-            if (joystick.Vertical >= joystickDeadZone || joystick.Vertical <= -joystickDeadZone ||
-                 joystick.Horizontal >= joystickDeadZone || joystick.Horizontal <= -joystickDeadZone)
+            if (joystick.Direction.magnitude > 0)
             {
                 if (Time.time > nextAttackTime)
                 {
@@ -107,7 +109,7 @@ public class PlayerAttack : MonoBehaviour
                 }
                 player.attackMagnitude = new Vector2(joystick.Horizontal, joystick.Vertical).magnitude;
                 
-                Debug.LogError(new Vector2(joystick.Horizontal, joystick.Vertical));
+                //Debug.LogError(new Vector2(joystick.Horizontal, joystick.Vertical));
             }
             else
             {
@@ -126,8 +128,11 @@ public class PlayerAttack : MonoBehaviour
 
     public void StartGameThrowAnimation()
     {
+        float vel = projectileSpeed;
+        projectileSpeed = 3;
         InvokeToiletPaperAttack();
         player.animator.Play("Throwing");
+        projectileSpeed = vel;
     }
 
     public void ActivateAbility()

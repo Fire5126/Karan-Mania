@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     int waveScore = 0;
     int killScore = 0;
     float cameraSize;
+    static float t = 0.0f;
 
 
     // Game Properties
@@ -51,11 +52,13 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        // starts the game
         if (Input.GetKeyDown(KeyCode.Space) && !gameStarted)
         {
             StartGame();
         }
 
+        // in between wave timer
         if (timerActivated)
         {
             timer -= 1 * Time.deltaTime;
@@ -65,6 +68,13 @@ public class GameManager : MonoBehaviour
                 timerActivated = false;
                 uiManager.DisableTimerUI();
             }
+        }
+
+        if (gameStarted)
+        {
+            FindObjectOfType<Camera>().orthographicSize = Mathf.Lerp(2.5f, 4.5f, t);
+            t += 2f * Time.deltaTime;
+            Debug.Log("changing size");
         }
     }
 
@@ -80,7 +90,9 @@ public class GameManager : MonoBehaviour
         soundManager = FindObjectOfType<SoundManager>();
         titleScreenMusic = soundManager.Play("TitleScreenMusic", true);
         cameraSize = FindObjectOfType<Camera>().orthographicSize;
+        
         FindObjectOfType<Camera>().orthographicSize = 2.5f;
+        
         player = FindObjectOfType<PlayerController>();
         gamePaused = false;
         gameStarted = false;
@@ -101,11 +113,13 @@ public class GameManager : MonoBehaviour
         maintheme = soundManager.Play("MainMusic", true);
         
         player.StartGameAnimation();
+        FindObjectOfType<WorkerIntroAnimScript>().GameStarted();
     }
 
     public void StartGame()
     {
-        FindObjectOfType<Camera>().orthographicSize = cameraSize;
+
+
         gameStarted = true;
         player.gameStarted = true;
         waveManager.enabled = true;
@@ -125,14 +139,16 @@ public class GameManager : MonoBehaviour
             uiManager.UpdateHighScores(PlayerPrefs.GetInt("HighScore"), PlayerPrefs.GetInt("WaveHighScore"));
         }
 
-        if(waveScore >= room2WaveNumber)
+        if(waveScore == room2WaveNumber)
         {
             sector2Barrier.enabled = false;
+            uiManager.ActivateSectorTextAlert();
         }
 
-        if (waveScore >= room3WaveNumber)
+        if (waveScore == room3WaveNumber)
         {
             sector3Barrier.enabled = false;
+            uiManager.ActivateSectorTextAlert();
             TeleporterBackDoor[] teleporters = FindObjectsOfType<TeleporterBackDoor>();
             foreach (TeleporterBackDoor door in teleporters)
             {

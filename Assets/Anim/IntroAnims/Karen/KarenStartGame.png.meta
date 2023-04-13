@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9b8cf18184f8e1c40af6d568546ef690
+guid: 639466cd413a0b8469f4ffd2199aadf9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -125,446 +125,302 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WorriedEmote_0
+      name: KarenStartGame_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a7f4bf0d7044424588f65dbdcb45b74
+      internalID: 693218625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KarenStartGame_1
       rect:
         serializedVersion: 2
         x: 96
         y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 96
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9ec7d17796adc40bb8359537349ec819
-      internalID: 1427366168
+      spriteID: 6efc17c690cf74a4591fe35bd678e39f
+      internalID: 383024635
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WorriedEmote_1
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4cf813f1e144c46339adc8ceadca94e4
-      internalID: 1002100199
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WorriedEmote_2
+      name: KarenStartGame_2
       rect:
         serializedVersion: 2
         x: 192
         y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 96
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1dc0ba386082e46b5869b5d6c7e7f0cf
-      internalID: 228940014
+      spriteID: c8306c20056a7394196613ccd9912ce9
+      internalID: 518791668
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WorriedEmote_3
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 302495087d2b34e6da3e617d70f09b89
-      internalID: -773070338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WorriedEmote_4
+      name: KarenStartGame_3
       rect:
         serializedVersion: 2
         x: 288
         y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 96
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0307f0257e42b41db8a23171020f0e9a
-      internalID: 563657216
+      spriteID: b8d67687c934b734ba5dbeefa68e6cca
+      internalID: 992459334
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WorriedEmote_5
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a5af064c113543f3a85023bc0316705
-      internalID: 1872746755
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WorriedEmote_6
+      name: KarenStartGame_4
       rect:
         serializedVersion: 2
         x: 384
         y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 96
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46ba798a9b2864f848c481b2e8ed789f
-      internalID: 1841040231
+      spriteID: abcad2328710ee64581afeb9889a115d
+      internalID: 1435268691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WorriedEmote_7
-      rect:
-        serializedVersion: 2
-        x: 432
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 27e20ebfca7b34bd2ba5c88d12fce783
-      internalID: -1469746739
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WorriedEmote_8
+      name: KarenStartGame_5
       rect:
         serializedVersion: 2
         x: 480
         y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 96
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3108db3115d154872a19fc2801067074
-      internalID: 1395213516
+      spriteID: 40c8a038c8530ea40ae14cab4c28760e
+      internalID: -722477988
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WorriedEmote_9
-      rect:
-        serializedVersion: 2
-        x: 528
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cde027eba2a4a4b82a9a6249b3f87ee8
-      internalID: -107941945
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WorriedEmote_10
+      name: KarenStartGame_6
       rect:
         serializedVersion: 2
         x: 576
         y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 96
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8e869bd33c24443179b011a0c5b32be3
-      internalID: 1204745188
+      spriteID: 3b5850fdc8df648498ef3750ce3ec3c4
+      internalID: 951652530
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WorriedEmote_11
-      rect:
-        serializedVersion: 2
-        x: 624
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4f90a6b782d0a4a0685de57e88e8972a
-      internalID: -231967974
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WorriedEmote_12
+      name: KarenStartGame_7
       rect:
         serializedVersion: 2
         x: 672
         y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 96
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7be448c04f1934cb0a0e440026ff7c7b
-      internalID: 1045910805
+      spriteID: bf3ec7194771da6438e767177bf11d65
+      internalID: 319462123
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WorriedEmote_13
-      rect:
-        serializedVersion: 2
-        x: 720
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 56dccac9880fd4798891d35a5b09aa76
-      internalID: 1286984012
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WorriedEmote_14
+      name: KarenStartGame_8
       rect:
         serializedVersion: 2
         x: 768
         y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 96
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5e8c61ea28694b6a8f34914cb0b60c7
-      internalID: -998803645
+      spriteID: 1cefeeb6a7258ef428885ff20f63a3c8
+      internalID: -430281403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WorriedEmote_15
-      rect:
-        serializedVersion: 2
-        x: 816
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f87e513da971248578eee5049f3f1b44
-      internalID: 1762911075
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WorriedEmote_16
+      name: KarenStartGame_9
       rect:
         serializedVersion: 2
         x: 864
         y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 96
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 36a2f22f05a674694afd5762e6869d35
-      internalID: -1423467923
+      spriteID: fa75d9de3d425684bb829ac5ad818bd6
+      internalID: -2034056555
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WorriedEmote_17
-      rect:
-        serializedVersion: 2
-        x: 912
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39c2587be9def41e1aaf7413e1b10409
-      internalID: 374459130
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WorriedEmote_18
+      name: KarenStartGame_10
       rect:
         serializedVersion: 2
         x: 960
         y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 96
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af92b9fa46a2a49f0b02e1be1b03385d
-      internalID: 592554791
+      spriteID: c291c697ff38fc44081fe399a2366d90
+      internalID: 384028689
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WorriedEmote_19
-      rect:
-        serializedVersion: 2
-        x: 1008
-        y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba45123157f6e44d982a38bfb6a60660
-      internalID: -92401996
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: WorriedEmote_20
+      name: KarenStartGame_11
       rect:
         serializedVersion: 2
         x: 1056
         y: 0
-        width: 48
-        height: 48
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 96
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ff222ee813c9044a19075146df8f6e0e
-      internalID: 367288626
+      spriteID: 7d497051a3c07204c8161612546c570f
+      internalID: -1024539880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KarenStartGame_12
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 96
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.33333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66682d831a87a4b4e8f7ed05427ec7b4
+      internalID: -2031183283
       vertices: []
       indices: 
       edges: []
@@ -580,27 +436,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      WorriedEmote_6: 1841040231
-      WorriedEmote_19: -92401996
-      WorriedEmote_15: 1762911075
-      WorriedEmote_7: -1469746739
-      WorriedEmote_2: 228940014
-      WorriedEmote_3: -773070338
-      WorriedEmote_20: 367288626
-      WorriedEmote_10: 1204745188
-      WorriedEmote_8: 1395213516
-      WorriedEmote_13: 1286984012
-      WorriedEmote_0: 1427366168
-      WorriedEmote_14: -998803645
-      WorriedEmote_4: 563657216
-      WorriedEmote_5: 1872746755
-      WorriedEmote_11: -231967974
-      WorriedEmote_17: 374459130
-      WorriedEmote_9: -107941945
-      WorriedEmote_16: -1423467923
-      WorriedEmote_12: 1045910805
-      WorriedEmote_18: 592554791
-      WorriedEmote_1: 1002100199
+      KarenStartGame_4: 1435268691
+      KarenStartGame_10: 384028689
+      KarenStartGame_12: -2031183283
+      KarenStartGame_1: 383024635
+      KarenStartGame_0: 693218625
+      KarenStartGame_2: 518791668
+      KarenStartGame_6: 951652530
+      KarenStartGame_3: 992459334
+      KarenStartGame_11: -1024539880
+      KarenStartGame_9: -2034056555
+      KarenStartGame_8: -430281403
+      KarenStartGame_5: -722477988
+      KarenStartGame_7: 319462123
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

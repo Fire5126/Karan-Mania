@@ -286,7 +286,7 @@ public class WaveManager : MonoBehaviour
 
     void InitialiseWave()
     {
-        AstarPath.active.data.gridGraph.Scan();
+        /*AstarPath.active.data.gridGraph.Scan();*/
         enemiesToSpawn = Mathf.RoundToInt(enemiesToSpawn * gameDifficulty + 5);
         enemiesSpawned = 0;
         waveActive = true;
