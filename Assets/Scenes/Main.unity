@@ -132923,6 +132923,11 @@ MonoBehaviour:
   sector3Barrier: {fileID: 274133231}
   room2WaveNumber: 3
   room3WaveNumber: 10
+--- !u!4 &1714405509 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8213050681094559645, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+  m_PrefabInstance: {fileID: 265500894756974203}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1723970977
 GameObject:
   m_ObjectHideFlags: 0
@@ -134975,6 +134980,10 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1303246788}
+    - target: {fileID: 265500894694437226, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 265500894694437227, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -135027,6 +135036,10 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 1394783354}
+    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
       propertyPath: speedIncrease
       value: 3
@@ -135127,6 +135140,22 @@ PrefabInstance:
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 2524524780197180353, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 1394783354}
+    - target: {fileID: 2524524780197180353, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2524524780197180353, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: toiletPaper
+      value: 
+      objectReference: {fileID: 5838533575152257406, guid: 8105d56d6044042bf952bc4362a40be7, type: 3}
+    - target: {fileID: 2524524780197180353, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: projectileSpawnLocation
+      value: 
+      objectReference: {fileID: 1714405509}
     - target: {fileID: 2953599187006508074, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.362056
