@@ -74,7 +74,7 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    void InitialisePlayArea()
+    public void InitialisePlayArea()
     {
         nodes = AstarPath.active.data.gridGraph.nodes;
 
@@ -290,7 +290,7 @@ public class WaveManager : MonoBehaviour
         enemiesToSpawn = Mathf.RoundToInt(enemiesToSpawn * gameDifficulty + 5);
         enemiesSpawned = 0;
         waveActive = true;
-        gameManager.AddWaveScore();
+        //gameManager.AddWaveScore();
         waveIndex++;
     }
 
@@ -315,6 +315,7 @@ public class WaveManager : MonoBehaviour
         {
             ResetValues();
             gameActive = true;
+            gameManager.AddWaveScore();
             InitialiseWave();
         }
     }
@@ -322,6 +323,7 @@ public class WaveManager : MonoBehaviour
     void ProgressGame()
     {
         enemies = FindObjectsOfType<Enemy>();
+        
         int[] enemyIndexes = CalculateEnemyToSpawn();
         if (Time.time > nextSpawnTime && waveActive && enemiesToSpawn > enemiesSpawned)
         {

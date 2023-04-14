@@ -141,6 +141,9 @@ public class GameManager : MonoBehaviour
         {
             sector2Barrier.enabled = false;
             uiManager.ActivateSectorTextAlert();
+            var graphToScan = AstarPath.active.data.gridGraph;
+            AstarPath.active.Scan(graphToScan);
+            waveManager.InitialisePlayArea();
         }
 
         if (waveScore == room3WaveNumber)
@@ -152,6 +155,9 @@ public class GameManager : MonoBehaviour
             {
                 door.ActivateDoors();
             }
+            var graphToScan = AstarPath.active.data.gridGraph;
+            AstarPath.active.Scan(graphToScan);
+            waveManager.InitialisePlayArea();
         }
     }
 
@@ -258,6 +264,7 @@ public class GameManager : MonoBehaviour
 
     public void StartWaveTimer(float time)
     {
+        AddWaveScore();
         //uiManager.EnableTimerUI();
         Invoke("EnableTimerUIDelayed", 0.01f);
         timer = time;
