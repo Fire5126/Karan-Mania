@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: WalkatronBottomLeftRail
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -1349329098, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: -15240370, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: 1465579240, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: -204948983, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: 1866582121, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: -1559855945, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: 1526803131, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: -29776175, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: -1739779806, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: 1742410666, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: -61351901, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: -573848312, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: -952230982, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: -200382569, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: 10500575, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: -173120718, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: 1734444833, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: 998683395, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: 2023034835, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: -929803165, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: -146263603, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: 1926756002, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: 2098686898, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: 1884942080, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: 494716336, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: 1026383592, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: 1849991003, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: -1387602605, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: 505667866, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: -201609741, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: -584849178, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  - {fileID: 279175425, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
+  m_MinSpeed: 20
+  m_MaxSpeed: 20
+  m_AnimationStartTime: 1
+  m_AnimationStartFrame: 1
+  m_TileColliderType: 1
