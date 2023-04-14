@@ -175,21 +175,16 @@ public class PlayerAttack : MonoBehaviour
         gameObject.transform.GetChild(1).transform.rotation = Quaternion.Euler(0, 0, AngleDeg);
     }
 
-
-
-
     // Main ToiletPaper Attack
     public void ToiletPaper()
     {
         Quaternion rotation = transform.GetChild(1).transform.rotation;
         Instantiate<GameObject>(toiletPaper, transform.GetChild(1).transform.position, rotation).transform.GetComponent<ToiletPaperScript>().InitiateVariables(numberOfEnemiesToPierceThrough);
     }
-
     public void ToiletPaper(Quaternion rotation)
     {
         Instantiate<GameObject>(toiletPaper, transform.GetChild(1).transform.position, rotation).transform.GetComponent<ToiletPaperScript>().InitiateVariables(numberOfEnemiesToPierceThrough);
     }
-
     void DoubleToiletPaper()
     {
         float zrot = transform.GetChild(1).transform.rotation.eulerAngles.z + 10;
@@ -199,7 +194,6 @@ public class PlayerAttack : MonoBehaviour
         Instantiate<GameObject>(toiletPaper, transform.GetChild(1).transform.position, rotation).transform.GetComponent<ToiletPaperScript>().InitiateVariables(numberOfEnemiesToPierceThrough); ;
         Instantiate<GameObject>(toiletPaper, transform.GetChild(1).transform.position, rotation2).transform.GetComponent<ToiletPaperScript>().InitiateVariables(numberOfEnemiesToPierceThrough); ;
     }
-
     void TripleToiletPaper()
     {
         float zrot = transform.GetChild(1).transform.rotation.eulerAngles.z + 20;
@@ -211,14 +205,10 @@ public class PlayerAttack : MonoBehaviour
         Quaternion rotation3 = transform.GetChild(1).transform.rotation;
         Instantiate<GameObject>(toiletPaper, transform.GetChild(1).transform.position, rotation3).transform.GetComponent<ToiletPaperScript>().InitiateVariables(numberOfEnemiesToPierceThrough); ;
     }
-
     public void EnemyHit(Collider2D enemy)
     {
         enemy.gameObject.GetComponent<Enemy>().UpdateHealth(toiletPaperDamage);
     }
-
-
-
 
     // Abilities
     void ScreamingStun()

@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class UpgradeMenu : MonoBehaviour
 {
@@ -22,12 +24,13 @@ public class UpgradeMenu : MonoBehaviour
 
     GameManager gameManager;
     UIManager uIManager;
-
-    // Start is called before the first frame update
-    void Start()
+    private _PlayerAttack player;
+    
+    private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
         uIManager = FindObjectOfType<UIManager>();
+        player = FindObjectOfType<_PlayerAttack>();
     }
 
     // Update is called once per frame
@@ -135,22 +138,22 @@ public class UpgradeMenu : MonoBehaviour
     {
         if (StatisticIndex == 0)
         {
-            FindObjectOfType<PlayerAttack>().toiletPaperDamage += 2;
+            player.toiletPaperDamage += 2;
         }
         if (StatisticIndex == 1)
         {
-            float ProjectileSpeed = FindObjectOfType<PlayerAttack>().projectileSpeed;
+            float ProjectileSpeed = player.projectileSpeed;
             if (ProjectileSpeed <= 13)
             {
-                FindObjectOfType<PlayerAttack>().projectileSpeed += 1;
+                player.projectileSpeed += 1;
             }
             if (ProjectileSpeed <= 17)
             {
-                FindObjectOfType<PlayerAttack>().projectileSpeed += 0.5f;
+                player.projectileSpeed += 0.5f;
             }
             if (ProjectileSpeed <= 20)
             {
-                FindObjectOfType<PlayerAttack>().projectileSpeed += 0.25f;
+                player.projectileSpeed += 0.25f;
             }
                 
                 
@@ -187,21 +190,35 @@ public class UpgradeMenu : MonoBehaviour
 
     void GiveAbility(int AbilityIndex)
     {
-        FindObjectOfType<PlayerAttack>().ChangeAbility(AbilityIndex);
-
+        _PlayerAttack.AbilityTypes ability = _PlayerAttack.AbilityTypes.None;
+        switch (AbilityIndex)
+        {
+            case(0):
+                ability = _PlayerAttack.AbilityTypes.ScreamingStun;
+                break;
+            case(1):
+                ability = _PlayerAttack.AbilityTypes.HighHeelRun;
+                break;
+            case(2):
+                ability = _PlayerAttack.AbilityTypes.BananaPeelLandmine;
+                break;
+            case(3):
+                ability = _PlayerAttack.AbilityTypes.PiercingToiletPaperAbility;
+                break;
+        }
+        player.ChangeAbility(ability);
+        Debug.LogWarning("Chosen ability = " + ability.ToString());
     }
 
     void UpgradeAbility()
     {
-        PlayerAttack playerAtt = FindObjectOfType<PlayerAttack>();
-        int lvl = playerAtt.AbilityLevel;
-        if (lvl >= 3)
+        if (player.abilityLevel == _PlayerAttack.AbilityUpgrades.level3)
         {
             return;
         }
         else
         {
-            playerAtt.AbilityLevel++;
+            player.abilityLevel++;
         }
     }
 }

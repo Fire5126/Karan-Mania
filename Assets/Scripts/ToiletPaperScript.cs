@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,7 +7,7 @@ public class ToiletPaperScript : MonoBehaviour
 {
 
     PlayerController player;
-    PlayerAttack attackScript;
+    _PlayerAttack attackScript;
     Rigidbody2D rb;
 
     bool collideCheck = true;
@@ -14,19 +15,25 @@ public class ToiletPaperScript : MonoBehaviour
     public Collider2D toiletPaperCollider;
     int enemiesToPierce = 0;
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        attackScript = FindObjectOfType<_PlayerAttack>();
+        player = FindObjectOfType<PlayerController>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         FindObjectOfType<SoundManager>().Play("ToiletPaperThrow");
         Invoke("StopCollideCheck", 0.1f);
         Invoke("EnableCollision", 0.2f);
-        rb = GetComponent<Rigidbody2D>();
-
-        attackScript = FindObjectOfType<PlayerAttack>();
-        player = FindObjectOfType<PlayerController>();
+        
+        
         rb.AddForce(transform.right * attackScript.projectileSpeed, ForceMode2D.Impulse);
-        if(rb.velocity.magnitude < attackScript.projectileSpeed)
+        if(rb.velocity.magnitude < attackScript.projectileSpeed - 0.2f)
         {
+            Debug.LogError("ToiletPaper spawned with incorrect velocity, Velocity = " + rb.velocity.magnitude + " when it should be = " + attackScript.projectileSpeed);
             DestroyToiletPaper();
         }
         Invoke("DestroyToiletPaper", attackScript.toiletPaperDuration);

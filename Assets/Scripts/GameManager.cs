@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
 
     // Game Objects
     [Header("References")]
-    [SerializeField] private IntroManager introManager;
     public WaveManager waveManager;
     public UIManager uiManager;
     PlayerController player;
@@ -74,7 +73,6 @@ public class GameManager : MonoBehaviour
         {
             FindObjectOfType<Camera>().orthographicSize = Mathf.Lerp(2.5f, 4.5f, t);
             t += 2f * Time.deltaTime;
-            Debug.Log("changing size");
         }
     }
 
