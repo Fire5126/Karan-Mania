@@ -132862,8 +132862,8 @@ MonoBehaviour:
   uiManager: {fileID: 294722401}
   sector2Barrier: {fileID: 1983629790}
   sector3Barrier: {fileID: 274133231}
-  room2WaveNumber: 1
-  room3WaveNumber: 1
+  room2WaveNumber: 3
+  room3WaveNumber: 8
 --- !u!1 &1723970977
 GameObject:
   m_ObjectHideFlags: 0
