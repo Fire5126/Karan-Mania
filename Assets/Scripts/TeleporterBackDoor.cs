@@ -16,11 +16,13 @@ public class TeleporterBackDoor : MonoBehaviour
     private bool doorsActive;
 
     private bool doorOpen;
+
+    private Animator animator;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -38,6 +40,7 @@ public class TeleporterBackDoor : MonoBehaviour
     private void OpenDoor()
     {
         doorOpen = true;
+        animator.SetBool("IsOpen", true);
         transform.GetChild(0).GetComponent<BoxCollider2D>().enabled = false;
         //open door
     }
@@ -45,6 +48,7 @@ public class TeleporterBackDoor : MonoBehaviour
     private void CloseDoor()
     {
         doorOpen = false;
+        animator.SetBool("IsOpen", false);
         timeUntillDoorOpen = openDelay;
         transform.GetChild(0).GetComponent<BoxCollider2D>().enabled = true;
         // close door

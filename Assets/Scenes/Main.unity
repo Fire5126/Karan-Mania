@@ -207,7 +207,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 265500894756974208}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
         m_MethodName: ActivateAbility
         m_Mode: 1
@@ -257,54 +257,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 22979746}
   m_CullTransparentMesh: 1
---- !u!1 &50126765
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 50126766}
-  - component: {fileID: 50126767}
-  m_Layer: 0
-  m_Name: IntroManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &50126766
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50126765}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1979641191}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &50126767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 50126765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b4efbb62de8942b08230cb7b80fbf52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  KarenSpeechBubble: {fileID: 0}
-  SupervisorSpeechBubble: {fileID: 0}
-  Karen: {fileID: 0}
-  Supervisor: {fileID: 0}
 --- !u!1 &96900707
 GameObject:
   m_ObjectHideFlags: 0
@@ -132916,18 +132868,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03cc3c07b4be40b9948943ea8828d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  introManager: {fileID: 50126767}
   waveManager: {fileID: 547607395}
   uiManager: {fileID: 294722401}
   sector2Barrier: {fileID: 1983629790}
   sector3Barrier: {fileID: 274133231}
-  room2WaveNumber: 3
-  room3WaveNumber: 10
---- !u!4 &1714405509 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8213050681094559645, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-  m_PrefabInstance: {fileID: 265500894756974203}
-  m_PrefabAsset: {fileID: 0}
+  room2WaveNumber: 1
+  room3WaveNumber: 1
 --- !u!1 &1723970977
 GameObject:
   m_ObjectHideFlags: 0
@@ -133990,111 +133936,6 @@ MonoBehaviour:
   MusicMixer: {fileID: 4661077439522172075, guid: 740f60bc32ed938408a21dd93c9c5973, type: 2}
   Mixer: {fileID: 24100000, guid: 740f60bc32ed938408a21dd93c9c5973, type: 2}
   uiManager: {fileID: 294722401}
---- !u!1 &1975162739
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1975162740}
-  - component: {fileID: 1975162742}
-  - component: {fileID: 1975162741}
-  m_Layer: 3
-  m_Name: SoundWaveAnim
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1975162740
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975162739}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 265500894756974204}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1975162741
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975162739}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 670ec02c4020d524e90ca291ace46583, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!212 &1975162742
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975162739}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 700258582, guid: 034f9b68a21e90b4eae1e0a014b3f90c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 5, y: 5}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!1 &1979641190
 GameObject:
   m_ObjectHideFlags: 0
@@ -134128,7 +133969,6 @@ Transform:
   - {fileID: 294722400}
   - {fileID: 601235902}
   - {fileID: 1974573199}
-  - {fileID: 50126766}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -135032,110 +134872,6 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 6836a1b20f25d58419a2a949848864fb, type: 2}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: joystick
-      value: 
-      objectReference: {fileID: 1394783354}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: speedIncrease
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: StunGameObject
-      value: 
-      objectReference: {fileID: 1975162739}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: stunTime_Level1
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: stunTime_Level2
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: stunTime_Level3
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: blastForceMultiplier
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: landMineSpawnOffset.y
-      value: -0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: attackTypes.Array.data[3]
-      value: TripleToiletPaper
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: abilityCooldown_HighHeelRun
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: abilityDuration_HighHeelRun
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: numberOfEnemiesToPierceThrough
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: abilityDuration_HighHeelRun_Lvl1
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: abilityDuration_HighHeelRun_Lvl2
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: abilityDuration_HighHeelRun_Lvl3
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: abilityCooldown_BananaPeelLandMine
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: abilityCooldown_PiercingToiletPaper
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: abilityDuration_PiercingToiletPaper
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: numberOfEnemiesToPierceThrough_Lvl1
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: numberOfEnemiesToPierceThrough_Lvl2
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: numberOfEnemiesToPierceThrough_Lvl3
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: ability_NumberOfEnemiesToPierceThrough
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: abilityCooldown_BananaPeelLandMine_Lvl1
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: abilityCooldown_BananaPeelLandMine_Lvl2
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: abilityCooldown_BananaPeelLandMine_lvl3
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 2079693928650573054, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
       propertyPath: m_Icon
       value: 
@@ -135146,16 +134882,8 @@ PrefabInstance:
       objectReference: {fileID: 1394783354}
     - target: {fileID: 2524524780197180353, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2524524780197180353, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: toiletPaper
-      value: 
-      objectReference: {fileID: 5838533575152257406, guid: 8105d56d6044042bf952bc4362a40be7, type: 3}
-    - target: {fileID: 2524524780197180353, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: projectileSpawnLocation
-      value: 
-      objectReference: {fileID: 1714405509}
     - target: {fileID: 2953599187006508074, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.362056
@@ -135196,17 +134924,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 265500894694437227, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
   m_PrefabInstance: {fileID: 265500894756974203}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &265500894756974208 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 971748473027874382, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-  m_PrefabInstance: {fileID: 265500894756974203}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27a3d70f4444f7849aa1c3a221ce7f19, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8002992252121247387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -135279,13 +134996,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorTeleporter
       objectReference: {fileID: 0}
+    - target: {fileID: 3746233340850934500, guid: ae00aea5ed30c2440a14242751896813, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746233340850934500, guid: ae00aea5ed30c2440a14242751896813, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6157456849259985975, guid: ae00aea5ed30c2440a14242751896813, type: 3}
       propertyPath: otherDoor
       value: 
       objectReference: {fileID: 802527876}
     - target: {fileID: 8484912442095335954, guid: ae00aea5ed30c2440a14242751896813, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8484912442095335954, guid: ae00aea5ed30c2440a14242751896813, type: 3}
       propertyPath: m_LocalPosition.x
