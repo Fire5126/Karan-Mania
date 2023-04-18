@@ -41355,7 +41355,7 @@ Tilemap:
       - {fileID: -156787535, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: -375399441, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: 41064503, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
-      m_AnimationSpeed: 20.000002
+      m_AnimationSpeed: 20
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 12, y: -29, z: 0}
@@ -133872,8 +133872,8 @@ MonoBehaviour:
   uiManager: {fileID: 294722401}
   sector2Barrier: {fileID: 1983629790}
   sector3Barrier: {fileID: 274133231}
-  room2WaveNumber: 1
-  room3WaveNumber: 8
+  room2WaveNumber: 3
+  room3WaveNumber: 7
 --- !u!1 &1723970977
 GameObject:
   m_ObjectHideFlags: 0
@@ -135810,7 +135810,7 @@ Tilemap:
       - {fileID: 1369479860, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: 148989642, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: -1693624512, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
-      m_AnimationSpeed: 20.000002
+      m_AnimationSpeed: 20
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 10, y: -27, z: 0}
