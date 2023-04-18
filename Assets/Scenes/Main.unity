@@ -207,8 +207,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PlayerAttack, Assembly-CSharp
+      - m_Target: {fileID: 265500894756974209}
+        m_TargetAssemblyTypeName: _PlayerAttack, Assembly-CSharp
         m_MethodName: ActivateAbility
         m_Mode: 1
         m_Arguments:
@@ -41658,7 +41658,7 @@ Tilemap:
       - {fileID: -156787535, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: -375399441, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: 41064503, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
-      m_AnimationSpeed: 20
+      m_AnimationSpeed: 20.000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 12, y: -25, z: 0}
@@ -137177,6 +137177,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 265500894694437227, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
   m_PrefabInstance: {fileID: 265500894756974203}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &265500894756974209 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2524524780197180353, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+  m_PrefabInstance: {fileID: 265500894756974203}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b50180f9d4c0f094eb2ff4273d21e68d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8002992252121247387
 PrefabInstance:
   m_ObjectHideFlags: 0
