@@ -41355,7 +41355,7 @@ Tilemap:
       - {fileID: -156787535, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: -375399441, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: 41064503, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
-      m_AnimationSpeed: 20
+      m_AnimationSpeed: 20.000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 12, y: -29, z: 0}
@@ -41659,7 +41659,7 @@ Tilemap:
       - {fileID: -156787535, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: -375399441, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: 41064503, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
-      m_AnimationSpeed: 20.000002
+      m_AnimationSpeed: 20
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 12, y: -25, z: 0}
@@ -133872,7 +133872,7 @@ MonoBehaviour:
   uiManager: {fileID: 294722401}
   sector2Barrier: {fileID: 1983629790}
   sector3Barrier: {fileID: 274133231}
-  room2WaveNumber: 3
+  room2WaveNumber: 1
   room3WaveNumber: 8
 --- !u!1 &1723970977
 GameObject:
@@ -135810,7 +135810,7 @@ Tilemap:
       - {fileID: 1369479860, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: 148989642, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: -1693624512, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
-      m_AnimationSpeed: 20
+      m_AnimationSpeed: 20.000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 10, y: -27, z: 0}
@@ -136953,7 +136953,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2128312082}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.13, y: 22.71, z: -1.0952139}
+  m_LocalPosition: {x: 11, y: -28, z: -1.0952139}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
