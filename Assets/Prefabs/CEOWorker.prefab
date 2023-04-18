@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583322672430832639}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.64, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -173,8 +173,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f555b5aa0ffb24b6a801f0e81cb6388b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 30
-  damage: 10
+  MaxHealth: 50
+  damage: 40
 --- !u!114 &583322672758955227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +191,7 @@ MonoBehaviour:
   radius: 0.52
   height: 0.01
   canMove: 1
-  maxSpeed: 2.5
+  maxSpeed: 2
   gravity: {x: 0, y: 0, z: 0}
   groundMask:
     serializedVersion: 2
@@ -309,6 +309,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.51, y: 1.01}
+  m_Offset: {x: 0, y: 0.57}
+  m_Size: {x: 0.86, y: 2}
   m_Direction: 0

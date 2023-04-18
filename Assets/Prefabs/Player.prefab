@@ -107,7 +107,7 @@ MonoBehaviour:
   joystick: {fileID: 0}
   projectileSpawnLocation: {fileID: 8213050681094559645}
   toiletPaper: {fileID: 5838533575152257406, guid: 8105d56d6044042bf952bc4362a40be7, type: 3}
-  toiletPaperDamage: 10
+  toiletPaperDamage: 5
   toiletPaperDuration: 5
   projectileSpeed: 8
   attackDelay: 0.5
@@ -206,7 +206,7 @@ Animator:
   m_GameObject: {fileID: 265500894694437237}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 309387ccae35df24caaf1e33d83293da, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
