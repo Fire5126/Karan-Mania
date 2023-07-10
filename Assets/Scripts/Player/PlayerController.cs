@@ -143,6 +143,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void RevivePlayer()
+    {
+        isDead = false;
+    }
+
     public void PlayToiletPaperHit()
     {
         if (Random.Range(0, 2) == 1)

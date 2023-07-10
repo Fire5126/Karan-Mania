@@ -255,6 +255,15 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    public void AdRevivePlayer()
+    {
+        gamePaused = false;
+        waveManager.gamePaused = gamePaused;
+        uiManager.deathOverlay.SetActive(false);
+        player.isPaused = gamePaused;
+        Time.timeScale = 1;
+    }
+
     public void LoadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

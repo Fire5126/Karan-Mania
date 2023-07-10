@@ -23,6 +23,7 @@ public class TestSpawner : MonoBehaviour
     private List<enemiesEnum> enemyListVar = new List<enemiesEnum>();
     private Enemy[] enemiesSpawned;
     private bool enemySpawned;
+    int waveIndex = 0;
 
     // Graph Values
     float maxGraphX;
@@ -221,6 +222,11 @@ public class TestSpawner : MonoBehaviour
     {
         enemySpawned = false;
         waveStarted = false;
+        upgradeMenu.OfferUpgrades(waveIndex);
+        if (waveIndex >= 3)
+        {
+            waveIndex = 0;
+        }
         gameManager.AddWaveScore();
 
         // start next wave in gameManager
