@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     public TMP_Text HighScoreText;
     public TMP_Text HighestWaveText;
     public GameObject SectorOpenAlertText;
+    public GameObject SkinSelectionMenu;
 
     [Header("Upgrade Menu References")]
     public GameObject UpgradeMenu;
@@ -231,6 +232,16 @@ public class UIManager : MonoBehaviour
     public void DisableSectorTextAlert()
     {
         SectorOpenAlertText.SetActive(false);
+    }
+    
+    public void ActivateSkinSelectionMenu()
+    {
+        SkinSelectionMenu.SetActive(true);
+    }
+    
+    public void DisableSkinSelectionMenu()
+    {
+        SkinSelectionMenu.SetActive(false);
     }
 
 }
