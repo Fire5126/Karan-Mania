@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     // Game Objects
     [Header("References")]
-    public WaveManager waveManager;
+    public TestSpawner waveManager;
     public UIManager uiManager;
     PlayerController player;
     SoundManager soundManager;
@@ -52,10 +52,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // starts the game
-        if (Input.GetKeyDown(KeyCode.Space) && !gameStarted)
+        /*if (Input.GetKeyDown(KeyCode.Space) && !gameStarted)
         {
             StartGame();
-        }
+        }*/
 
         // in between wave timer
         if (timerActivated)
@@ -95,8 +95,8 @@ public class GameManager : MonoBehaviour
         gamePaused = false;
         gameStarted = false;
         player.gameStarted = false;
-        waveManager.enabled = false;
-        waveManager.isPaused = gamePaused;
+        //waveManager.enabled = false;
+        waveManager.gamePaused = gamePaused;
         uiManager.TogglePauseOverlay(gamePaused);
         player.isPaused = gamePaused;
         uiManager.DisableInGameOverlay();
@@ -120,15 +120,18 @@ public class GameManager : MonoBehaviour
 
         gameStarted = true;
         player.gameStarted = true;
-        waveManager.enabled = true;
+        //waveManager.enabled = true;
         uiManager.EnableInGameOverlay();
         uiManager.DisablePreGameOverlay();
         uiManager.UpdateWaveScoreUI(waveScore);
         uiManager.UpdateKillsScoreUI(killScore);
+        waveManager.StartNextWave(waveScore++);
+        Debug.LogError("StartGame called");
     }
 
     public void AddWaveScore()
     {
+        Debug.LogError("AddWaveScore called");
         waveScore++;
         uiManager.UpdateWaveScoreUI(waveScore);
         if (waveScore > PlayerPrefs.GetInt("WaveHighScore"))
@@ -159,6 +162,8 @@ public class GameManager : MonoBehaviour
             AstarPath.active.Scan(graphToScan);
             waveManager.InitialisePlayArea();
         }
+        
+        waveManager.StartNextWave(waveScore);
     }
 
     public void AddKillScore()
@@ -191,7 +196,7 @@ public class GameManager : MonoBehaviour
 
             if(softPauseActive == false)
             {
-                waveManager.isPaused = gamePaused;
+                waveManager.gamePaused = gamePaused;
                 player.isPaused = gamePaused;
                 Time.timeScale = 1;
             }
@@ -204,7 +209,7 @@ public class GameManager : MonoBehaviour
 
             if(softPauseActive == false)
             {
-                waveManager.isPaused = gamePaused;
+                waveManager.gamePaused = gamePaused;
                 player.isPaused = gamePaused;
                 Time.timeScale = 0;
             }
@@ -225,7 +230,7 @@ public class GameManager : MonoBehaviour
     public void SoftPause()
     {
         softPauseActive = true;
-        waveManager.isPaused = gamePaused;
+        waveManager.gamePaused = gamePaused;
         player.isPaused = gamePaused;
         Time.timeScale = 0;
     }
@@ -233,7 +238,7 @@ public class GameManager : MonoBehaviour
     public void SoftUnPause()
     {
         softPauseActive = false;
-        waveManager.isPaused = gamePaused;
+        waveManager.gamePaused = gamePaused;
         player.isPaused = gamePaused;
         Time.timeScale = 1;
     }
@@ -246,7 +251,7 @@ public class GameManager : MonoBehaviour
     public void PlayerDied()
     {
         gamePaused = true;
-        waveManager.isPaused = gamePaused;
+        waveManager.gamePaused = gamePaused;
         uiManager.ActivateDeathOverlay();
         player.isPaused = gamePaused;
         Time.timeScale = 0;

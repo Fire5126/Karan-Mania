@@ -7,7 +7,6 @@ public class StartGameStateScript : StateMachineBehaviour
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         FindObjectOfType<_PlayerAttack>().StartGameThrowAnimation();
-        FindObjectOfType<GameManager>().StartGame();
     }
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state

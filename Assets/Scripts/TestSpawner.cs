@@ -11,7 +11,7 @@ public class TestSpawner : MonoBehaviour
 
     [SerializeField] private GameObject[] enemies;
 
-    private bool gamePaused = false;
+    public bool gamePaused = false;
     private bool waveStarted = false;
     
     [Header("ratios for enemies for their wave group"), Tooltip("order: 0 = worker, 1 = angryWorker, 2 = supervisor, 3 = manager, 4 = CEO")]
@@ -22,6 +22,7 @@ public class TestSpawner : MonoBehaviour
     [SerializeField, InspectorName("Wave10Ratio (includes boss)")] private int[] wave10ratio;
     private List<enemiesEnum> enemyListVar = new List<enemiesEnum>();
     private Enemy[] enemiesSpawned;
+    private bool enemySpawned;
 
     // Graph Values
     float maxGraphX;
@@ -37,7 +38,6 @@ public class TestSpawner : MonoBehaviour
     private PlayerController player;
 
     [SerializeField] private float enemySpawnDelay = 1.0f;
-    private float nextEnemySpawn = 0;
     private int bossesSpawned = 0;
     
 
@@ -58,7 +58,7 @@ public class TestSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        InitialisePlayArea();
     }
 
     private void Awake()
@@ -75,8 +75,13 @@ public class TestSpawner : MonoBehaviour
         // checks if the wave has started or if the game has paused.
         if (!waveStarted || gamePaused) return;
 
+        if (!enemySpawned) return;
+        
         enemiesSpawned = FindObjectsOfType<Enemy>();
-        if (enemies.Length > 0) return;
+        if (enemiesSpawned.Length > 0)
+        {
+            return;
+        }
         
         FinishWave();
     }
@@ -138,6 +143,7 @@ public class TestSpawner : MonoBehaviour
         {
             yield return new WaitForSeconds(enemySpawnDelay);
             Instantiate<GameObject>(enemies[(int)x], InitialiseEnemySpawnPoint(), Quaternion.identity).GetComponent<AIDestinationSetter>().target = player.transform;
+            enemySpawned = true;
         }
     }
     
@@ -213,8 +219,11 @@ public class TestSpawner : MonoBehaviour
 
     private void FinishWave()
     {
+        enemySpawned = false;
+        Debug.LogError("WaveFinished");
         waveStarted = false;
         gameManager.AddWaveScore();
+        Debug.LogError("FinishWave called");
         
         // start next wave in gameManager
     }
