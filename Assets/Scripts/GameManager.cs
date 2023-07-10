@@ -126,12 +126,10 @@ public class GameManager : MonoBehaviour
         uiManager.UpdateWaveScoreUI(waveScore);
         uiManager.UpdateKillsScoreUI(killScore);
         waveManager.StartNextWave(waveScore++);
-        Debug.LogError("StartGame called");
     }
 
     public void AddWaveScore()
     {
-        Debug.LogError("AddWaveScore called");
         waveScore++;
         uiManager.UpdateWaveScoreUI(waveScore);
         if (waveScore > PlayerPrefs.GetInt("WaveHighScore"))

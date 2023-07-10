@@ -220,11 +220,9 @@ public class TestSpawner : MonoBehaviour
     private void FinishWave()
     {
         enemySpawned = false;
-        Debug.LogError("WaveFinished");
         waveStarted = false;
         gameManager.AddWaveScore();
-        Debug.LogError("FinishWave called");
-        
+
         // start next wave in gameManager
     }
 }
