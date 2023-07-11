@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     public float health = 20;
     Rigidbody2D rb;
     Vector2 moveDirection;
+    private bool invincible = false;
+    private float TimeUntilInvincibility;
 
     // Game Objects
     [Header("References")]
@@ -66,8 +68,13 @@ public class PlayerController : MonoBehaviour
         if (!gameStarted) return;
 
         ManageAnimationsAndSFX();
+        
+        if (isPaused || !invincible) return;
 
-
+        if (Time.time > TimeUntilInvincibility)
+        {
+            invincible = false;
+        }
     }
 
     
@@ -129,8 +136,16 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    public void TemporaryInvincibility(float duration)
+    {
+        TimeUntilInvincibility = duration;
+        invincible = true;
+    }
+
     public void TakeDamage(int damageTaken)
     {
+        if (invincible) return;
+        
         if (damageDisabled == false)
         {
             health -= damageTaken;

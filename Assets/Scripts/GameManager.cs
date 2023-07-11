@@ -262,6 +262,8 @@ public class GameManager : MonoBehaviour
         uiManager.deathOverlay.SetActive(false);
         player.isPaused = gamePaused;
         Time.timeScale = 1;
+        player.health = player.maxHealth;
+        player.TemporaryInvincibility(4);
     }
 
     public void LoadScene()
