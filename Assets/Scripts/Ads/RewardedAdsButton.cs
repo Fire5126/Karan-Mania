@@ -64,6 +64,7 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
             // Grant a reward.
             FindObjectOfType<GameManager>().AdRevivePlayer();
             _initializer.InitializeAds();
+            LoadAd();
         }
     }
  

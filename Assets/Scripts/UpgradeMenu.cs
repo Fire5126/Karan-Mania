@@ -178,12 +178,13 @@ public class UpgradeMenu : MonoBehaviour
         if(IncreaseTypeIndex == 0)
         {
             uIManager.UpdateMaxHealth(FindObjectOfType<PlayerController>().maxHealth += 5);
+            uIManager.UpdateHealthStat(FindObjectOfType<PlayerController>().health += 5);
         }
         if(IncreaseTypeIndex == 1)
         {
             if (FindObjectOfType <PlayerController>().health < FindObjectOfType<PlayerController>().maxHealth)
             {
-                uIManager.UpdateHealthStat(FindObjectOfType<PlayerController>().health += 5);
+                uIManager.UpdateHealthStat(FindObjectOfType<PlayerController>().health += 10);
             }
         }
     }

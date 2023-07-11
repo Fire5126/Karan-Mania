@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     SoundManager soundManager;
     AudioSource titleScreenMusic;
     AudioSource maintheme;
+    [SerializeField] private GameObject startgamebutton;
 
     [Header("Sector Barriers")]
     [SerializeField] private BoxCollider2D sector2Barrier;
@@ -78,7 +79,9 @@ public class GameManager : MonoBehaviour
 
     public void UIStartGame()
     {
+        startgamebutton.SetActive(false);
         StartGameAnimation();
+        
     }
 
     void Setup()
@@ -263,6 +266,7 @@ public class GameManager : MonoBehaviour
         player.isPaused = gamePaused;
         Time.timeScale = 1;
         player.health = player.maxHealth;
+        uiManager.UpdateHealthStat(player.health);
         player.TemporaryInvincibility(4);
     }
 

@@ -43319,7 +43319,7 @@ Tilemap:
       - {fileID: -156787535, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: -375399441, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: 41064503, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
-      m_AnimationSpeed: 20.000002
+      m_AnimationSpeed: 20
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 12, y: -27, z: 0}
@@ -43357,7 +43357,7 @@ Tilemap:
       - {fileID: 1417139779, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: -191766136, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: -2051485696, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
-      m_AnimationSpeed: 20
+      m_AnimationSpeed: 20.000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 9, y: -26, z: 0}
@@ -43547,7 +43547,7 @@ Tilemap:
       - {fileID: -1660946613, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: -1805278380, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: 543599447, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
-      m_AnimationSpeed: 20.000002
+      m_AnimationSpeed: 20
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 12, y: -24, z: 0}
@@ -136792,6 +136792,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveManager: {fileID: 547607397}
   uiManager: {fileID: 294722401}
+  startgamebutton: {fileID: 1419435698}
   sector2Barrier: {fileID: 1983629790}
   sector3Barrier: {fileID: 274133231}
   room2WaveNumber: 3
@@ -139576,7 +139577,7 @@ Tilemap:
       - {fileID: -1053238389, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: -464205341, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: 1221592349, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
-      m_AnimationSpeed: 20
+      m_AnimationSpeed: 20.000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 10, y: -26, z: 0}
