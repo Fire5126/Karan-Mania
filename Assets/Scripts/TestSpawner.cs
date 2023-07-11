@@ -24,6 +24,7 @@ public class TestSpawner : MonoBehaviour
     private Enemy[] enemiesSpawned;
     private bool enemySpawned;
     int waveIndex = 0;
+    private float waveDelay = 5;
 
     // Graph Values
     float maxGraphX;
@@ -227,7 +228,7 @@ public class TestSpawner : MonoBehaviour
         {
             waveIndex = 0;
         }
-        gameManager.AddWaveScore();
+        gameManager.StartWaveTimer(waveDelay);
 
         // start next wave in gameManager
     }

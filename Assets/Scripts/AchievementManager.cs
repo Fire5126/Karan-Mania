@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class AchievementManager : MonoBehaviour
@@ -129,7 +128,7 @@ public class AchievementManager : MonoBehaviour
 public class Skin
 {
     public Sprite idleSprite;
-    public AnimatorController animController;
+    public RuntimeAnimatorController animController;
 }
 
 [System.Serializable]

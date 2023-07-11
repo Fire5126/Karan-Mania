@@ -276,9 +276,9 @@ public class GameManager : MonoBehaviour
 
     public void StartWaveTimer(float time)
     {
-        AddWaveScore();
         //uiManager.EnableTimerUI();
         Invoke("EnableTimerUIDelayed", 0.01f);
+        Invoke("AddWaveScore", time);
         timer = time;
         timerActivated = true;
     }
