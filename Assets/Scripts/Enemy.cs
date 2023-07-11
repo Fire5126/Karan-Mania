@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public int damage;
     int damageStat;
     float speed;
+    private bool dead = false;
 
     // Enemy Variable Properties
     bool ableToAttack = false;
@@ -39,6 +40,8 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
+        if (dead) return;
+        
         // Sprite Flipping
         if (aIPath.velocity.x < 0f)
         {
@@ -76,14 +79,17 @@ public class Enemy : MonoBehaviour
         MaxHealth -= damage;
         if (MaxHealth <= 0)
         {
+            dead = true;
             gameManager.AddKillScore();
             
-            Destroy(gameObject);
+            GetComponent<Animator>().Play("Death");
+            //Destroy(gameObject);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (dead) return;
         if (collision.transform.tag == "Player")
         {
             ableToAttack = true;
@@ -92,6 +98,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (dead) return;
         if (collision.transform.tag == "Player")
         {
             ableToAttack = false;
@@ -100,11 +107,13 @@ public class Enemy : MonoBehaviour
 
     void ApplyPlayerDamage()
     {
+        if (dead) return;
         player.GetComponent<PlayerController>().TakeDamage(damage);
     }
 
     public void ResetStunStats()
     {
+        if (dead) return;
         damage = damageStat;
         GetComponent<AIPath>().maxSpeed = speed;
     }

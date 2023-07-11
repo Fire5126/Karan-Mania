@@ -62,9 +62,9 @@ public class RewardedAdsButton : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         {
             Debug.Log("Unity Ads Rewarded Ad Completed");
             // Grant a reward.
-            FindObjectOfType<GameManager>().AdRevivePlayer();
             _initializer.InitializeAds();
             LoadAd();
+            FindObjectOfType<GameManager>().AdRevivePlayer();
         }
     }
  

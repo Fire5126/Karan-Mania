@@ -22,4 +22,11 @@ public class WorkerIntroAnimScript : MonoBehaviour
             gameManager.StartGame();
         }
     }
+
+    public void ResetAnimations()
+    {
+        RuntimeAnimatorController animController = GetComponent<Animator>().runtimeAnimatorController;
+        GetComponent<Animator>().runtimeAnimatorController = null;
+        GetComponent<Animator>().runtimeAnimatorController = animController;
+    }
 }

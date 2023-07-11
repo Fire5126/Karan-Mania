@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -105,6 +107,7 @@ public class GameManager : MonoBehaviour
         uiManager.DisableInGameOverlay();
         uiManager.EnablePreGameOverlay();
         Time.timeScale = 1;
+        
     }
 
     void StartGameAnimation()
@@ -260,6 +263,7 @@ public class GameManager : MonoBehaviour
 
     public void AdRevivePlayer()
     {
+        FindObjectOfType<RewardedAdsButton>().GetComponent<Button>().interactable = false;
         gamePaused = false;
         waveManager.gamePaused = gamePaused;
         uiManager.deathOverlay.SetActive(false);
@@ -267,7 +271,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         player.health = player.maxHealth;
         uiManager.UpdateHealthStat(player.health);
-        player.TemporaryInvincibility(4);
+        player.TemporaryInvincibility(8);
     }
 
     public void LoadScene()

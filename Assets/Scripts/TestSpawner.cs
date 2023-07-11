@@ -195,9 +195,6 @@ public class TestSpawner : MonoBehaviour
         enemyListVar = new List<enemiesEnum>();
         switch (currentWave)
         {
-            default:
-                enemyListVar = CalculateEnemyToSpawn(amountOfEnemiesToSpawn, wave1ratio, false);
-                break;
             case <=3:
                 enemyListVar = CalculateEnemyToSpawn(amountOfEnemiesToSpawn, wave1ratio, false);
                 break;
