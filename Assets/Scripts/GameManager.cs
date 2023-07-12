@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     int killScore = 0;
     float cameraSize;
     static float t = 0.0f;
+    private bool adWatched = false;
 
 
     // Game Properties
@@ -255,6 +256,7 @@ public class GameManager : MonoBehaviour
     public void PlayerDied()
     {
         gamePaused = true;
+        FindObjectOfType<RewardedAdsButton>().GetComponent<Button>().interactable = adWatched;
         waveManager.gamePaused = gamePaused;
         uiManager.ActivateDeathOverlay();
         player.isPaused = gamePaused;
@@ -263,7 +265,8 @@ public class GameManager : MonoBehaviour
 
     public void AdRevivePlayer()
     {
-        FindObjectOfType<RewardedAdsButton>().GetComponent<Button>().interactable = false;
+        adWatched = false;
+        FindObjectOfType<RewardedAdsButton>().GetComponent<Button>().interactable = adWatched;
         gamePaused = false;
         waveManager.gamePaused = gamePaused;
         uiManager.deathOverlay.SetActive(false);
