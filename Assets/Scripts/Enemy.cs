@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     bool ableToAttack = false;
     float attackDelay = 1;
     float nextAttack;
+    private SpriteRenderer spriteRenderer;
 
     // References
     GameObject player;
@@ -36,7 +37,8 @@ public class Enemy : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         player = GameObject.FindGameObjectWithTag("Player");
         animator.Play("Running", 0, 0.0f);
-        
+        spriteRenderer = gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
+
     }
     private void Update()
     {
@@ -45,11 +47,11 @@ public class Enemy : MonoBehaviour
         // Sprite Flipping
         if (aIPath.velocity.x < 0f)
         {
-            gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = true;
+            spriteRenderer.flipX = true;
         }
         else if (aIPath.velocity.x > 0f)
         {
-            gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().flipX = false;
+            spriteRenderer.flipX = false;
         }
         
         // Animation
@@ -79,12 +81,28 @@ public class Enemy : MonoBehaviour
         MaxHealth -= damage;
         if (MaxHealth <= 0)
         {
-            dead = true;
-            gameManager.AddKillScore();
-            
-            GetComponent<Animator>().Play("Death");
-            //Destroy(gameObject);
+            HandleEnemyDeath();
         }
+    }
+
+    private void HandleEnemyDeath()
+    {
+        dead = true;
+        gameManager.AddKillScore();
+        GetComponent<CapsuleCollider2D>().enabled = false;
+        GetComponent<Rigidbody2D>().simulated = false;
+
+        if (spriteRenderer.flipX == false)
+        {
+            animator.Play("Death");
+        }
+        else
+        {
+            animator.Play("DeathInverse");
+        }
+        
+        
+        //Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -109,11 +109,11 @@ public class TestSpawner : MonoBehaviour
             amountOfEnemyTypes.Add(++bossesSpawned);
         }
 
-        for (int i = 0; i < amountOfEnemyTypes.Count; i++)
+        for (int a = 0; a < amountOfEnemyTypes.Count; a++)
         {
-            for (int j = 0; j < amountOfEnemyTypes[i]; j++)
+            for (int j = 0; j < amountOfEnemyTypes[a]; j++)
             {
-                switch (i)
+                switch (a)
                 {
                     case 0:
                         enemiesList.Add(enemiesEnum.worker);
@@ -133,8 +133,6 @@ public class TestSpawner : MonoBehaviour
                 }
             }
         }
-
-        
 
         return enemiesList;
     }
@@ -184,9 +182,11 @@ public class TestSpawner : MonoBehaviour
 
     public void StartNextWave(int waveNumber)
     {
+
         if (waveStarted) { Debug.LogError("Wave already in progress!"); return; }
 
         waveStarted = true;
+        waveIndex++;
         
         // calculates the amount of enemies to spawned based on:
         // enemies represented by the equation ((2^bx) + 5) where x is the wave number and b is the difficulity multiplier
