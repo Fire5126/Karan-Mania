@@ -452,7 +452,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 8.199982}
+  m_AnchoredPosition: {x: 0, y: 8.199951}
   m_SizeDelta: {x: 1468, y: 150}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &96900709
@@ -4697,11 +4697,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834050185}
   m_CullTransparentMesh: 1
---- !u!1 &834573263 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4783409508421847900, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-  m_PrefabInstance: {fileID: 265500894756974203}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &836682014
 GameObject:
   m_ObjectHideFlags: 0
@@ -139281,7 +139276,7 @@ Tilemap:
       - {fileID: 1369479860, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: 148989642, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: -1693624512, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
-      m_AnimationSpeed: 20.000002
+      m_AnimationSpeed: 20
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 11, y: -31, z: 0}
@@ -140239,23 +140234,23 @@ MonoBehaviour:
   - Achieved: 0
     name: 100 Kills
     kills: 100
-    lockedOverlay: {fileID: 0}
+    lockedOverlay: {fileID: 1823942358}
   - Achieved: 0
     name: 200 Kills
     kills: 200
-    lockedOverlay: {fileID: 0}
+    lockedOverlay: {fileID: 710534128}
   - Achieved: 0
     name: 300 Kills
     kills: 300
-    lockedOverlay: {fileID: 0}
+    lockedOverlay: {fileID: 195509618}
   - Achieved: 0
     name: 400 Kills
     kills: 400
-    lockedOverlay: {fileID: 0}
+    lockedOverlay: {fileID: 759698056}
   - Achieved: 0
     name: 500 Kills
     kills: 500
-    lockedOverlay: {fileID: 0}
+    lockedOverlay: {fileID: 72254317}
   skinsList:
   - idleSprite: {fileID: 21300000, guid: 2a34f7af30dd4964f93349ee31ef71fe, type: 3}
     animController: {fileID: 9100000, guid: 309387ccae35df24caaf1e33d83293da, type: 2}
@@ -141250,10 +141245,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2004298850}
     m_Modifications:
-    - target: {fileID: 265500894694437226, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
-      propertyPath: Shield
-      value: 
-      objectReference: {fileID: 834573263}
     - target: {fileID: 265500894694437226, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
       propertyPath: joystick
       value: 

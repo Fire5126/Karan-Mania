@@ -32,6 +32,7 @@ public class AchievementManager : MonoBehaviour
     void Start()
     {
         int kills = PlayerPrefs.GetInt("HighScore");
+        Debug.Log("Kills high score = " + kills);
 
         foreach (Achievement A in AchievementList)
         {

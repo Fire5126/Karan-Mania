@@ -190,7 +190,8 @@ public class UIManager : MonoBehaviour
 
     public void SetAbilityButtonSprite(int AbilityIndex)
     {
-        AbilityButton.transform.GetChild(0).transform.GetComponentInChildren<Image>().sprite = UpgradeThreeIcons_Special[AbilityIndex];
+        Debug.Log("Ability Button Updated with correct sprite");
+        AbilityButton.transform.GetChild(0).transform.GetChild(0).GetComponent<Image>().sprite = UpgradeThreeIcons_Special[AbilityIndex];
     }
 
     public void AbilityReady()

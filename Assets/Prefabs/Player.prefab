@@ -160,7 +160,8 @@ MonoBehaviour:
   joystick: {fileID: 0}
   animator: {fileID: 0}
   attackMagnitude: 0
-  Shield: {fileID: 0}
+  Shield: {fileID: 4783409508421847900}
+  ShieldIdleSprite: {fileID: 21300000, guid: ed4ed032401b87740825593d42e63b69, type: 3}
 --- !u!58 &265500894694437225
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -125,7 +125,19 @@ public class _PlayerAttack : MonoBehaviour
     private void Update()
     {
         // Makes sure player is not paused or that the game hasn't started
-        if (player.isPaused || !player.gameStarted || attackDisabled) return;
+        if (player.isPaused || !player.gameStarted) return;
+        
+        //turns ready icon for ability button on and off
+        if (Time.time > nextAbilityTime && hasAbility)
+        {
+            _uiManager.AbilityReady();
+        }
+        else if (Time.time <= nextAbilityTime)
+        {
+            _uiManager.AbilityUsed();
+        }
+
+        if (attackDisabled) return;
         
         RotateFirePosition();
         
@@ -140,15 +152,7 @@ public class _PlayerAttack : MonoBehaviour
         // Sets attack magnitude for animations
         player.attackMagnitude = joystick.Direction.magnitude;
 
-        //sad
-        if (Time.time > nextAbilityTime && hasAbility)
-        {
-            _uiManager.AbilityReady();
-        }
-        else
-        {
-            _uiManager.AbilityUsed();
-        }
+        
 
         // Timer and resetter for attack type upgrade
         if (!attackUpgradeEnabled) return;

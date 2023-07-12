@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector]
     public float attackMagnitude = 0;
     [SerializeField] private GameObject Shield;
+    [SerializeField] private Sprite ShieldIdleSprite;
 
     void Start()
     {
@@ -141,6 +142,7 @@ public class PlayerController : MonoBehaviour
     public void TemporaryInvincibility(float duration)
     {
         Shield.SetActive(true);
+        Shield.GetComponent<Animator>().Play("Default");
         TimeUntilInvincibility = Time.time + duration;
         invincible = true;
     }
