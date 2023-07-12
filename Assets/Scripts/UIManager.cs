@@ -188,6 +188,11 @@ public class UIManager : MonoBehaviour
         UpgradeButtonThree.GetComponent<Image>().sprite = UpgradeThreeIcons_Special[UpgradeThreeIndex];
     }
 
+    public void SetAbilityButtonSprite(int AbilityIndex)
+    {
+        AbilityButton.transform.GetChild(1).transform.GetComponentInChildren<Image>().sprite = UpgradeThreeIcons_Special[AbilityIndex];
+    }
+
     public void UpgradeOneChosen()
     {
 
@@ -211,6 +216,8 @@ public class UIManager : MonoBehaviour
     {
         AbilityButton.SetActive(true);
     }
+    
+    
 
     public void SFXVolUpdate(float sliderValue)
     {

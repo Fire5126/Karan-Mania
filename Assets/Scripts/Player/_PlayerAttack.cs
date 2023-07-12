@@ -294,6 +294,21 @@ public class _PlayerAttack : MonoBehaviour
     }
     public void ChangeAbility(AbilityTypes ability)
     {
+        switch (ability)
+        {
+            case AbilityTypes.ScreamingStun:
+                FindObjectOfType<UIManager>().SetAbilityButtonSprite(0);
+                break;
+            case AbilityTypes.BananaPeelLandmine:
+                FindObjectOfType<UIManager>().SetAbilityButtonSprite(2);
+                break;
+            case AbilityTypes.HighHeelRun:
+                FindObjectOfType<UIManager>().SetAbilityButtonSprite(1);
+                break;
+            case AbilityTypes.PiercingToiletPaperAbility:
+                FindObjectOfType<UIManager>().SetAbilityButtonSprite(3);
+                break;
+        }
         hasAbility = true;
         CurrentAbility = ability;
         abilityLevel = AbilityUpgrades.level1;
