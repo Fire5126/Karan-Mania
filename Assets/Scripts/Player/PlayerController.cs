@@ -29,9 +29,11 @@ public class PlayerController : MonoBehaviour
     public Joystick joystick;
     GameManager gameManager;
     SoundManager soundManager;
+    [HideInInspector]
     public Animator animator;
     [HideInInspector]
     public float attackMagnitude = 0;
+    [SerializeField] private GameObject Shield;
 
     void Start()
     {
@@ -73,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
         if (Time.time > TimeUntilInvincibility)
         {
-            invincible = false;
+            DisableShieldWarning();
         }
     }
 
@@ -138,7 +140,8 @@ public class PlayerController : MonoBehaviour
 
     public void TemporaryInvincibility(float duration)
     {
-        TimeUntilInvincibility = duration;
+        Shield.SetActive(true);
+        TimeUntilInvincibility = Time.time + duration;
         invincible = true;
     }
 
@@ -161,6 +164,17 @@ public class PlayerController : MonoBehaviour
     public void RevivePlayer()
     {
         isDead = false;
+    }
+
+    public void DisableShieldWarning()
+    {
+        Shield.GetComponent<Animator>().Play("ShieldEndAnim");
+    }
+
+    public void DisableShield()
+    {
+        Shield.SetActive(false);
+        invincible = false;
     }
 
     public void PlayToiletPaperHit()

@@ -45,6 +45,9 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        cameraSize = FindObjectOfType<Camera>().orthographicSize;
+        soundManager = FindObjectOfType<SoundManager>();
+        player = FindObjectOfType<PlayerController>();
         Application.targetFrameRate = 60;
     }
 
@@ -92,13 +95,15 @@ public class GameManager : MonoBehaviour
     {
         //introManager.GameStartSequence();
         uiManager.UpdateHighScores(PlayerPrefs.GetInt("HighScore"), PlayerPrefs.GetInt("WaveHighScore"));
-        soundManager = FindObjectOfType<SoundManager>();
+        
         titleScreenMusic = soundManager.Play("TitleScreenMusic", true);
-        cameraSize = FindObjectOfType<Camera>().orthographicSize;
+        
         
         FindObjectOfType<Camera>().orthographicSize = 2.5f;
+
+        adButton.interactable = true;
+        adWatched = false;
         
-        player = FindObjectOfType<PlayerController>();
         gamePaused = false;
         gameStarted = false;
         player.gameStarted = false;
@@ -273,13 +278,13 @@ public class GameManager : MonoBehaviour
         uiManager.ActivateDeathOverlay();
         player.isPaused = gamePaused;
         Time.timeScale = 0;
-        adButton.interactable = adWatched;
+        adButton.interactable = !adWatched;
     }
 
     public void AdRevivePlayer()
     {
-        adWatched = false;
-        FindObjectOfType<RewardedAdsButton>().GetComponent<Button>().interactable = adWatched;
+        adWatched = true;
+        adButton.interactable = !adWatched;
         gamePaused = false;
         waveManager.gamePaused = gamePaused;
         uiManager.deathOverlay.SetActive(false);
@@ -287,7 +292,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         player.health = player.maxHealth;
         uiManager.UpdateHealthStat(player.health);
-        player.TemporaryInvincibility(8);
+        player.TemporaryInvincibility(4);
     }
 
     public void LoadScene()
