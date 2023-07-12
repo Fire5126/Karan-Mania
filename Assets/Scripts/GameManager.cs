@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     float cameraSize;
     static float t = 0.0f;
     private bool adWatched = false;
+    [SerializeField] private Button adButton;
 
 
     // Game Properties
@@ -193,58 +194,70 @@ public class GameManager : MonoBehaviour
         return killScore;
     }
 
-    public void TogglePauseGame()
+    public void PauseGame()
     {
+        gamePaused = true;
+
+        if(softPauseActive == false)
+        {
+            waveManager.gamePaused = gamePaused;
+            player.isPaused = gamePaused;
+            Time.timeScale = 0;
+        }
+            
+        uiManager.TogglePauseOverlay(gamePaused);
+    }
+
+    public void UnPauseGame()
+    {
+        gamePaused = false;
+
+        if(softPauseActive == false)
+        {
+            waveManager.gamePaused = gamePaused;
+            player.isPaused = gamePaused;
+            Time.timeScale = 1;
+        }
+            
+        uiManager.TogglePauseOverlay(gamePaused); 
+    }
+    
+    /*public void TogglePauseGame()
+    {
+        
+        
         if (gamePaused == true)
         {
-            gamePaused = false;
-
-            if(softPauseActive == false)
-            {
-                waveManager.gamePaused = gamePaused;
-                player.isPaused = gamePaused;
-                Time.timeScale = 1;
-            }
             
-            uiManager.TogglePauseOverlay(gamePaused); 
         }
         else if (gamePaused == false)
         {
-            gamePaused = true;
-
-            if(softPauseActive == false)
-            {
-                waveManager.gamePaused = gamePaused;
-                player.isPaused = gamePaused;
-                Time.timeScale = 0;
-            }
-            
-            uiManager.TogglePauseOverlay(gamePaused);
+           
         }
         else
         {
             Debug.Log("Pause code broken");
         }
-    }
+    }*/
 
     public void UIUnpause()
     {
-        TogglePauseGame();
+        UnPauseGame();
     }
 
     public void SoftPause()
     {
         softPauseActive = true;
-        waveManager.gamePaused = gamePaused;
-        player.isPaused = gamePaused;
+        waveManager.gamePaused = true;
+        player.isPaused = true;
         Time.timeScale = 0;
     }
 
     public void SoftUnPause()
     {
         softPauseActive = false;
-        waveManager.gamePaused = gamePaused;
-        player.isPaused = gamePaused;
+        waveManager.gamePaused = false;
+        player.isPaused = false;
         Time.timeScale = 1;
     }
 
@@ -256,11 +269,11 @@ public class GameManager : MonoBehaviour
     public void PlayerDied()
     {
         gamePaused = true;
-        FindObjectOfType<RewardedAdsButton>().GetComponent<Button>().interactable = adWatched;
         waveManager.gamePaused = gamePaused;
         uiManager.ActivateDeathOverlay();
         player.isPaused = gamePaused;
         Time.timeScale = 0;
+        adButton.interactable = adWatched;
     }
 
     public void AdRevivePlayer()

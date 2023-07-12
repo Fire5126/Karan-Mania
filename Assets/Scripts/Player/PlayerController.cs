@@ -59,11 +59,11 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        // Pause Game
+        /*// Pause Game
         if (Input.GetKeyDown(KeyCode.Escape) && !isDead)
         {
             gameManager.TogglePauseGame();
-        }
+        }*/
 
         if (!gameStarted) return;
 
