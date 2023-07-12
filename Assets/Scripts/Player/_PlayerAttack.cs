@@ -407,6 +407,7 @@ public class _PlayerAttack : MonoBehaviour
         attackDisabled = true;
         player.damageDisabled = true;
         Invoke("DisableHighHeelRun", abilityDuration_HighHeelRun); // invokes the end of the ability
+        player.TemporaryInvincibility(abilityDuration_HighHeelRun);
     }
     private void DisableHighHeelRun()
     {

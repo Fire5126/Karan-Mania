@@ -4697,6 +4697,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834050185}
   m_CullTransparentMesh: 1
+--- !u!1 &834573263 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4783409508421847900, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+  m_PrefabInstance: {fileID: 265500894756974203}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &836682014
 GameObject:
   m_ObjectHideFlags: 0
@@ -43721,7 +43726,7 @@ Tilemap:
       - {fileID: -1660946613, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: -1805278380, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: 543599447, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
-      m_AnimationSpeed: 20.000002
+      m_AnimationSpeed: 20
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 12, y: -24, z: 0}
@@ -136830,7 +136835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03cc3c07b4be40b9948943ea8828d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  adButton: {fileID: 0}
+  adButton: {fileID: 1397594726}
   waveManager: {fileID: 547607397}
   uiManager: {fileID: 294722401}
   startgamebutton: {fileID: 1419435698}
@@ -139276,7 +139281,7 @@ Tilemap:
       - {fileID: 1369479860, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: 148989642, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: -1693624512, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
-      m_AnimationSpeed: 20
+      m_AnimationSpeed: 20.000002
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 11, y: -31, z: 0}
@@ -141245,6 +141250,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2004298850}
     m_Modifications:
+    - target: {fileID: 265500894694437226, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
+      propertyPath: Shield
+      value: 
+      objectReference: {fileID: 834573263}
     - target: {fileID: 265500894694437226, guid: 2b4f2ff94754549a3b0581b0d87e93c5, type: 3}
       propertyPath: joystick
       value: 
