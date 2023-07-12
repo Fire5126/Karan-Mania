@@ -190,7 +190,17 @@ public class UIManager : MonoBehaviour
 
     public void SetAbilityButtonSprite(int AbilityIndex)
     {
-        AbilityButton.transform.GetChild(1).transform.GetComponentInChildren<Image>().sprite = UpgradeThreeIcons_Special[AbilityIndex];
+        AbilityButton.transform.GetChild(0).transform.GetComponentInChildren<Image>().sprite = UpgradeThreeIcons_Special[AbilityIndex];
+    }
+
+    public void AbilityReady()
+    {
+        AbilityButton.transform.GetChild(1).gameObject.SetActive(true);
+    }
+    
+    public void AbilityUsed()
+    {
+        AbilityButton.transform.GetChild(1).gameObject.SetActive(false);
     }
 
     public void UpgradeOneChosen()

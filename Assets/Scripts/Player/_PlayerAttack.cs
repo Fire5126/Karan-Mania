@@ -17,6 +17,7 @@ public class _PlayerAttack : MonoBehaviour
     public Joystick joystick;
     private PlayerController player;
     private SoundManager soundManager;
+    private UIManager _uiManager;
 
     [Header("Toilet Paper Settings")]
     [SerializeField] private Transform projectileSpawnLocation;
@@ -119,6 +120,7 @@ public class _PlayerAttack : MonoBehaviour
     {
         player = GetComponent<PlayerController>();
         soundManager = FindObjectOfType<SoundManager>();
+        _uiManager = FindObjectOfType<UIManager>();
     }
     private void Update()
     {
@@ -137,6 +139,16 @@ public class _PlayerAttack : MonoBehaviour
         
         // Sets attack magnitude for animations
         player.attackMagnitude = joystick.Direction.magnitude;
+
+        //sad
+        if (Time.time > nextAbilityTime && hasAbility)
+        {
+            _uiManager.AbilityReady();
+        }
+        else
+        {
+            _uiManager.AbilityUsed();
+        }
 
         // Timer and resetter for attack type upgrade
         if (!attackUpgradeEnabled) return;
