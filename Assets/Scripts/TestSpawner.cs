@@ -220,8 +220,8 @@ public class TestSpawner : MonoBehaviour
     {
         enemySpawned = false;
         waveStarted = false;
-        //upgradeMenu.OfferUpgrades(waveIndex);
-        upgradeMenu.OfferUpgrades(3);
+        upgradeMenu.OfferUpgrades(waveIndex);
+        //upgradeMenu.OfferUpgrades(3);
         if (waveIndex >= 3)
         {
             waveIndex = 0;

@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
     [Header("Sector Barriers")]
     [SerializeField] private BoxCollider2D sector2Barrier;
     [SerializeField] private BoxCollider2D sector3Barrier;
+    [SerializeField] private Animator Sector2Anim;
+    [SerializeField] private Animator Sector3Anim;
     [SerializeField] private int room2WaveNumber;
     [SerializeField] private int room3WaveNumber;
 
@@ -154,6 +156,7 @@ public class GameManager : MonoBehaviour
         if(waveScore == room2WaveNumber)
         {
             sector2Barrier.enabled = false;
+            Sector2Anim.Play("Explosion");
             uiManager.ActivateSectorTextAlert();
             var graphToScan = AstarPath.active.data.gridGraph;
             AstarPath.active.Scan(graphToScan);
@@ -163,6 +166,7 @@ public class GameManager : MonoBehaviour
         if (waveScore == room3WaveNumber)
         {
             sector3Barrier.enabled = false;
+            Sector3Anim.Play("Explosion");
             uiManager.ActivateSectorTextAlert();
             TeleporterBackDoor[] teleporters = FindObjectsOfType<TeleporterBackDoor>();
             foreach (TeleporterBackDoor door in teleporters)
