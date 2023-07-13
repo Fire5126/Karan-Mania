@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
 
         adButton.interactable = true;
         adWatched = false;
-        
+        adButton.GetComponent<RewardedAdsButton>().LoadAd();
         gamePaused = false;
         gameStarted = false;
         player.gameStarted = false;
