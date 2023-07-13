@@ -46758,7 +46758,7 @@ Tilemap:
       - {fileID: -156787535, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: -375399441, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: 41064503, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
-      m_AnimationSpeed: 20.000002
+      m_AnimationSpeed: 20
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 12, y: -29, z: 0}
@@ -138626,14 +138626,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1191708586, guid: 5ab1e2e8e0a53364db43edd4c1894e69, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -140062,7 +140062,7 @@ Tilemap:
       - {fileID: 1369479860, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: 148989642, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
       - {fileID: -1693624512, guid: 7a56785a26aa9714c80a0bda5f449046, type: 3}
-      m_AnimationSpeed: 20.000002
+      m_AnimationSpeed: 20
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 10, y: -29, z: 0}
@@ -140928,8 +140928,8 @@ MonoBehaviour:
     animController: {fileID: 9100000, guid: 309387ccae35df24caaf1e33d83293da, type: 2}
   - idleSprite: {fileID: 21300000, guid: cd8807ad77fbc7440b110b4b6e5aa339, type: 3}
     animController: {fileID: 9100000, guid: 58683e314aab4344f94a53f62a883860, type: 2}
-  - idleSprite: {fileID: 0}
-    animController: {fileID: 0}
+  - idleSprite: {fileID: 21300000, guid: 84ac9c50479aa6240b9f40f21bc123de, type: 3}
+    animController: {fileID: 9100000, guid: cfd50e53be72eb9468542ee5be0a4179, type: 2}
   - idleSprite: {fileID: 21300000, guid: fa8263ac02b1257488ed1db090b17c34, type: 3}
     animController: {fileID: 9100000, guid: 51f68ca722385fa448a2a2564dde5120, type: 2}
   - idleSprite: {fileID: 21300000, guid: 06a329975eaa6c841be932efc5c926ed, type: 3}
