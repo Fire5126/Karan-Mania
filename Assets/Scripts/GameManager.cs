@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour
 
         soundManager.StopPlaying(titleScreenMusic);
         maintheme = soundManager.Play("MainMusic", true);
-        
+        uiManager.DisablePreGameOverlay();
         player.StartGameAnimation();
         FindObjectOfType<WorkerIntroAnimScript>().GameStarted();
     }
@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
         player.gameStarted = true;
         //waveManager.enabled = true;
         uiManager.EnableInGameOverlay();
-        uiManager.DisablePreGameOverlay();
+        
         uiManager.UpdateWaveScoreUI(waveScore);
         uiManager.UpdateKillsScoreUI(killScore);
         AddWaveScore();
