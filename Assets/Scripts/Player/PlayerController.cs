@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour
     [Header("Player Stats")]
     public float movementSpeed;
     public float maxHealth = 20;
-    bool isDead = false;
     public float health = 20;
     Rigidbody2D rb;
     Vector2 moveDirection;
@@ -157,15 +156,9 @@ public class PlayerController : MonoBehaviour
             gameManager.UpdatePlayerHealthStat(health);
             if (health <= 0)
             {
-                isDead = true;
                 gameManager.PlayerDied();
             }
         }
-    }
-
-    public void RevivePlayer()
-    {
-        isDead = false;
     }
 
     public void DisableShieldWarning()

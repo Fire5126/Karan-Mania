@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
         uiManager.DisablePreGameOverlay();
         uiManager.UpdateWaveScoreUI(waveScore);
         uiManager.UpdateKillsScoreUI(killScore);
-        waveManager.StartNextWave(waveScore++);
+        AddWaveScore();
     }
 
     public void AddWaveScore()

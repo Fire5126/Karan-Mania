@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class TestSpawner : MonoBehaviour
 {
-    private int currentWave = 0;
+    //private int currentWave = 0;
 
     [SerializeField] private GameObject[] enemies;
 
@@ -193,7 +193,7 @@ public class TestSpawner : MonoBehaviour
         amountOfEnemiesToSpawn = Mathf.RoundToInt(Mathf.Pow(2, waveDiff * waveNumber) + 5);
 
         enemyListVar = new List<enemiesEnum>();
-        switch (currentWave)
+        switch (waveNumber)
         {
             case <=3:
                 enemyListVar = CalculateEnemyToSpawn(amountOfEnemiesToSpawn, wave1ratio, false);
