@@ -139,7 +139,7 @@ public class TestSpawner : MonoBehaviour
 
     private IEnumerator SpawnEnemies(List<enemiesEnum> enemyType)
     {
-        enemySpawnDelay = (((Mathf.Log(currentWave))/1.5f) + 1f);
+        enemySpawnDelay = (((Mathf.Log(currentWave))/2.3f) + 1f);
         foreach (var x in enemyType)
         {
             yield return new WaitForSeconds(enemySpawnDelay);
@@ -191,7 +191,9 @@ public class TestSpawner : MonoBehaviour
         
         // calculates the amount of enemies to spawned based on:
         // enemies represented by the equation ((2^bx) + 5) where x is the wave number and b is the difficulity multiplier
-        amountOfEnemiesToSpawn = Mathf.RoundToInt(Mathf.Pow(2, waveDiff * waveNumber) + 5);
+        //amountOfEnemiesToSpawn = Mathf.RoundToInt(Mathf.Pow(2, waveDiff * waveNumber) + 5);
+        
+        amountOfEnemiesToSpawn = Mathf.RoundToInt((Mathf.Log(waveNumber)/0.02f) + 5f);
 
         enemyListVar = new List<enemiesEnum>();
         switch (waveNumber)
