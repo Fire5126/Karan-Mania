@@ -362,6 +362,7 @@ public class _PlayerAttack : MonoBehaviour
             {
                 hitCollider.GetComponent<Enemy>().damage = 0;
                 hitCollider.GetComponent<AIPath>().maxSpeed = 0;
+                
             }
         }
         Invoke("ScreamAttackUnstunEnemy", stunTime);
