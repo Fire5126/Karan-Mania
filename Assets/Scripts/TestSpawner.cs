@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 
 public class TestSpawner : MonoBehaviour
 {
-    //private int currentWave = 0;
+    private int currentWave = 0;
 
     [SerializeField] private GameObject[] enemies;
 
@@ -139,6 +139,7 @@ public class TestSpawner : MonoBehaviour
 
     private IEnumerator SpawnEnemies(List<enemiesEnum> enemyType)
     {
+        enemySpawnDelay = (((Mathf.Log(currentWave))/1.5f) + 1f);
         foreach (var x in enemyType)
         {
             yield return new WaitForSeconds(enemySpawnDelay);
@@ -211,6 +212,8 @@ public class TestSpawner : MonoBehaviour
                 enemyListVar = CalculateEnemyToSpawn(amountOfEnemiesToSpawn, wave10ratio, true);
                 break;
         }
+
+        currentWave = waveNumber;
         
         // Spawns the enemies
         StartCoroutine(SpawnEnemies(enemyListVar));
