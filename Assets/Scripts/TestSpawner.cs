@@ -133,8 +133,21 @@ public class TestSpawner : MonoBehaviour
                 }
             }
         }
+        
+        Shuffle(enemiesList);
 
         return enemiesList;
+    }
+
+    private void Shuffle<T>(List<T> inputList)
+    {
+        for (int i = 0; i < inputList.Count; i++)
+        {
+            T temp = inputList[i];
+            int rand = Random.Range(i, inputList.Count);
+            inputList[i] = inputList[rand];
+            inputList[rand] = temp;
+        }
     }
 
     private IEnumerator SpawnEnemies(List<enemiesEnum> enemyType)
