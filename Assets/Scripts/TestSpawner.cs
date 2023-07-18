@@ -206,7 +206,7 @@ public class TestSpawner : MonoBehaviour
         // enemies represented by the equation ((2^bx) + 5) where x is the wave number and b is the difficulity multiplier
         //amountOfEnemiesToSpawn = Mathf.RoundToInt(Mathf.Pow(2, waveDiff * waveNumber) + 5);
         
-        amountOfEnemiesToSpawn = Mathf.RoundToInt((Mathf.Log(waveNumber)/0.02f) + 5f);
+        amountOfEnemiesToSpawn = Mathf.RoundToInt((Mathf.Log(waveNumber)/0.03f) + 5f);
 
         enemyListVar = new List<enemiesEnum>();
         switch (waveNumber)
